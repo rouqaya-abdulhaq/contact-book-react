@@ -1,14 +1,31 @@
 import React from "react";
 import "./card.css";
 import Form from "../form/form";
-const Card = () =>{
-    return(
-        <div className="cardWrapper">
-        <h1>card component</h1>
-        <Form/>
-        </div>
+class Card extends React.Component{
+    constructor(){
+        super();
+        this.state = {
+            name : "",
+            phoneNumber : "",
+            email : ""
+        }
+    }
 
-    );
+
+    handleSave = (fullName,phoneNumber,email)=>{
+        this.setState({
+            "name" : fullName,
+            "phoneNumber" : phoneNumber,
+            "email" : email
+        });
+    }
+    render(){
+        return(
+            <div className="cardWrapper">
+            <Form handleSave={this.handleSave}/>
+            </div>
+        ); 
+    }
 }
 
 export default Card;

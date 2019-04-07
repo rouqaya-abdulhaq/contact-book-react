@@ -1,6 +1,6 @@
 import React from "react";
 import "./card.css";
-import Form from '../containers/form/form.js';
+// import Form from '../containers/form/form';
 //need to set the correct path and change this into a wrapper
 class Card extends React.Component{
     constructor(){
@@ -22,7 +22,7 @@ class Card extends React.Component{
     render(){
         return(
             <div className="cardWrapper">
-            <Form handleSave={this.handleSave}/>
+            {/* <Form handleSave={this.handleSave}/> */}
             </div>
         ); 
     }

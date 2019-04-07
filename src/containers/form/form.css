@@ -1,22 +1,5 @@
-*, *::before, *::after {box-sizing: border-box}
 .formWrapper{
-    /* display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr; */
-    background-color: aqua;
-}
-.inputLabel{
-   margin: 0.5vw;
-   font-family: 'Times New Roman', Times, serif;
-   font-size: 1em;
-}
-.inputBox{
-    margin: 0.5vw;
-    border-radius: 10%;
-    -webkit-box-shadow: 3px 8px 3px -1px rgba(179,166,179,0.74);
-    -moz-box-shadow: 3px 8px 3px -1px rgba(179,166,179,0.74);
-    box-shadow: 3px 8px 3px -1px rgba(179,166,179,0.74);
-}
-.save{
-    margin : 0.5vw;
+    background: red;
+    height: 200px;
+    width: 200px;
 }

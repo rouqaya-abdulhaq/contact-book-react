@@ -1,6 +1,7 @@
 import React from "react";
 import "./card.css";
-import Form from "../form/form";
+import Form from '../containers/form/form.js';
+//need to set the correct path and change this into a wrapper
 class Card extends React.Component{
     constructor(){
         super();
@@ -10,7 +11,6 @@ class Card extends React.Component{
             email : ""
         }
     }
-
 
     handleSave = (fullName,phoneNumber,email)=>{
         this.setState({

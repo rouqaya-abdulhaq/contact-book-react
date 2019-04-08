@@ -1,11 +1,12 @@
 import React from 'react';
 import './input.css';
 
-const Input = () =>{
+function Input(props){
+    
     return(
         <div className="inputWrapper">
-            <label>{this.props.label}</label>
-            <input type="text" className="inputBox" required></input>
+            <label>{props.label}: </label>
+            <input type={props.type} className="inputBox" required></input>
         </div>
     );
 }

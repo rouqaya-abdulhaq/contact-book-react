@@ -1,5 +1,6 @@
 import React ,{Component} from "react";
 import Input from "../../components/input/input";
+import Button from "../../components/submit-button/button";
 
 class Form extends Component{
     render(){
@@ -10,6 +11,7 @@ class Form extends Component{
               <Input label={"email"} type={"email"}/>
               <Input label={"phone number"} type={"tel"} 
               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+              <Button/>
             </div>
         );
     }

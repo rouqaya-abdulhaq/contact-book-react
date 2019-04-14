@@ -1,0 +1,27 @@
+#cover{
+    height: 10vh;
+    width: 4vw;
+    background: orange;
+    border-radius: 15%;
+    padding-top: 1vh;
+    box-sizing:border-box;
+    position: relative;
+  }
+  
+  .straps{
+    background: silver;
+    height: 1.5vh;
+    width: 1vw;
+    border-radius: 30%;
+    margin: 1vh -1vh;
+  }
+
+  #icon{
+      position: absolute;
+      top:2vh;
+      left: 0.7vw;
+      height: 5vh;
+      width: 3vw;
+      top: 1vh;
+      padding: 0;
+  }

@@ -1,14 +1,14 @@
 import React from 'react';
-import './regestration.css';
+import './registration.css';
 import Button from '../../components/button/button';
 
 /* should create another state when the user is not regeterd 
 it should render sign out */ 
-class Regestration extends React.Component{
+class Registration extends React.Component{
   constructor(){
     super();
     this.state = {
-      regesterd : false
+      registered : false
     }
   }
 
@@ -22,4 +22,4 @@ class Regestration extends React.Component{
     }
 }
 
-export default Regestration;
+export default Registration;

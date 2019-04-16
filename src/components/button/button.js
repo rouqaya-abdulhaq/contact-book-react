@@ -4,8 +4,11 @@ import "./button.css";
 function Button(props){
     return(
         <div id="buttonWrapper">
-           <input type="submit" id="submit-button"
-            value="submit" onClick={props.handleSubmit}></input>
+           <button 
+           className="navButton" 
+           type="button" onClick={props.handleClick} >
+           {props.value}
+           </button>
         </div>
     );
 }

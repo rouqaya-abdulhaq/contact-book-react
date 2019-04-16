@@ -1,11 +1,11 @@
 import React from 'react';
-import "./button.css";
+
 
 function Button(props){
     return(
         <div id="buttonWrapper">
            <button 
-           className="navButton" 
+           className={props.className} 
            type="button" onClick={props.handleClick} >
            {props.value}
            </button>

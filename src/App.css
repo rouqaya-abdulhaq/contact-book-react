@@ -1,7 +1,16 @@
 *, *::before, *::after {box-sizing: border-box}
+/* i should create a header element to wrap 
+all the components of the header that will make it easier to style
+so the styling of this grid will go there */
 
 .App {
-  
+  display: grid;
+  /* grid-gap: 10px; */
+  grid-template-columns: 25%  50%  25%;
+  background: paleturquoise;
+  grid-template-areas:
+               "logo . registration";
+                             
 }
 
 

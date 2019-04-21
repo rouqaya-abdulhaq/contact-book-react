@@ -12,14 +12,15 @@ class Registration extends React.Component{
     }
   }
 
-    render(){
-      return(
-        <div>
+  render(){
+     return(
+        <div className="registration">
           <Button className='navButton' value="sign in"/>
           <Button className='navButton' value="log in"/>
         </div>
       );
     }
+    
 }
 
 export default Registration;

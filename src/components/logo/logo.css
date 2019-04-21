@@ -1,4 +1,5 @@
 #cover{
+  grid-area: logo;
     height: 10vh;
     width: 4vw;
     background: #fba004;
@@ -6,6 +7,7 @@
     padding-top: 1vh;
     box-sizing:border-box;
     position: relative;
+    margin-left: 4%;
   }
   
   .straps{

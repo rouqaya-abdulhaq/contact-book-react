@@ -1,0 +1,10 @@
+*, *::before, *::after {box-sizing: border-box}
+
+.header{
+    display: grid;
+  /* grid-gap: 10px; */
+  grid-template-columns: 25%  50%  25%;
+  background: bisque;
+  grid-template-areas:
+               "logo . registration";
+}

@@ -12,7 +12,7 @@ class Header extends React.Component {
         }
     }
     render(){
-    if(this.state.registered == false){
+    if(this.state.registered === false){
         return(
           <div className="registrtionHeader header">
             <Logo/>

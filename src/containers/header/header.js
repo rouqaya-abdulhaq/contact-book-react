@@ -14,14 +14,14 @@ class Header extends React.Component {
     render(){
     if(this.state.registered == false){
         return(
-          <div className="registrtionHeader">
+          <div className="registrtionHeader header">
             <Logo/>
             <Registration/> 
           </div>
         );
     }
     return(
-        <div className="signOutHeader">
+        <div className="signOutHeader header">
           <Logo/>
           <SignOut/> 
         </div>

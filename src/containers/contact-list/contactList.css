@@ -1,0 +1,19 @@
+.contactList{
+    border: dashed black;
+    height: 65vh;
+    width: 20vw;
+    grid-area: contactList;
+    margin-top: 20%;
+    text-align: center;
+}
+
+.title{
+    font-family: monospace;
+    font-size: 2em;
+}
+
+.addButton{
+    height: 1.3em;
+    width: 1.3em;
+    text-align: center;
+}

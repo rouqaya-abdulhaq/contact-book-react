@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './containers/header/header';
+import ContactList from './containers/contact-list/contactList';
+
 
 
 class App extends Component {
@@ -8,8 +10,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header/>
+        <ContactList/>
         {/*
-         <ContactsList/>
          <Footer/>
          <Palette/>
         */}

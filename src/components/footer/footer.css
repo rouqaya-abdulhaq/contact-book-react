@@ -1,0 +1,7 @@
+.footer{
+    grid-area: footer;
+    margin-top : 10vh;
+    margin-left: 2vw;
+    font-family: monospace;
+    font-size: inherit;
+}

@@ -1,0 +1,8 @@
+.palette{
+    width: 4vw;
+    height: 4vh;
+    border: dashed black;
+    grid-area: palette;
+    margin-top: 4%;
+    margin-left: 2vw;
+}

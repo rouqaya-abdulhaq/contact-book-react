@@ -7,8 +7,7 @@
    grid-auto-columns: 20% 50% 20%;
    grid-template-areas: "header header header"
                           ". contactList ."
-                          ". footer .";
-                             
+                          "palette footer .";
 }
 
 

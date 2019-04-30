@@ -1,14 +1,14 @@
 import React from 'react';
-import icon from'./phone-icon.png';
+import PersonIcon from'./personIcon/personIcon';
 import './logo.css';
 
 const Logo = (props)=>{
     return(
         <div id="cover">
+           <PersonIcon/> 
            <div className="straps"></div>
            <div className="straps"></div>
-           <div className="straps"></div> 
-           <img id="icon" src={icon} alt="icon"/>       
+           <div className="straps"></div>      
         </div>
     );
 

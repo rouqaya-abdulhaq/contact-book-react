@@ -1,8 +1,9 @@
 .palette{
-    width: 4vw;
-    height: 4vh;
-    border: dashed black;
     grid-area: palette;
-    margin-top: 4%;
-    margin-left: 2vw;
+    margin-left: 2%;
+}
+img{
+    width: 3vw;
+    height: auto;
+    cursor: pointer;
 }

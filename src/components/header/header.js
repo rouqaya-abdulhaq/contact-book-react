@@ -1,18 +1,20 @@
 import React from 'react';
 import Logo from '../logo/logo';
+import './header.css'
 import Registartion from '../../containers/registration/registration';
 
-class Registration extends React.Component{
+class Header extends React.Component{
   
 
   render(){
      return(
-        <div className="header">
+        <div className="header signOutHeader">
           <Logo/>
+          <Registartion/>
         </div>
       );
     }
     
 }
 
-export default Registration;
+export default Header;

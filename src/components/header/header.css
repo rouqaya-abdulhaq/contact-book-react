@@ -18,7 +18,7 @@
   /*temporary background color*/
   background: bisque;
   grid-template-areas:
-               "logo . signOut";
+               "logo  . signOut";
 }
 
 .navButton{

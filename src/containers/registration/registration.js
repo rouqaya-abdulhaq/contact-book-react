@@ -1,6 +1,8 @@
 import React from 'react';
 import './registration.css';
 import SignOut from '../../components/sign-out/signOut';
+import SignIn from '../../components/signIn/signIn';
+import LogIn from '../../components/logIn/logIn';
 
 class Registration extends React.Component {
     constructor(){
@@ -12,7 +14,7 @@ class Registration extends React.Component {
     render(){
       return (
         <div>
-          
+          <SignOut/>
         </div>
       );
   

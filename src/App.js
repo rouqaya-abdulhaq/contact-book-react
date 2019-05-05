@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './containers/header/header';
+import Header from './components/header/header';
 import ContactList from './containers/contact-list/contactList';
 import Footer from "./components/footer/footer";
 import Palette from "./components/palette/palette";
+
 
 
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import './registration.css';
+import Button from '../../components/button/button';
 import SignOut from '../../components/sign-out/signOut';
 import SignIn from '../../components/signIn/signIn';
 import LogIn from '../../components/logIn/logIn';
@@ -13,8 +14,8 @@ class Registration extends React.Component {
     }
     render(){
       return (
-        <div>
-          <SignOut/>
+        <div className="signOut">
+             <Button className='navButton' value="sign out"/>
         </div>
       );
   

@@ -8,6 +8,7 @@ import Palette from "./components/palette/palette";
 
 
 
+
 class App extends Component {
   constructor(){
     super();

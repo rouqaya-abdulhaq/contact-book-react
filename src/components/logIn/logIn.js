@@ -1,13 +1,20 @@
 import React from 'react';
+import './logIn.css';
 
 const LogIn = () =>{
     return(
         <div>
-           <label>email</label>
-           <input type="email" required></input>
+          <main id="logInWrapper">
+              <form>
+                 <label>email</label>
+                 <input type="email" required></input>
 
-           <label>password</label>
-           <input type="password" required></input>
+                 <label>password</label>
+                 <input type="password" required></input>
+
+                 <button className="submitButton" type="submit">Log In</button>
+              </form>
+          </main>
         </div>
     );
 }

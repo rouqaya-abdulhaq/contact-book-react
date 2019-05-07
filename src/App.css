@@ -4,9 +4,18 @@
    overflow: hidden;
    display : grid;
    grid-template-columns: 40% 20% 40%;
-   grid-auto-columns: 20% 50% 20%;
    grid-template-areas: "header header header"
                           ". contactList ."
+                          "palette footer .";
+}
+/* need to find a way to display the log in 
+component on the page perfectly
+because this is not working*/
+.logInPage{
+   display: grid;
+   grid-template-columns:  30% 40% 30%;
+   grid-template-areas: "header header header"
+                          ". logIn ."
                           "palette footer .";
 }
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import './logIn.css';
+import "../../containers/registration/registration.css";
 
 const LogIn = () =>{
     return(
         <div>
           <main id="logInWrapper">
-              <form>
+              <form id="logInForm">
                  <label>email</label>
                  <input type="email" required></input>
 

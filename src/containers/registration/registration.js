@@ -2,7 +2,7 @@ import React from 'react';
 import './registration.css';
 import Button from '../../components/button/button';
 import SignOut from '../../components/sign-out/signOut';
-import SignIn from '../../components/signIn/signIn';
+import SignUp from '../../components/signUp/signUp';
 import LogIn from '../../components/logIn/logIn';
 
 class Registration extends React.Component {

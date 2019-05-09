@@ -1,24 +1,30 @@
 import React from 'react';
 import './registration.css';
 import Button from '../../components/button/button';
-import SignOut from '../../components/sign-out/signOut';
-import SignUp from '../../components/signUp/signUp';
-import LogIn from '../../components/logIn/logIn';
+
 
 class Registration extends React.Component {
     constructor(){
         super();
         this.state = {
-            isRregistered : false
+            isRregistered : true
         }
     }
+
     render(){
+      if(this.state.isRregistered === false){
+        return (
+          <div className="signOut">
+               <Button className='navButton' value="sign out"/>
+          </div>
+        );
+      }
       return (
-        <div className="signOut">
-             <Button className='navButton' value="sign out"/>
+        <div className="registartion">
+             <Button className='navButton' value="sign In"/>
+             <Button className='navButton' value="sign Up"/>
         </div>
       );
-  
     }
 }
 

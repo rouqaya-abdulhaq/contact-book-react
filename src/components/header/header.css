@@ -3,6 +3,7 @@
 .header{
   grid-area: header;
 }
+/* i need to find a better name than registration*/
 
 .registrtionHeader{
   display: grid;

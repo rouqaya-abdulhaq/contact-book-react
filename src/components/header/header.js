@@ -9,7 +9,7 @@ class Header extends React.Component{
   render(){
      return(
        //i need to add wich kind of header this is dynamically
-        <div className="header registrtionHeader">
+        <div className="header signOutHeader">
           <Logo/>
           <Registartion/>
         </div>

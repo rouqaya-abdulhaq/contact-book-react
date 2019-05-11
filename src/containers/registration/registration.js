@@ -1,6 +1,7 @@
 import React from 'react';
 import './registration.css';
 import Button from '../../components/button/button';
+import {Link } from 'react-router-dom';
 
 
 class Registration extends React.Component {
@@ -12,17 +13,17 @@ class Registration extends React.Component {
     }
 
     render(){
-      if(this.state.isRregistered === false){
+      if(this.state.isRregistered === true){
         return (
           <div className="signOut">
-               <Button className='navButton' value="sign out"/>
+            <Link to="/"><Button className='navButton' value="sign out"/></Link>
           </div>
         );
       }
       return (
         <div className="registartion">
-             <Button className='navButton' value="sign In"/>
-             <Button className='navButton' value="sign Up"/>
+          <Link to="/log-in"><Button className='navButton' value="log In"/></Link>
+          <Link to="/sign-up"><Button className='navButton' value="sign Up"/></Link>
         </div>
       );
     }

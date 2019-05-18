@@ -6,7 +6,7 @@ function Button(props){
         <div id="buttonWrapper">
            <button 
            className={props.className} 
-           type="button" onClick={props.handleClick} >
+           type="button" onClick={props.handleclick1} onClick={props.handleClick2} >
            {props.value}
            </button>
         </div>

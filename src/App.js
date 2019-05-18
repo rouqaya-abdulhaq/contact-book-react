@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, } from 'react-router-dom';
 import './App.css';
-import Header from './components/header/header';
+import Header from './containers/header/header';
 import ContactList from './containers/contact-list/contactList';
 import Footer from "./components/footer/footer";
 import Palette from "./components/palette/palette";
@@ -14,15 +14,21 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      styles : []
+      styles : [],
+      isRegistered: true
     }
+  }
+
+  updateRegistrationHandler = () =>{
+      this.setState({isRegistered : !this.state.isRegistered})
   }
 
   render() {
     return (
     <Router>
       <div className="App">
-        <Header/>
+        <Header isRegistered={this.state.isRegistered} 
+        updateRegistrationHandler ={this.updateRegistrationHandler}/>
         <Switch>
           <Route exact path="/" component={ContactList}></Route>
           <Route exact path="/sign-up" component={SignUp}></Route>

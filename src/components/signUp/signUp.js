@@ -13,7 +13,7 @@ const SignUp = () =>{
 
                <label>password: </label>
                <input type="password" required></input>
-
+                {/* this button should call the updateHeaderHandler once clicked */}
                <button className="submitButton" type="submit">Sign Up</button> 
             </form>
         </div>

@@ -12,7 +12,7 @@ class ContactList extends React.Component{
         return(
             <div className="contactList">
                 <p className="title">contacts :</p>
-                <button className="addButton">+</button>
+                <button className="addButton"> + </button>
             </div>
         );
     }

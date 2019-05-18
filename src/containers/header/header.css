@@ -5,7 +5,7 @@
 }
 /* i need to find a better name than registration*/
 
-.registrtionHeader{
+.registrationHeader{
   display: grid;
   grid-template-columns: 25%  50%  25%;
   background: bisque;

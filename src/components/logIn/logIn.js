@@ -1,7 +1,8 @@
 import React from 'react';
 import "../registration/registration.css";
+import {Link } from 'react-router-dom';
 
-const LogIn = () =>{
+const LogIn = (props) =>{
     return(
         <div>
           <main id="logInWrapper">
@@ -11,8 +12,11 @@ const LogIn = () =>{
 
                  <label>password</label>
                  <input type="password" required></input>
-                 {/* this button should call the updateHeaderHandler once clicked */}
-                 <button className="submitButton" type="submit">Log In</button>
+                 
+                 <Link to="/">
+                    <button className="submitButton" 
+                    onClick={props.updateHeaderHandler} type="submit">Log In</button>
+                 </Link>
               </form>
           </main>
         </div>

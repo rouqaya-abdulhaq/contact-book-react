@@ -15,7 +15,8 @@ class App extends Component {
     super();
     this.state = {
       styles : [],
-      isRegistered: true
+      isRegistered: true,
+      headerType: "signOutHeader",
     }
   }
 
@@ -23,16 +24,34 @@ class App extends Component {
       this.setState({isRegistered : !this.state.isRegistered})
   }
 
+  updateHeaderType= () =>{
+    let newHeaderType = (this.state.headerType === "signOutHeader") ? "registrationHeader" : "signOutHeader";
+    this.setState({headerType : newHeaderType})
+
+  }
+
+  updateHeaderHandler = () =>{
+    this.updateRegistrationHandler();
+    this.updateHeaderType();
+  }
+
   render() {
     return (
     <Router>
       <div className="App">
         <Header isRegistered={this.state.isRegistered} 
-        updateRegistrationHandler ={this.updateRegistrationHandler}/>
+        updateHeaderHandler ={this.updateHeaderHandler}
+        headerType={this.state.headerType}/>
         <Switch>
           <Route exact path="/" component={ContactList}></Route>
-          <Route exact path="/sign-up" component={SignUp}></Route>
-          <Route exact path="/log-in" component={LogIn}></Route>
+          <Route exact path="/sign-up" 
+          render={(props)=> <SignUp updateHeaderHandler={this.updateHeaderHandler} 
+          isAuthed={true}/>} 
+          ></Route>
+          <Route exact path="/log-in" 
+          render={(props)=> <LogIn updateHeaderHandler={this.updateHeaderHandler}
+          isAuthed={true} />}>
+          </Route>
         </Switch>
         <Footer author={"rouqaya abdulhaq"}/>
         <Palette/>

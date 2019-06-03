@@ -4,31 +4,14 @@ import './header.css'
 import Registartion from '../../components/registration/registration';
 
 class Header extends React.Component{
-    constructor(){
-      super();
-      this.state = {
-        headerType: "signOutHeader",
-      }
-    }
-    
-    updateHeaderType= () =>{
-      let newHeaderType = (this.state.headerType === "signOutHeader") ? "registrationHeader" : "signOutHeader";
-      this.setState({headerType : newHeaderType})
-
-    }
-
-    updateHeaderHandler = () =>{
-      this.props.updateRegistrationHandler();
-      this.updateHeaderType();
-    }
-
+  //should probably move this to the components again 
     render(){
       return(
          <div className="header">
-         <div className={this.state.headerType}>
+         <div className={this.props.headerType}>
            <Logo/>
            <Registartion 
-           onClick={this.updateHeaderHandler}
+           updateHeaderHandler={this.props.updateHeaderHandler}
            isRegistered={this.props.isRegistered} />
          </div>
          </div>
@@ -37,5 +20,4 @@ class Header extends React.Component{
     }
 
     
-
 export default Header;

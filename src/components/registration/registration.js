@@ -9,7 +9,7 @@ const  Registration = (props) => {
           <div className="signOut">
             <Link to="/log-in">
               <button className="navButton" 
-              onClick={props.onClick}>sign out</button>
+              onClick={props.updateHeaderHandler}>sign out</button>
             </Link>
           </div>
         );

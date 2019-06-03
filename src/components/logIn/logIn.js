@@ -1,5 +1,5 @@
 import React from 'react';
-import "../../containers/registration/registration.css";
+import "../registration/registration.css";
 
 const LogIn = () =>{
     return(

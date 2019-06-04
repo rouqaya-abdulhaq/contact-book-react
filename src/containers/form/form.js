@@ -1,6 +1,6 @@
 import React ,{Component} from "react";
 import Input from "../../components/input/input";
-import Button from "../../components/submit-button/button";
+
 
 class Form extends Component{
     constructor(props){
@@ -41,7 +41,7 @@ class Form extends Component{
               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value={this.state.phoneNumber}
               onChange={this.handleChange}/>
 
-              <Button handleSubmit={this.handleSubmit}/>
+              <button onClick={this.handleSubmit}>submit</button>
             </div>
         );
     }

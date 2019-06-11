@@ -28,6 +28,7 @@ class Form extends Component{
     render(){
         return(
             <div className="formWrapper">
+                {this.props.children}
               <Input label={"first name"} id="firstName" value={this.state.firstName}
               type={"text"} onChange={this.handleChange}/>
 

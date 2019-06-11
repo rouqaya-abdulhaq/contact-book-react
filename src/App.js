@@ -20,7 +20,7 @@ class App extends Component {
       headerType: "signOutHeader",
     }
   }
-
+  //i want to extract all the header handlers to adifferent component when i clean the code
   updateRegistrationHandler = () =>{
       this.setState({isRegistered : !this.state.isRegistered})
   }

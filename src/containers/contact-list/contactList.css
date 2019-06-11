@@ -17,3 +17,10 @@
     width: 1.3em;
     text-align: center;
 }
+
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}

@@ -6,10 +6,10 @@ class Form extends Component{
     constructor(props){
         super(props);
         this.state={
-            firstName: "",
-            lastName:"",
-            email: "",
-            phoneNumber: ""
+                firstName: "",
+                lastName:"",
+                email: "",
+                phoneNumber: "" 
         }
     }
     
@@ -20,9 +20,9 @@ class Form extends Component{
             }
         );
     }
-    
-    handleSubmit = ()=>{
-        console.log(this.state);
+//the contact list submit change to a clearer name
+    handleSubmit = (event)=>{
+        this.props.onSubmit(this.state);
     }
 
     render(){

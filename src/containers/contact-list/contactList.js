@@ -4,8 +4,8 @@ import PopUp from '../../components/popUp/popUp';
 import Form from '../form/form';
 
 class ContactList extends React.Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             contacts : [],
             addClicked : false,
@@ -32,16 +32,23 @@ class ContactList extends React.Component{
         this.showPopUpHandler();
     }
 
+    onSubmitHandler = (newContact) =>{
+        this.setState({"contacts" : [...this.state.contacts, newContact]})
+    }
+    
+    
     render(){
         return(
             <div className="contactList">
                 <p className="title">contacts :</p>
                 <button className="addButton" onClick={this.clickAddHandler}> + </button>
                 <PopUp display={this.state.popUpDisplay}>
-                    <Form>
+                    <Form onSubmit={this.onSubmitHandler}>
                         <button onClick={this.hidePopUpHandler}> x </button>
                     </Form>
                 </PopUp>
+                {this.state.contacts.map((contact) =>
+                     <li key={contact.phoneNumber}>{contact.firstName}</li>)}
             </div>
         );
     }

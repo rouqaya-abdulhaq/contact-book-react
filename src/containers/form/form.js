@@ -9,8 +9,9 @@ class Form extends Component{
                 firstName: "",
                 lastName:"",
                 email: "",
-                phoneNumber: "" 
+                phoneNumber: "",
         }
+        this.baseState = this.state
     }
     
     handleChange = (state, newValue)=>{
@@ -20,9 +21,11 @@ class Form extends Component{
             }
         );
     }
+
 //the contact list submit change to a clearer name
     handleSubmit = (event)=>{
         this.props.onSubmit(this.state);
+        this.setState(this.baseState);
     }
 
     render(){

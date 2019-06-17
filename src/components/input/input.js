@@ -11,7 +11,7 @@ const Input = (props)=>{
     return(
         <div className="inputWrapper">
             <label>{props.label}: </label>
-            <input type={props.type} className="inputBox" 
+            <input type={props.type} value={props.value} className="inputBox" 
             onChange={updateParentState} 
              required></input>
         </div>

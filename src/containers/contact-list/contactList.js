@@ -33,7 +33,8 @@ class ContactList extends React.Component{
     }
 
     onSubmitHandler = (newContact) =>{
-        this.setState({"contacts" : [...this.state.contacts, newContact]})
+        this.setState({"contacts" : [...this.state.contacts, newContact]});
+        this.hidePopUpHandler();
     }
     
     

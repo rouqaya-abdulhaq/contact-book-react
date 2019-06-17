@@ -1,6 +1,7 @@
 import React from 'react';
 import "./contactList.css";
 import PopUp from '../../components/popUp/popUp';
+import Contact from '../../components/contact/contact';
 import Form from '../form/form';
 
 class ContactList extends React.Component{
@@ -49,7 +50,9 @@ class ContactList extends React.Component{
                     </Form>
                 </PopUp>
                 {this.state.contacts.map((contact) =>
-                     <li key={contact.phoneNumber}>{contact.firstName}</li>)}
+                     <Contact phoneNumber={contact.phoneNumber} 
+                     firstName={contact.firstName} 
+                     lastName={contact.lastName}/>)}
             </div>
         );
     }

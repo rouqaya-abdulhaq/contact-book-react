@@ -6,15 +6,20 @@ class Form extends Component{
     constructor(props){
         super(props);
         this.state={
-                firstName: "",
-                lastName:"",
-                email: "",
-                phoneNumber: "",
+                firstName: props.firstName,
+                lastName: props.lastName,
+                email: props.email,
+                phoneNumber: props.phoneNumber,
         }
-        this.baseState = this.state
+        this.baseState = {
+            firstName : "",
+            lastName : "",
+            email : "",
+            phoneNumber : ""
+        }
     }
     
-    handleChange = (state, newValue)=>{
+    ChangeHandler = (state, newValue)=>{
         this.setState(
             {
                 [state] : newValue
@@ -22,30 +27,30 @@ class Form extends Component{
         );
     }
 
-//the contact list submit change to a clearer name
-    handleSubmit = (event)=>{
+    submitFormHandler = ()=>{
         this.props.onSubmit(this.state);
         this.setState(this.baseState);
     }
+
 
     render(){
         return(
             <div className="formWrapper">
                 {this.props.children}
               <Input label={"first name"} id="firstName" value={this.state.firstName}
-              type={"text"} onChange={this.handleChange}/>
+              type={"text"} onChange={this.ChangeHandler}/>
 
               <Input label={"last name"} id="lastName" value={this.state.lastName}
-              type={"text"} onChange={this.handleChange}/>
+              type={"text"} onChange={this.ChangeHandler}/>
 
               <Input label={"email"} id="email" value={this.state.email}
-              type={"email"} onChange={this.handleChange}/>
+              type={"email"} onChange={this.ChangeHandler}/>
 
               <Input label={"phone number"} id="phoneNumber" type={"tel"} 
               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value={this.state.phoneNumber}
-              onChange={this.handleChange}/>
+              onChange={this.ChangeHandler}/>
 
-              <button onClick={this.handleSubmit}>submit</button>
+              <button onClick={this.submitFormHandler}>submit</button>
             </div>
         );
     }

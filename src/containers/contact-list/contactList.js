@@ -3,10 +3,12 @@ import "./contactList.css";
 import PopUp from '../../components/popUp/popUp';
 import Contact from '../../components/contact/contact';
 import Form from '../form/form';
+import EditButton from '../../components/editButton/editButton';
 
 /*in order to edit each contact i need a handler that displays the targeted
 contact edit onclick then a form will reappear that has all of the previous info
 and once changed and resubmitted the contacts array must be updated with the new info */
+//each element in the contacts array should have a special index.
 
 class ContactList extends React.Component{
     constructor(props){
@@ -15,6 +17,8 @@ class ContactList extends React.Component{
             contacts : [],
             addClicked : false,
             addContactDisplay : "hide",
+            editClicked : false,
+            editFormDisplay : "hide"
         }
     }
     
@@ -41,12 +45,31 @@ class ContactList extends React.Component{
         this.setState({"contacts" : [...this.state.contacts, newContact]});
         this.hidePopUpHandler("addContactDisplay");
     }
-    
-    onEditHandler = (editedContact)=>{
-        ///
+
+    //maybe i should move the edit pop up methods th the edit button
+
+    editClickedHandler = ()=>{
+        this.setState({
+            "editClicked" : !this.state.editClicked
+         });
     }
+
+    clickEditHandler = () =>{
+        this.editClickedHandler();
+        this.showPopUpHandler("editFormDisplay");
+    }
+     
+    onEditHandler = (index , newContact)=>{
+        let contacts = [...this.state.contacts];
+        contacts[index] = newContact;
+        this.setState({
+            'contacts' : contacts
+        } );
+    }
+
     
     render(){
+        
         return(
             <div className="contactList">
                 <p className="title">contacts :</p>
@@ -56,13 +79,21 @@ class ContactList extends React.Component{
                         <button onClick={()=>this.hidePopUpHandler("addContactDisplay")}> x </button>
                     </Form>
                 </PopUp>
-                 {/*i should use a different key that has nothing to do with the info */}
-                {this.state.contacts.map((contact) =>
-                     <Contact key={contact.phoneNumber} phoneNumber={contact.phoneNumber} 
-                     firstName={contact.firstName} 
-                     lastName={contact.lastName}
-                     email={contact.email}
-                     onEdit={this.clickEditHandler}/>)}
+
+                 {/*i should use a different key that has nothing to do with the info 
+                and delete buttons must be here*/}
+
+                {this.state.contacts.map((contact,index) =>
+                <div key={contact.phoneNumber}>
+                    <Contact phoneNumber={contact.phoneNumber} 
+                    firstName={contact.firstName} 
+                    lastName={contact.lastName}/>
+
+                   <EditButton displayEditForm={this.state.editFormDisplay} 
+                   editClick={this.clickEditHandler} hidePopUpHandler={this.hidePopUpHandler}
+                   submitEditHandler={(newContact)=>this.onEditHandler(index , newContact)} 
+                   oldContact={contact}/>
+                </div>)}
             </div>
         );
     }

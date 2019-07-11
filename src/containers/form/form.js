@@ -6,17 +6,13 @@ class Form extends Component{
     constructor(props){
         super(props);
         this.state={
-                firstName: props.firstName,
-                lastName: props.lastName,
-                email: props.email,
-                phoneNumber: props.phoneNumber,
+                firstName: "",
+                lastName: "",
+                email: "",
+                phoneNumber: "",
         }
-        this.baseState = {
-            firstName : "",
-            lastName : "",
-            email : "",
-            phoneNumber : ""
-        }
+        this.baseState = this.state;
+        
     }
     
     ChangeHandler = (state, newValue)=>{

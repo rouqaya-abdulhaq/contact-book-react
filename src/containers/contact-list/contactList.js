@@ -1,7 +1,6 @@
 import React from 'react';
 import "./contactList.css";
 import PopUp from '../../components/popUp/popUp';
-import Contact from '../../components/contact/contact';
 import Form from '../form/form';
 import EditButton from '../../components/editButton/editButton';
 
@@ -85,9 +84,8 @@ class ContactList extends React.Component{
 
                 {this.state.contacts.map((contact,index) =>
                 <div key={contact.phoneNumber}>
-                    <Contact phoneNumber={contact.phoneNumber} 
-                    firstName={contact.firstName} 
-                    lastName={contact.lastName}/>
+            
+                    <li>{contact.firstName + " " + contact.lastName}</li>
 
                    <EditButton displayEditForm={this.state.editFormDisplay} 
                    editClick={this.clickEditHandler} hidePopUpHandler={this.hidePopUpHandler}

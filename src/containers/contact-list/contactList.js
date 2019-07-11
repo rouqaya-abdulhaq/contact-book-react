@@ -4,9 +4,6 @@ import PopUp from '../../components/popUp/popUp';
 import Form from '../form/form';
 import EditButton from '../../components/editButton/editButton';
 
-/*in order to edit each contact i need a handler that displays the targeted
-contact edit onclick then a form will reappear that has all of the previous info
-and once changed and resubmitted the contacts array must be updated with the new info */
 //each element in the contacts array should have a special index.
 
 class ContactList extends React.Component{
@@ -16,8 +13,6 @@ class ContactList extends React.Component{
             contacts : [],
             addClicked : false,
             addContactDisplay : "hide",
-            editClicked : false,
-            editFormDisplay : "hide"
         }
     }
     
@@ -43,19 +38,6 @@ class ContactList extends React.Component{
     onSubmitHandler = (newContact) =>{
         this.setState({"contacts" : [...this.state.contacts, newContact]});
         this.hidePopUpHandler("addContactDisplay");
-    }
-
-    //maybe i should move the edit pop up methods th the edit button
-
-    editClickedHandler = ()=>{
-        this.setState({
-            "editClicked" : !this.state.editClicked
-         });
-    }
-
-    clickEditHandler = () =>{
-        this.editClickedHandler();
-        this.showPopUpHandler("editFormDisplay");
     }
      
     onEditHandler = (index , newContact)=>{
@@ -87,8 +69,8 @@ class ContactList extends React.Component{
             
                     <li>{contact.firstName + " " + contact.lastName}</li>
 
-                   <EditButton displayEditForm={this.state.editFormDisplay} 
-                   editClick={this.clickEditHandler} hidePopUpHandler={this.hidePopUpHandler}
+                   <EditButton showPopUp={this.showPopUpHandler} 
+                    hidePopUp={this.hidePopUpHandler}
                    submitEditHandler={(newContact)=>this.onEditHandler(index , newContact)} 
                    oldContact={contact}/>
                 </div>)}

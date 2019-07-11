@@ -7,7 +7,28 @@ class EditButton extends React.Component{
         super(props);
         this.state={
             editedContact : undefined,
+            editClicked : false,
+            editFormDisplay : "hide"
         }
+    }
+    //the two next methods are duplicated from contact list find a way to clean them up
+    hidePopUpHandler = (state)=>{
+        this.setState({[state] : "hide"});
+    }
+
+    showPopUpHandler = (state)=>{
+        this.setState({[state]: "show"})
+    }
+
+    editClickedHandler = ()=>{
+        this.setState({
+            "editClicked" : !this.state.editClicked
+         });
+    }
+
+    clickEditHandler = () =>{
+        this.editClickedHandler();
+        this.showPopUpHandler("editFormDisplay");
     }
 
     getEditedContactHandler = (editedContact) =>{
@@ -25,11 +46,10 @@ class EditButton extends React.Component{
     render(){
         return(
             <div>
-                <button onClick={this.props.editClick}>edit</button>
-                 {/*when an edit button is pressed all the edit pop ups are showed */}
-                <PopUp display={this.props.displayEditForm}>
+                <button onClick={this.clickEditHandler}>edit</button>
+                <PopUp display={this.state.editFormDisplay}>
                   <Form onSubmit={this.getEditedContactHandler}>
-                    <button onClick={()=>this.props.hidePopUpHandler("editFormDisplay")}> x </button>
+                    <button onClick={()=>this.hidePopUpHandler("editFormDisplay")}> x </button>
                   </Form>
                 </PopUp>
     

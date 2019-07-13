@@ -48,6 +48,14 @@ class ContactList extends React.Component{
         } );
     }
 
+    onDeleteHandler = (index) =>{
+        let contacts = [...this.state.contacts];
+        contacts.splice(index,1);
+        this.setState({
+            contacts : contacts
+        });
+    }
+
     
     render(){
         
@@ -61,8 +69,7 @@ class ContactList extends React.Component{
                     </Form>
                 </PopUp>
 
-                 {/*i should use a different key that has nothing to do with the info 
-                and delete buttons must be here*/}
+                 {/*i should use a different key that has nothing to do with the info */}
 
                 {this.state.contacts.map((contact,index) =>
                 <div key={contact.phoneNumber}>
@@ -73,6 +80,8 @@ class ContactList extends React.Component{
                     hidePopUp={this.hidePopUpHandler}
                    submitEditHandler={(newContact)=>this.onEditHandler(index , newContact)} 
                    oldContact={contact}/>
+
+                   <button onClick={()=>this.onDeleteHandler(index)}> delete </button>
                 </div>)}
             </div>
         );

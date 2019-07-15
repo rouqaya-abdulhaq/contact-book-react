@@ -4,7 +4,6 @@ import PopUp from '../../components/popUp/popUp';
 import Form from '../form/form';
 import EditButton from '../../components/editButton/editButton';
 
-//each element in the contacts array should have a special index.
 
 class ContactList extends React.Component{
     constructor(props){
@@ -35,7 +34,8 @@ class ContactList extends React.Component{
         this.showPopUpHandler("addContactDisplay");
     }
 
-    onSubmitHandler = (newContact) =>{
+    onSubmitHandler = (newContact,id) =>{
+        newContact.id = id;
         this.setState({"contacts" : [...this.state.contacts, newContact]});
         this.hidePopUpHandler("addContactDisplay");
     }
@@ -68,14 +68,11 @@ class ContactList extends React.Component{
                         <button onClick={()=>this.hidePopUpHandler("addContactDisplay")}> x </button>
                     </Form>
                 </PopUp>
-
-                 {/*i should use a different key that has nothing to do with the info */}
-
+               
                 {this.state.contacts.map((contact,index) =>
-                <div key={contact.phoneNumber}>
-            
+                <div key={contact.id}>
                     <li>{contact.firstName + " " + contact.lastName}</li>
-
+                     
                    <EditButton showPopUp={this.showPopUpHandler} 
                     hidePopUp={this.hidePopUpHandler}
                    submitEditHandler={(newContact)=>this.onEditHandler(index , newContact)} 

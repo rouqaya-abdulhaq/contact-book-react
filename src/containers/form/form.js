@@ -12,9 +12,14 @@ class Form extends Component{
                 phoneNumber: "",
         }
         this.baseState = this.state;
-        
+        this.id = 0;
     }
-    
+
+    generateId = () =>{
+        this.id++;
+        return this.id;
+    }
+
     ChangeHandler = (state, newValue)=>{
         this.setState(
             {
@@ -24,9 +29,12 @@ class Form extends Component{
     }
 
     submitFormHandler = ()=>{
-        this.props.onSubmit(this.state);
+        let id =this.generateId();
+        this.props.onSubmit(this.state,id);
         this.setState(this.baseState);
     }
+
+    
 
 
     render(){

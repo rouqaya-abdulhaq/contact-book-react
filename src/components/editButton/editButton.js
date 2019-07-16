@@ -11,32 +11,39 @@ class EditButton extends React.Component{
             editFormDisplay : "hide"
         }
     }
-    //the two next methods are duplicated from contact list find a way to clean them up
-    hidePopUpHandler = (state)=>{
-        this.setState({[state] : "hide"});
+    /*1-the showpopup and hidepopup are duplicates frm the parent fix that
+    2-the id passed as key is being used for the same edited and original which is causing
+    a warning
+    3- the infinite loop situation because of componentdidupsate*/
+
+    clickEditHandler = () =>{
+        this.displayEditForm();
+        this.showPopUp("editFormDisplay");
     }
 
-    showPopUpHandler = (state)=>{
-        this.setState({[state]: "show"})
-    }
-
-    editClickedHandler = ()=>{
+    displayEditForm = ()=>{
         this.setState({
             "editClicked" : !this.state.editClicked
          });
     }
 
-    clickEditHandler = () =>{
-        this.editClickedHandler();
-        this.showPopUpHandler("editFormDisplay");
+    showPopUp = (state)=>{
+        this.setState({[state]: "show"})
     }
 
-    getEditedContactHandler = (editedContact) =>{
+
+    onSubmitEditHandler = (editedContact) =>{
         this.setState({
             'editedContact' : editedContact
         });
     }
 
+    hidePopUp = (state)=>{
+        this.setState({[state] : "hide"});
+    }
+
+    /*this is setting state in an infinte loop by calling
+    submit edit handler after the first edit */
     componentDidUpdate() {
         if(this.state.editedContact !== undefined){
             this.props.submitEditHandler(this.state.editedContact);
@@ -48,8 +55,8 @@ class EditButton extends React.Component{
             <div>
                 <button onClick={this.clickEditHandler}>edit</button>
                 <PopUp display={this.state.editFormDisplay}>
-                  <Form onSubmit={this.getEditedContactHandler}>
-                    <button onClick={()=>this.hidePopUpHandler("editFormDisplay")}> x </button>
+                  <Form onSubmit={this.onSubmitEditHandler}>
+                    <button onClick={()=>this.hidePopUp("editFormDisplay")}> x </button>
                   </Form>
                 </PopUp>
     

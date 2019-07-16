@@ -3,7 +3,8 @@ import "./contactList.css";
 import PopUp from '../../components/popUp/popUp';
 import Form from '../form/form';
 import EditButton from '../../components/editButton/editButton';
-
+/*i can't seem to update the contacts more than once i get ×
+"Maximum update depth exceeded" error */
 
 class ContactList extends React.Component{
     constructor(props){
@@ -14,39 +15,43 @@ class ContactList extends React.Component{
             addContactDisplay : "hide",
         }
     }
+
+    clickAddHandler = () =>{
+        this.displayContactForm();
+        this.showPopUp("addContactDisplay");
+    }
     
-    addContactHandler = ()=>{
+    displayContactForm = ()=>{
         this.setState({
            "addClicked" : !this.state.addClicked
         });
     }
 
-    hidePopUpHandler = (state)=>{
-        this.setState({[state] : "hide"});
-    }
-
-    showPopUpHandler = (state)=>{
+    showPopUp = (state)=>{
         this.setState({[state]: "show"})
     }
 
-    clickAddHandler = () =>{
-        this.addContactHandler();
-        this.showPopUpHandler("addContactDisplay");
-    }
 
     onSubmitHandler = (newContact,id) =>{
         newContact.id = id;
         this.setState({"contacts" : [...this.state.contacts, newContact]});
-        this.hidePopUpHandler("addContactDisplay");
+        this.hidePopUp("addContactDisplay");
     }
+
+    hidePopUp = (state)=>{
+        this.setState({[state] : "hide"});
+    }
+    /*edit handler is being called multiple times by the edit button 
+    but it works perfectly in the first edit  */
      
     onEditHandler = (index , newContact)=>{
         let contacts = [...this.state.contacts];
         contacts[index] = newContact;
         this.setState({
             'contacts' : contacts
-        } );
+        });
     }
+
 
     onDeleteHandler = (index) =>{
         let contacts = [...this.state.contacts];
@@ -58,6 +63,17 @@ class ContactList extends React.Component{
 
     
     render(){
+        const contacts = this.state.contacts.map((contact,index) =>
+        <div key={contact.id}>
+            <li>{contact.firstName + " " + contact.lastName}</li>
+             
+           <EditButton showPopUp={this.showPopUpHandler} 
+            hidePopUp={this.hidePopUpHandler}
+           submitEditHandler={(newContact)=>this.onEditHandler(index , newContact)} 
+           oldContact={contact}/>
+
+           <button onClick={()=>this.onDeleteHandler(index)}> delete </button>
+        </div>)
         
         return(
             <div className="contactList">
@@ -65,21 +81,11 @@ class ContactList extends React.Component{
                 <button className="addButton" onClick={this.clickAddHandler}> + </button>
                 <PopUp display={this.state.addContactDisplay}>
                     <Form onSubmit={this.onSubmitHandler}>
-                        <button onClick={()=>this.hidePopUpHandler("addContactDisplay")}> x </button>
+                        <button onClick={()=>this.hidePopUp("addContactDisplay")}> x </button>
                     </Form>
                 </PopUp>
-               
-                {this.state.contacts.map((contact,index) =>
-                <div key={contact.id}>
-                    <li>{contact.firstName + " " + contact.lastName}</li>
-                     
-                   <EditButton showPopUp={this.showPopUpHandler} 
-                    hidePopUp={this.hidePopUpHandler}
-                   submitEditHandler={(newContact)=>this.onEditHandler(index , newContact)} 
-                   oldContact={contact}/>
-
-                   <button onClick={()=>this.onDeleteHandler(index)}> delete </button>
-                </div>)}
+                {/* create a scroll bar around contacts  */}
+                {contacts}
             </div>
         );
     }

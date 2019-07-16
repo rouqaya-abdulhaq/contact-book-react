@@ -15,6 +15,13 @@ class Form extends Component{
         this.id = 0;
     }
 
+    submitFormHandler = ()=>{
+        let id =this.generateId();
+        this.props.onSubmit(this.state,id);
+        this.setState(this.baseState);
+    }
+    //this is not so good because of the update feature it
+    // creates a new elemnt with the same id
     generateId = () =>{
         this.id++;
         return this.id;
@@ -27,14 +34,6 @@ class Form extends Component{
             }
         );
     }
-
-    submitFormHandler = ()=>{
-        let id =this.generateId();
-        this.props.onSubmit(this.state,id);
-        this.setState(this.baseState);
-    }
-
-    
 
 
     render(){

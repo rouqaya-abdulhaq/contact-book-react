@@ -5,11 +5,14 @@
     grid-area: contactList;
     margin-top: 20%;
     text-align: center;
+    overflow-y: auto;
 }
 
+/*fix the position of the title*/
 .title{
     font-family: monospace;
     font-size: 2em;
+    /* position: fixed; */
 }
 
 .addButton{

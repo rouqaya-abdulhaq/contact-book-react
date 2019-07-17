@@ -84,7 +84,6 @@ class ContactList extends React.Component{
                         <button onClick={()=>this.hidePopUp("addContactDisplay")}> x </button>
                     </Form>
                 </PopUp>
-                {/* create a scroll bar around contacts  */}
                 {contacts}
             </div>
         );

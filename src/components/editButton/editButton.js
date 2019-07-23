@@ -10,11 +10,11 @@ class EditButton extends React.Component{
             editClicked : false,
             editFormDisplay : "hide"
         }
+        this.baseState = this.state;
     }
     /*1-the showpopup and hidepopup are duplicates frm the parent fix that
     2-the id passed as key is being used for the same edited and original which is causing
-    a warning
-    3- the infinite loop situation because of componentdidupsate*/
+    a warning*/
 
     clickEditHandler = () =>{
         this.displayEditForm();
@@ -42,11 +42,11 @@ class EditButton extends React.Component{
         this.setState({[state] : "hide"});
     }
 
-    /*this is setting state in an infinte loop by calling
-    submit edit handler after the first edit */
+
     componentDidUpdate() {
         if(this.state.editedContact !== undefined){
             this.props.submitEditHandler(this.state.editedContact);
+            this.setState(this.baseState);
         }
     }
 

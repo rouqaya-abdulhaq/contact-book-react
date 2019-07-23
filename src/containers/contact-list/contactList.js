@@ -3,8 +3,7 @@ import "./contactList.css";
 import PopUp from '../../components/popUp/popUp';
 import Form from '../form/form';
 import EditButton from '../../components/editButton/editButton';
-/*i can't seem to update the contacts more than once i get ×
-"Maximum update depth exceeded" error */
+
 
 class ContactList extends React.Component{
     constructor(props){
@@ -41,8 +40,6 @@ class ContactList extends React.Component{
     hidePopUp = (state)=>{
         this.setState({[state] : "hide"});
     }
-    /*edit handler is being called multiple times by the edit button 
-    but it works perfectly in the first edit  */
      
     onEditHandler = (index , newContact)=>{
         let contacts = [...this.state.contacts];

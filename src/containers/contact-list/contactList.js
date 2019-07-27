@@ -11,36 +11,20 @@ class ContactList extends React.Component{
         this.state = {
             contacts : [],
             addClicked : false,
-            addContactDisplay : "hide",
         }
     }
 
-    clickAddHandler = () =>{
-        this.displayContactForm();
-        this.showPopUp("addContactDisplay");
+    onSubmitHandler = (newContact) =>{
+        this.setState({"contacts" : [...this.state.contacts, newContact]});
+        this.displayAddForm();
+    }
+
+    displayAddForm= () =>{
+        this.setState({
+            addClicked : !this.state.addClicked
+        })
     }
     
-    displayContactForm = ()=>{
-        this.setState({
-           "addClicked" : !this.state.addClicked
-        });
-    }
-
-    showPopUp = (state)=>{
-        this.setState({[state]: "show"})
-    }
-
-
-    onSubmitHandler = (newContact,id) =>{
-        newContact.id = id;
-        this.setState({"contacts" : [...this.state.contacts, newContact]});
-        this.hidePopUp("addContactDisplay");
-    }
-
-    hidePopUp = (state)=>{
-        this.setState({[state] : "hide"});
-    }
-     
     onEditHandler = (index , newContact)=>{
         let contacts = [...this.state.contacts];
         contacts[index] = newContact;
@@ -48,7 +32,6 @@ class ContactList extends React.Component{
             'contacts' : contacts
         });
     }
-
 
     onDeleteHandler = (index) =>{
         let contacts = [...this.state.contacts];
@@ -61,7 +44,8 @@ class ContactList extends React.Component{
     
     render(){
         const contacts = this.state.contacts.map((contact,index) =>
-        <div key={contact.id}>
+        //phone number is the key for now only
+        <div key={contact.phoneNumber}>
             <li>{contact.firstName + " " + contact.lastName}</li>
              
            <EditButton showPopUp={this.showPopUpHandler} 
@@ -75,10 +59,10 @@ class ContactList extends React.Component{
         return(
             <div className="contactList">
                 <p className="title">contacts :</p>
-                <button className="addButton" onClick={this.clickAddHandler}> + </button>
-                <PopUp display={this.state.addContactDisplay}>
+                <button className="addButton" onClick={this.displayAddForm}> + </button>
+                <PopUp display={this.state.addClicked}>
                     <Form onSubmit={this.onSubmitHandler}>
-                        <button onClick={()=>this.hidePopUp("addContactDisplay")}> x </button>
+                        <button onClick={this.displayAddForm}> x </button>
                     </Form>
                 </PopUp>
                 {contacts}

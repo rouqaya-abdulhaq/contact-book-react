@@ -5,3 +5,9 @@
     border: black dashed;
     background: thistle;
 }
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}

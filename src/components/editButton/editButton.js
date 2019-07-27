@@ -7,42 +7,23 @@ class EditButton extends React.Component{
         super(props);
         this.state={
             editedContact : undefined,
-            editClicked : false,
-            editFormDisplay : "hide"
+            editClicked : false ,
         }
         this.baseState = this.state;
     }
-    /*1-the showpopup and hidepopup are duplicates frm the parent fix that
-    2-the id passed as key is being used for the same edited and original which is causing
-    a warning*/
 
-    clickEditHandler = () =>{
-        this.displayEditForm();
-        this.showPopUp("editFormDisplay");
-    }
-
-    displayEditForm = ()=>{
+    displayEditForm = () =>{
         this.setState({
-            "editClicked" : !this.state.editClicked
-         });
+            editClicked : !this.state.editClicked
+        })
     }
-
-    showPopUp = (state)=>{
-        this.setState({[state]: "show"})
-    }
-
 
     onSubmitEditHandler = (editedContact) =>{
         this.setState({
             'editedContact' : editedContact
         });
     }
-
-    hidePopUp = (state)=>{
-        this.setState({[state] : "hide"});
-    }
-
-
+   
     componentDidUpdate() {
         if(this.state.editedContact !== undefined){
             this.props.submitEditHandler(this.state.editedContact);
@@ -53,10 +34,10 @@ class EditButton extends React.Component{
     render(){
         return(
             <div>
-                <button onClick={this.clickEditHandler}>edit</button>
-                <PopUp display={this.state.editFormDisplay}>
+                <button onClick={this.displayEditForm}>edit</button>
+                <PopUp display={this.state.editClicked}>
                   <Form onSubmit={this.onSubmitEditHandler}>
-                    <button onClick={()=>this.hidePopUp("editFormDisplay")}> x </button>
+                    <button onClick={this.displayEditForm}> x </button>
                   </Form>
                 </PopUp>
     

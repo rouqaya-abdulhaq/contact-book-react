@@ -7,6 +7,8 @@
    grid-template-areas: "header header header"
                           ". contactList ."
                           "palette footer .";
+   height: 100vh;
+   width: 100vw;                      
 }
 /* need to find a way to display the log in 
 component on the page perfectly
@@ -17,6 +19,14 @@ because this is not working*/
    grid-template-areas: "header header header"
                           ". logIn ."
                           "palette footer .";
+}
+
+.default{
+   background: salmon;
+}
+
+.red{
+   background: red;
 }
 
 

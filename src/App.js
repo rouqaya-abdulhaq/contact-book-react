@@ -15,7 +15,7 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      styles : [],
+      style : 'default',
       isRegistered: true,
       headerType: "signOutHeader",
     }
@@ -36,10 +36,17 @@ class App extends Component {
     this.updateHeaderType();
   }
 
+  changeStyleHandler = (newStyle) =>{
+    this.setState({
+      style : newStyle 
+    });
+  }
+
   render() {
+    const classes = `App ${this.state.style}`;
     return (
-    <Router>
-      <div className="App">
+    <Router className='default'>
+      <div className={classes}>
         <Header isRegistered={this.state.isRegistered} 
         updateHeaderHandler ={this.updateHeaderHandler}
         headerType={this.state.headerType}/>
@@ -55,7 +62,7 @@ class App extends Component {
           </Route>
         </Switch>
         <Footer author={"rouqaya abdulhaq"}/>
-        <Palette/>
+        <Palette changeStyle={this.changeStyleHandler}/>
       </div>
     </Router>
     );

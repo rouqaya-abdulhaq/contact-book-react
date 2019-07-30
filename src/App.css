@@ -1,5 +1,13 @@
 *, *::before, *::after {box-sizing: border-box}
+/*-----------------
+   style guide :
+   1- global selectors
+   2- palette style classes*/
 
+
+   /*-------------------
+     1- global selectors
+     -------------------*/
 .App {
    overflow: hidden;
    display : grid;
@@ -21,13 +29,27 @@ because this is not working*/
                           "palette footer .";
 }
 
+/*------------------------
+  2- palette style classes
+ -------------------------*/
+
 .default{
    background: salmon;
+}
+.default .header{
+   background: red;
+}
+.default .navButton{
+
 }
 
 .red{
    background: red;
 }
-
-
+.red .header{
+   background: salmon;
+}
+.red .navButton{
+   
+}
 

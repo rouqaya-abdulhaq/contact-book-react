@@ -8,18 +8,26 @@
 .registrationHeader{
   display: grid;
   grid-template-columns: 25%  50%  25%;
-  background: bisque;
   grid-template-areas:
                "logo . registartion";
+}
+
+.registartion{
+  grid-area: registartion;
+  display: grid;
+  grid-template-columns: 50%  50%;
+  grid-gap: 1%;
 }
 
 .signOutHeader{
   display: grid;
   grid-template-columns: 25%  60%  15%;
-  /*temporary background color*/
-  background: bisque;
   grid-template-areas:
                "logo  . signOut";
+}
+
+.signOut{
+  grid-area: signOut;
 }
 
 .navButton{
@@ -36,15 +44,4 @@
   cursor: pointer;
   padding: 0;
   margin-top: 1%;
-}
-
-.registartion{
-  grid-area: registartion;
-  display: grid;
-  grid-template-columns: 50%  50%;
-  grid-gap: 1%;
-}
-
-.signOut{
-  grid-area: signOut;
 }

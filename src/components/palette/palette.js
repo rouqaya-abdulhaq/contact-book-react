@@ -9,8 +9,8 @@ class Palette extends React.Component {
         this.state = {
             stylePopUpDisplay : false,
             styleClasses : [
-                {className : 'default'},
-                {className : 'red'},
+                {class : 'default'},
+                {class : 'red'},
             ]
         }
     }
@@ -23,16 +23,20 @@ class Palette extends React.Component {
 
     render(){
         const styles = this.state.styleClasses.map((styleClass, index)=>
-            <li onClick={()=>this.props.changeStyle(styleClass.className)}
-            key={styleClass.className}>
-            {styleClass.className}</li>);
+        <div onClick={()=>this.props.changeStyle(styleClass.class)} 
+        className={`block ${styleClass.class}-block`} 
+        key={styleClass.class}>
+            {styleClass.class}
+         </div>);
 
         return(
             <div className="palette">
                <img src={PaletteImage} alt="palette" 
                onClick={this.displayStylePopUp}></img>
                <PopUp display={this.state.stylePopUpDisplay}>
-                   {styles}
+                   <div className="style-palette">
+                        {styles} 
+                   </div>
                </PopUp>
             </div>
         );

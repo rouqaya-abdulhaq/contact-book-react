@@ -2,11 +2,12 @@ import React from 'react';
 import './registration.css';
 import {Link } from 'react-router-dom';
 
-
+//the signout button and log sign buttons styles are in header css while the registration
+//styles only the form and it's elements it makes no sense  
 const  Registration = (props) => { 
       if(props.isRegistered === true){
         return (
-          <div className="signOut">
+          <div className="signOutButton">
             <Link to="/log-in">
               <button className="navButton" 
               onClick={props.updateHeaderHandler}>sign out</button>
@@ -15,7 +16,7 @@ const  Registration = (props) => {
         );
       }
       return (
-        <div className="registartion">
+        <div className="signLogButtons">
           <Link  to="/log-in">
             <button className="navButton" >log in</button>
           </Link>

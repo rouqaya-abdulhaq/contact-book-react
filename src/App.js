@@ -27,7 +27,7 @@ class App extends Component {
   }
 
   updateHeaderType= () =>{
-    let newHeaderType = (this.state.headerType === "signOutHeader") ? "registrationHeader" : "signOutHeader";
+    let newHeaderType = (this.state.headerType === "signOutHeader") ? "signLogHeader" : "signOutHeader";
     this.setState({headerType : newHeaderType})
 
   }

@@ -2,31 +2,31 @@
 
 .header{
   grid-area: header;
+  padding: 2vh;
 }
-/* i need to find a better name than registration*/
 
-.registrationHeader{
+.signLogHeader{
   display: grid;
-  grid-template-columns: 25%  50%  25%;
+  grid-template-columns: 20%  50%  30%;
   grid-template-areas:
                "logo . registartion";
 }
 
-.registartion{
+.signLogButtons{
   grid-area: registartion;
   display: grid;
-  grid-template-columns: 50%  50%;
+  grid-template-columns: 45%  45%;
   grid-gap: 1%;
 }
 
 .signOutHeader{
   display: grid;
-  grid-template-columns: 25%  60%  15%;
+  grid-template-columns: 20%  60%  20%;
   grid-template-areas:
                "logo  . signOut";
 }
 
-.signOut{
+.signOutButton{
   grid-area: signOut;
 }
 

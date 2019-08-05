@@ -1,22 +1,26 @@
 .contactList{
-    border: dashed black;
     height: 65vh;
     width: 20vw;
-    grid-area: contactList;
-    margin-top: 20%;
+    /* grid-area: main; */
     text-align: center;
     overflow-y: auto;
+    border-left: ridge 0.5vw ;
+    border-radius: 3%;
+    -webkit-box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
+    -moz-box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
+    box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
 }
 
-/*fix the position of the title*/
 .title{
     font-family: monospace;
     font-size: 2em;
-    /* position: fixed; */
+    position: sticky;
+    top: 1vh;
+    background : #D2B48C;
 }
 
 .addButton{
-    height: 1.3em;
-    width: 1.3em;
+    height: 3vh;
+    width: 2vw;
     text-align: center;
 }

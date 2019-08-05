@@ -15,6 +15,7 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
+      
       style : 'default',
       isRegistered: true,
       headerType: "signOutHeader",
@@ -45,7 +46,7 @@ class App extends Component {
   render() {
     const classes = `App ${this.state.style}`;
     return (
-    <Router className='default'>
+    <Router className="App">
       <div className={classes}>
         <Header isRegistered={this.state.isRegistered} 
         updateHeaderHandler ={this.updateHeaderHandler}

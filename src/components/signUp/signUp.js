@@ -4,8 +4,8 @@ import {Link } from 'react-router-dom';
 
 const SignUp = (props) =>{
     return(
-        <div>
-            <form id="signUpForm">
+        <main>
+            <form>
                <label>user name: </label>
                <input type="text" required></input>
  
@@ -20,7 +20,7 @@ const SignUp = (props) =>{
                     onClick={props.updateHeaderHandler}>Sign Up</button>
                </Link>
             </form>
-        </div>
+        </main>
     );
 }
 

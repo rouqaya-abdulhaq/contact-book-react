@@ -1,26 +1,16 @@
-#logInForm{
-    width: 22vw;
-    height: 27vh;
-}
-#signUpForm{
-    width: 40vw;
-    height: 40vh;
-
-}
-/* i really need tofind a way to style 
-the layout of the page with out using margin
-i should try with grid and flex*/
+ 
 form{
     padding: 2%;
-    position: relative;
     background: lightgrey;
+    grid-area: main;
+    justify-self: center;
     box-shadow: 0px 6px 0px 3px rgb(131, 129, 129);
     grid-area: logIn;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20%;
-    margin-left: 70%;
+    height: 100%;
+    width: 100%;
 }
 
 input{

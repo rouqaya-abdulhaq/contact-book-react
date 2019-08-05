@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../logo/logo';
 import './header.css'
-import Registartion from '../registration/registration';
+import Registartion from '../registrationButtons/registrationButtons';
 
 const Header = (props)=>{
       return(

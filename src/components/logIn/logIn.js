@@ -1,5 +1,5 @@
 import React from 'react';
-import "../registration/registration.css";
+import "../registrationButtons/registrationButtons.css";
 import {Link } from 'react-router-dom';
 
 const LogIn = (props) =>{

@@ -1,5 +1,5 @@
 import React from 'react';
-import "../registration/registration.css";
+import "../registrationButtons/registrationButtons";
 import {Link } from 'react-router-dom';
 //should i create a form component for logging and signing
 const SignUp = (props) =>{

@@ -1,7 +1,6 @@
 .contactList{
     height: 65vh;
     width: 20vw;
-    /* grid-area: main; */
     text-align: center;
     overflow-y: auto;
     border-left: ridge 0.5vw ;
@@ -16,7 +15,6 @@
     font-size: 2em;
     position: sticky;
     top: 1vh;
-    background : #D2B48C;
 }
 
 .addButton{

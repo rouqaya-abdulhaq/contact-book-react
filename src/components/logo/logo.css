@@ -2,16 +2,12 @@
   grid-area: logo;
     height: 10vh;
     width: 4vw;
-    background: #fba004;
     border-radius: 15%;
     padding-top: 1vh;
     box-sizing:border-box;
     position: relative;
     margin-left: 4%;
     margin-top: 1%;
-    -webkit-box-shadow: 2px 2px 0px 2px rgba(230,142,0,1);
-    -moz-box-shadow: 2px 2px 0px 2px rgba(230,142,0,1);
-    box-shadow: 2px 2px 0px 2px rgba(230,142,0,1);
   }
   
   .straps{

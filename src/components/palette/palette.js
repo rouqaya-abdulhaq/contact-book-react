@@ -10,7 +10,7 @@ class Palette extends React.Component {
             stylePopUpDisplay : false,
             styleClasses : [
                 {class : 'default'},
-                {class : 'red'},
+                {class : 'flowery'},
             ]
         }
     }

@@ -27,6 +27,7 @@ main{
 /*------------------------
   2- palette style classes
      1-default
+     2-flowery
  -------------------------*/
 
 /*1-deafult*/
@@ -56,14 +57,31 @@ main{
     box-shadow: 2px 2px 0px 2px rgba(65, 6, 34,1);
 }
 /*sign up and log in forms will be added later*/
-
-.red{
-   background: red;
+/*------------------------------*/
+/*2-flowey*/
+.flowery{
+   background: #FCDCD1;
 }
-.red .header{
-   background: salmon;
+.flowery .header{
+   background: #F3D1D2;
 }
-.red .navButton{
-   
+.flowery .navButton{
+   background: #EBBBB9;
+  -webkit-box-shadow: 0px 26px 0px 0px rgb(194, 154, 152,1);
+  -moz-box-shadow: 0px 26px 0px 0px rgba(194, 154, 152,1);
+  box-shadow: 0px 11px 0px 0px rgb(194, 154, 152,1);
+}
+.flowery .contactList{
+   background: #F4E9E5;
+   border-left-color: rgb(241, 209, 198);
+}
+.flowery .title{
+   background: #F8F8F6;
+}
+.flowery #cover{
+   background: rgb(240, 205, 194);
+   -webkit-box-shadow: 2px 2px 0px 2px rgb(214, 184, 174,1);
+    -moz-box-shadow: 2px 2px 0px 2px rgba(214, 184, 174,1);
+    box-shadow: 2px 2px 0px 2px rgba(214, 184, 174,1);
 }
 

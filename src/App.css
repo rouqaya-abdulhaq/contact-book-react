@@ -24,6 +24,8 @@
 main{
    grid-area: main;
 }
+
+
 /*------------------------
   2- palette style classes
      1-default
@@ -35,7 +37,7 @@ main{
    background: #AA1B41;
 }
 .default .header{
-   background: #E8A766;
+   background:  rgb(232, 167, 102);
 }
 .default .navButton{
    background: #4F3235;
@@ -63,7 +65,7 @@ main{
    background: #FCDCD1;
 }
 .flowery .header{
-   background: #F3D1D2;
+   background: rgb(235, 202, 203);
 }
 .flowery .navButton{
    background: #EBBBB9;
@@ -79,7 +81,7 @@ main{
    background: #F8F8F6;
 }
 .flowery #cover{
-   background: rgb(240, 205, 194);
+   background: rgb(243, 197, 182);
    -webkit-box-shadow: 2px 2px 0px 2px rgb(214, 184, 174,1);
     -moz-box-shadow: 2px 2px 0px 2px rgba(214, 184, 174,1);
     box-shadow: 2px 2px 0px 2px rgba(214, 184, 174,1);

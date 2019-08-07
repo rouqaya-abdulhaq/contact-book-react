@@ -56,7 +56,8 @@ class Form extends Component{
               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value={this.state.phoneNumber}
               onChange={this.ChangeHandler}/>
 
-              <button onClick={this.submitFormHandler}>submit</button>
+              <button className="submitButton" onClick={this.submitFormHandler}>
+                  submit</button>
             </div>
         );
     }

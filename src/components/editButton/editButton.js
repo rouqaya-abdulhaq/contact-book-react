@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from '../../containers/form/form';
 import PopUp from '../popUp/popUp';
+import '../../containers/contact-list/contactList.css';
 
 class EditButton extends React.Component{
     constructor(props){
@@ -35,12 +36,13 @@ class EditButton extends React.Component{
         return(
             <div>
                 <button onClick={this.displayEditForm}>edit</button>
-                <PopUp display={this.state.editClicked}>
-                  <Form onSubmit={this.onSubmitEditHandler}>
-                    <button onClick={this.displayEditForm}> x </button>
-                  </Form>
-                </PopUp>
-    
+                <div className="contactForm">
+                    <PopUp display={this.state.editClicked}>
+                      <Form onSubmit={this.onSubmitEditHandler}>
+                        <button onClick={this.displayEditForm}> x </button>
+                      </Form>
+                    </PopUp>
+                </div>
             </div>
         ); 
     }

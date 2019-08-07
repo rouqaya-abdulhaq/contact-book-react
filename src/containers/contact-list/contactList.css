@@ -22,3 +22,10 @@
     width: 2vw;
     text-align: center;
 }
+/*this could be improved by making the background transpaernt and enabling the other
+buttons to be pressed*/
+.contactForm{
+    position: fixed;
+    left : 33vw;
+    top: 33vh;
+}

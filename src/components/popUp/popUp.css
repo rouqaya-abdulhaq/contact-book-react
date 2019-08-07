@@ -1,7 +1,6 @@
 .popUp{
-    position: fixed;
     width: 40vw;
-    height: 40vh;
+    height: 50vh;
     border: black dashed;
     background: thistle;
 }

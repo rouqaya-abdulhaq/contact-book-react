@@ -1,6 +1,10 @@
-.formWrapper{
-    text-align: center;
-}
+/* .formWrapper{
+} */
 .submitButton{
-    
+    outline: none;
+    border-radius: 10%;
+}
+/*validation : i want this to go red if all the inputs are not filled*/
+.submitButton:focus , .submitButton:hover{
+    background: limegreen;
 }

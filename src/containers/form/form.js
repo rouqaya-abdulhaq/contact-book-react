@@ -1,5 +1,6 @@
 import React ,{Component} from "react";
 import Input from "../../components/input/input";
+import './form.css';
 
 
 class Form extends Component{

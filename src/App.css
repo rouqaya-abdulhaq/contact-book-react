@@ -35,7 +35,7 @@ main{
  -------------------------*/
 
 /*1-deafult*/
-.default{
+.default , .default .submitButton{
    background: #AA1B41;
 }
 .default .header{
@@ -63,7 +63,7 @@ main{
 /*sign up and log in forms will be added later*/
 /*------------------------------*/
 /*2-flowey*/
-.flowery{
+.flowery , .flowery .submitButton{
    background: #FCDCD1;
 }
 .flowery .header{

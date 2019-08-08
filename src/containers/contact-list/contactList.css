@@ -17,6 +17,11 @@
     top: 1vh;
 }
 
+.cancelButton{
+    outline: none;
+    font-size: 10%;
+}
+
 .addButton{
     height: 3vh;
     width: 2vw;

@@ -1,8 +1,8 @@
 .popUp{
     width: 40vw;
     height: 50vh;
-    border: black dashed;
-    background: thistle;
+    border:  black dashed;
+    border-radius: 3%;
 }
 .show{
     display: block;

@@ -64,7 +64,10 @@ class ContactList extends React.Component{
                     <div className="contactForm">
                         <PopUp  display={this.state.addClicked}>
                             <Form  onSubmit={this.onSubmitHandler}>
-                                <button onClick={this.displayAddForm}> x </button>
+                                {/* maybe this button should be in the form */}
+                                <button
+                                    className="cancelButton" onClick={this.displayAddForm}> x 
+                                </button>
                             </Form>
                         </PopUp> 
                     </div>

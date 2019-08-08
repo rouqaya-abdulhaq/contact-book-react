@@ -18,7 +18,9 @@
    grid-gap: 3%;
    grid-template-areas: "header header header"
                           ". main ."
-                          "palette footer .";                    
+                          "palette footer ."; 
+   font-family: "Comic Sans MS", cursive, sans-serif;
+                                          
 }
 
 main{

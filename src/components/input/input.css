@@ -1,6 +1,19 @@
+.inputWrapper{
+    margin: 5%;
+}
 .inputBox{
-
+   background: transparent;
+   border: none;
+   border-bottom : 0.3vh dashed black;
+   padding-left: 1%; 
+   outline: none;
+   font-family: "Comic Sans MS", cursive, sans-serif;	
+}
+.inputBox:focus{
+    border-bottom-color: green;
 }
 .label{
-    
+    margin-right: 2vw; 
+    margin-left: 2vw;
+    font-size: 1.5vw; 
 }

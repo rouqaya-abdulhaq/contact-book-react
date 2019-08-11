@@ -29,16 +29,17 @@ main{
 
 
 /*------------------------
+these should be extracted to a diffirent css file
   2- palette style classes
      1-default
      2-flowery
  -------------------------*/
 
 /*1-deafult*/
-.default {
+.default, .default .styleList  ,.default .submitButton{
    background: #AA1B41;
 }
-.default .header , .default .popUp{
+.default .header , .default .contactForm{
    background:  rgb(232, 167, 102);
 }
 .default .navButton{
@@ -64,10 +65,10 @@ main{
 
 /*------------------------------*/
 /*2-flowey*/
-.flowery , .flowery .submitButton{
+.flowery , .flowery .submitButton , .flowery .styleList{
    background: #FCDCD1;
 }
-.flowery .header , .flowery .popUp{
+.flowery .header , .flowery .contactForm{
    background: rgb(235, 202, 203);
 }
 .flowery .navButton{

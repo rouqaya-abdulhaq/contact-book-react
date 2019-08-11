@@ -1,4 +1,4 @@
-.palette{
+.paletteIcon{
     grid-area: palette;
     margin-left: 2%;
 }
@@ -7,30 +7,29 @@ img{
     height: auto;
     cursor: pointer;
 }
-.style-palette{
-    background: white;
+.styleList{
     height: 100%;
+    width: 15vw;
+    display: grid;
+    grid-template-columns: 49% 49%;
+    grid-auto-rows: 20%;
+    grid-gap: 2%;
+    overflow-y: auto;
 }
 
 .block{
-    height : 10%;
-    width : auto;
-    background: wheat;
-    margin : 1vw;
-    text-align: center; 
-    display: inline-block;
+    background: whitesmoke;
+    text-align: center;
+    padding-top: 5%;
+    overflow-wrap: break-word;
 }
 .block:hover{
     cursor: pointer;
 }
 
-/*---------------------
-  style palette blocks
-  ---------------------*/
-.default-block{
-    background: salmon;
+.palettePopUp{
+    position: fixed;
+    top: 35vh;
+    left : 4.5vw;
 }
 
-.red-block{
-    background : red;
-}

@@ -39,8 +39,10 @@
 buttons to be pressed*/
 .contactForm{
     position: fixed;
+    width: 40vw;
     left : 33vw;
     top: 33vh;
+    border-radius: 3%;
 }
 
 /*1-1*/

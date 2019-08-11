@@ -30,14 +30,16 @@ class Palette extends React.Component {
          </div>);
 
         return(
-            <div className="palette">
+            <div className="paletteIcon">
                <img src={PaletteImage} alt="palette" 
                onClick={this.displayStylePopUp}></img>
-               <PopUp display={this.state.stylePopUpDisplay}>
-                   <div className="style-palette">
-                        {styles} 
-                   </div>
-               </PopUp>
+               <div className="palettePopUp">
+                    <PopUp display={this.state.stylePopUpDisplay}>
+                        <div className="styleList">
+                         {styles} 
+                        </div>
+                    </PopUp> 
+               </div>
             </div>
         );
     }

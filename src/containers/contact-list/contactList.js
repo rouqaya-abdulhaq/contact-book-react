@@ -43,9 +43,10 @@ class ContactList extends React.Component{
 
     
     render(){
+        //this should be extracted to it's own component 'contacts'
         const contacts = this.state.contacts.map((contact,index) =>
         //phone number is the key for now only
-        <div key={contact.phoneNumber}>
+        <div className="contact" key={contact.phoneNumber}>
             <li>{contact.firstName + " " + contact.lastName}</li>
              
            <EditButton showPopUp={this.showPopUpHandler} 
@@ -53,7 +54,7 @@ class ContactList extends React.Component{
            submitEditHandler={(newContact)=>this.onEditHandler(index , newContact)} 
            oldContact={contact}/>
 
-           <button onClick={()=>this.onDeleteHandler(index)}> delete </button>
+           <button className="contactButton" onClick={()=>this.onDeleteHandler(index)}> x </button>
         </div>)
         
         return(

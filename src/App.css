@@ -1,4 +1,5 @@
 *, *::before, *::after {box-sizing: border-box}
+/*there are proplems with the outlines it outlines divs sometimes must be fixed*/
 /*-----------------
    style guide :
    1- global selectors
@@ -20,7 +21,6 @@
                           ". main ."
                           "palette footer ."; 
    font-family: "Comic Sans MS", cursive, sans-serif;
-                                          
 }
 
 main{

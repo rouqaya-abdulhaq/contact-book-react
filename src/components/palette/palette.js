@@ -23,10 +23,13 @@ class Palette extends React.Component {
 
     render(){
         const styles = this.state.styleClasses.map((styleClass, index)=>
-        <div onClick={()=>this.props.changeStyle(styleClass.class)} 
-        className={`block ${styleClass.class}-block`} 
-        key={styleClass.class}>
-            {styleClass.class}
+        <div 
+            onClick={()=>{this.props.changeStyle(styleClass.class);
+                        this.displayStylePopUp();}} 
+            className={`block ${styleClass.class}-block`} 
+            key={styleClass.class}>
+
+          {styleClass.class}
          </div>);
 
         return(

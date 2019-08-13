@@ -34,6 +34,7 @@
     height: 3vh;
     width: 2vw;
     text-align: center;
+    outline: none;
 }
 /*this could be improved by  enabling the other
 buttons to be pressed*/

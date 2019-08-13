@@ -4,7 +4,7 @@ import PopUp from '../../components/popUp/popUp';
 import Form from '../form/form';
 import EditButton from '../../components/editButton/editButton';
 
-
+//need to enable other buttons when there is some work in the process
 class ContactList extends React.Component{
     constructor(props){
         super(props);

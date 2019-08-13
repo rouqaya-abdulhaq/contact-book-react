@@ -51,17 +51,15 @@ buttons to be pressed*/
     justify-content: center;
     margin-top: 3%;
 }
+/*the margin for the edit is not really showing*/
 .contactButton{
-    margin-left: 2%;
+    margin-left: 2.5%;
     border: none;
     background: transparent;
     cursor: pointer;
     font-size: 20px;
-    height: 1vh;
+    height: 3.5vh;
     width: auto;
     font : bolder;
 }
-img{
-    height: 1vh;
-    width: auto;
-}
+

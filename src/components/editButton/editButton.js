@@ -36,15 +36,14 @@ class EditButton extends React.Component{
     render(){
         return(
             <div>
-                <button className="contactButton" onClick={this.displayEditForm}>
-                     <img src={Icon} alt="edit"></img> 
-                </button>
+                <img src={Icon} alt="edit" className="contactButton" 
+                    onClick={this.displayEditForm}></img> 
                 <div className="contactForm">
                     <PopUp display={this.state.editClicked}>
-                      <Form onSubmit={this.onSubmitEditHandler}>
+                    <Form onSubmit={this.onSubmitEditHandler}>
                         <button onClick={this.displayEditForm}> x </button>
-                      </Form>
-                    </PopUp>
+                    </Form>
+                    </PopUp>                
                 </div>
             </div>
         ); 

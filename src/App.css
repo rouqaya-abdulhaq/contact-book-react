@@ -38,23 +38,23 @@ these should be extracted to a diffirent css file
 
 /*1-deafult*/
 .default, .default .styleList  ,.default .submitButton{
-   background: #AA1B41;
+   background: rgb(170, 27, 65);
 }
 .default .header , .default .contactForm{
    background:  rgb(232, 167, 102);
 }
 .default .navButton{
-   background: #4F3235;
+   background: rgb(79, 50, 53);
   -webkit-box-shadow: 0px 26px 0px 0px rgb(54, 20, 7);
   -moz-box-shadow: 0px 26px 0px 0px rgba(54, 20, 7);
   box-shadow: 0px 11px 0px 0px rgb(54, 20, 7);
 }
 .default .contactList{
-   background: #DBAB7A;
+   background: rgb(219, 171, 122);
    border-left-color: rgb(209, 160, 111);
 }
 .default .title{
-   background : #D2B48C;
+   background : rgb(210, 180, 140);
 }
 .default #cover{
    background: rgb(161, 44, 83);
@@ -67,24 +67,24 @@ these should be extracted to a diffirent css file
 /*------------------------------*/
 /*2-flowey*/
 .flowery , .flowery .submitButton , .flowery .styleList{
-   background: #FCDCD1;
+   background: rgb(252, 220, 209);
 }
 .flowery .header , .flowery .contactForm{
    background: rgb(235, 202, 203);
 }
 .flowery .navButton{
-   background: #EBBBB9;
+   background: rgb(235, 187, 185);
   -webkit-box-shadow: 0px 26px 0px 0px rgb(194, 154, 152,1);
   -moz-box-shadow: 0px 26px 0px 0px rgba(194, 154, 152,1);
   box-shadow: 0px 11px 0px 0px rgb(194, 154, 152,1);
   color: black;
 }
 .flowery .contactList{
-   background: #F4E9E5;
+   background: rgb(244, 233, 229);
    border-left-color: rgb(241, 209, 198);
 }
 .flowery .title{
-   background: #F8F8F6;
+   background: rgb(248, 248, 246);
 }
 .flowery #cover{
    background: rgb(243, 197, 182);
@@ -99,7 +99,7 @@ these should be extracted to a diffirent css file
    background: rgb(90, 188, 185);
 }
 .seaSide .header , .seaSide .contactForm{
-   background: #EECB71;
+   background: rgb(238, 203, 113);
 }
 .seaSide .navButton{
    background: rgb(2, 28, 68);
@@ -112,7 +112,7 @@ these should be extracted to a diffirent css file
    border-left-color: rgb(103, 212, 180);
 }
 .seaSide .title{
-   background: #A6F4DC;
+   background: rgb(166, 244, 220);
 }
 .seaSide #cover{
    background: rgb(90, 188, 185);

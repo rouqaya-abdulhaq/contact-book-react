@@ -1,3 +1,11 @@
+/*-------------------------
+    STYLE TABLE :
+    1- PALETTE INTERFACE
+    2- PALETTE LIST
+        2-1 PALETTE LIST OUTSIDE STRUCTURE
+        2-2 PALETTE LIST INSIDE ELEMENTS
+---------------------------*/
+/*1- PALETTE INTERFACE*/
 .paletteIcon{
     grid-area: palette;
     margin-left: 2%;
@@ -6,6 +14,14 @@ img{
     width: 3vw;
     height: auto;
     cursor: pointer;
+}
+/*----------------------------------------------*/
+/*2- PALETTE LIST*/
+/*2-1 PALETTE LIST OUTSIDE STRUCTURE*/
+.palettePopUp{
+    position: fixed;
+    top: 35vh;
+    left : 4.5vw;
 }
 .styleList{
     height: 100%;
@@ -16,7 +32,8 @@ img{
     grid-gap: 2%;
     overflow-y: auto;
 }
-
+/*----------------------------*/
+/*2-2 PALETTE LIST INSIDE ELEMENTS*/
 .block{
     background: whitesmoke;
     text-align: center;
@@ -27,9 +44,4 @@ img{
     cursor: pointer;
 }
 
-.palettePopUp{
-    position: fixed;
-    top: 35vh;
-    left : 4.5vw;
-}
 

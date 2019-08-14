@@ -1,13 +1,14 @@
 *, *::before, *::after {box-sizing: border-box}
 /*there are proplems with the outlines it outlines divs sometimes must be fixed*/
+/*need a proper media fo most elements*/
 /*-----------------
-   style guide :
-   1- global selectors
-   2- palette style classes*/
+   STYLE TABLE :
+   1- GLOBAL SELECTORS
+   2- PALETTE STYLE CLASSES*/
 
 
    /*-------------------
-     1- global selectors
+     1- GLOBAL SELECTORS
      -------------------*/
 .App {
    overflow: hidden;
@@ -28,9 +29,9 @@ main{
 }
 
 
-/*------------------------
+/*----------------------------------------------------------------------
 these should be extracted to a diffirent css file
-  2- palette style classes
+  2- PALETTE STYLE CLASSES
      1-default
      2-flowery
      3-seaSide

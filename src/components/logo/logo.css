@@ -1,29 +1,30 @@
 #cover{
   grid-area: logo;
-    height: 10vh;
-    width: 4vw;
-    border-radius: 15%;
-    padding-top: 1vh;
-    box-sizing:border-box;
-    position: relative;
-    margin-left: 4%;
-    margin-top: 1%;
-  }
+  height: 10vh;
+  width: 4vw;
+  border-radius: 15%;
+  padding-top: 1vh;
+  box-sizing:border-box;
+  position: relative;
+  overflow: hidden;
+  margin-left: 4%;
+  margin-top: 1%;
+}
   
-  .straps{
-    background: silver;
-    height: 1.5vh;
-    width: 1vw;
-    border-radius: 30%;
-    margin: 1vh -1vh;
-  }
+.straps{
+  background: silver;
+  height: 1.5vh;
+  width: 1vw;
+  border-radius: 30%;
+  margin: 1vh -1vh;
+}
 
-  #icon{
-    position: absolute;
-    margin-left: 1em;
-    margin-top: 1.5em;
-  }
-  #cover{
-    position: relative;
-    overflow: hidden;
-  }
+#icon{
+    position: fixed;
+    margin-left: 1%;
+    margin-top: 1.5%;
+}
+
+@media only screen and (max-width: 600px) {
+  
+}

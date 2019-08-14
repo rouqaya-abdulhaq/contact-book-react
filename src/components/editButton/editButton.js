@@ -36,7 +36,7 @@ class EditButton extends React.Component{
     render(){
         return(
             <div>
-                <img src={Icon} alt="edit" className="contactButton" 
+                <img src={Icon} alt="edit" className="contactButtons" 
                     onClick={this.displayEditForm}></img> 
                 <div className="contactForm">
                     <PopUp display={this.state.editClicked}>

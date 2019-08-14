@@ -1,18 +1,18 @@
 .person-icon{
-    background: black;
-    position: relative;
-    height: 2em;
-    width: 2em;
-    border-radius:   50%/100px 100px 0 0;
-  }
-  .person-icon::before{
-    content: "";
-    background: black;
-    height: 1.5em;
-    width: 1.5em;
-    display: block;
-    position: absolute;
-    top: -4vh;
-    left: 0.3vw;
-    border-radius: 50%;
-  }
+  background: black;
+  position: relative;
+  height:   4%;
+  width: 2%;
+  border-radius:   50%/100px 100px 0 0;
+}
+.person-icon::before{
+  content: "";
+  background: black;
+  height: 1.5%;
+  width: 1.5%;
+  display: block;
+  position: fixed;
+  top: -4%;
+  left: 0.3%;
+  border-radius: 50%;
+}

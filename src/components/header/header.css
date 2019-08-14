@@ -1,10 +1,21 @@
 *, *::before, *::after {box-sizing: border-box}
+/*----------------------------
+  STYLE TABLE :
+  1- HEADER GLOBAL SELECTORS
+  2- HEADER TYPES
+    2-1 SIGN/LOG HEADER
+    2-2 SIGN OUT HEADER
+  3- NAV BUTTONS
+  ----------------------------*/
 
+/*1- HEADER GLOBAL SELECTORS*/
 .header{
   grid-area: header;
   padding: 2vh;
 }
-
+/*-----------------------------*/
+/*2- HEADER TYPES*/
+/*2-1 SIGN/LOG HEADER*/
 .signLogHeader{
   display: grid;
   grid-template-columns: 20%  50%  30%;
@@ -18,7 +29,8 @@
   grid-template-columns: 45%  45%;
   grid-gap: 1%;
 }
-
+/*-----------------------------*/
+/*2-2 SIGN OUT HEADER*/
 .signOutHeader{
   display: grid;
   grid-template-columns: 20%  60%  20%;
@@ -29,7 +41,9 @@
 .signOutButton{
   grid-area: signOut;
 }
+/*-----------------------------*/
 
+/*3- NAV BUTTONS*/
 .navButton{
   text-decoration: none;
   border: none;

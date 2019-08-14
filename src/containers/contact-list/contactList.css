@@ -1,11 +1,13 @@
 /*-------------------*/
-/*content table:
-  1-
-  contact list body and it's inside components
-   1-1
-   contact 
-*/
-/*1-*/
+/*STYLE TABLE:
+  1- CONTACT LIST OUTSIDE STRUCTURE
+  2- CONTACT LIST INSIDE ELEMENTS
+    2-1 DYNAMIC ELEMENTS
+    2-2 CONTACTS
+  3- CONTACT FORM 
+    3-1 FORM DYNAMICS
+----------------------*/
+/*1- CONTACT LIST OUTSIDE STRUCTURE*/
 .contactList{
     height: 65vh;
     width: 20vw;
@@ -17,43 +19,30 @@
     -moz-box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
     box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
 }
-
+/*--------------------------------------------------------------*/
+/*2- CONTACT LIST INSIDE ELEMENTS*/
+/*2-1 DYNAMIC ELEMENTS*/
 .title{
     font-family: monospace;
     font-size: 2em;
     position: sticky;
     top: 1vh;
 }
-
-.cancelButton{
-    outline: none;
-    font-size: 10%;
-}
-
 .addButton{
     height: 3vh;
     width: 2vw;
     text-align: center;
     outline: none;
 }
-/*this could be improved by  enabling the other
-buttons to be pressed*/
-.contactForm{
-    position: fixed;
-    width: 40vw;
-    left : 33vw;
-    top: 33vh;
-    border-radius: 3%;
-}
-
-/*1-1*/
+/*-----------------------*/
+/*2-2 CONTACTS*/
 .contact{
     display: flex;
     justify-content: center;
     margin-top: 3%;
 }
 /*the margin for the edit is not really showing*/
-.contactButton{
+.contactButtons{
     margin-left: 2.5%;
     border: none;
     background: transparent;
@@ -63,4 +52,24 @@ buttons to be pressed*/
     width: auto;
     font : bolder;
 }
+/*--------------------------------------------------------------*/
+/*3- CONTACT FORM */
+/*this could be improved by  enabling the other
+buttons to be pressed*/
+.contactForm{
+    position: fixed;
+    width: 40vw;
+    left : 33vw;
+    top: 33vh;
+    border-radius: 3%;
+}
+/*-----------------------*/
+/*3-1 FORM DYNAMICS*/
+.cancelButton{
+    outline: none;
+    font-size: 10%;
+}
+
+
+
 

@@ -5,10 +5,7 @@ import './logo.css';
 const Logo = (props)=>{
     return(
         <div id="cover">
-           <PersonIcon/> 
-           <div className="straps"></div>
-           <div className="straps"></div>
-           <div className="straps"></div>      
+           <PersonIcon/>      
         </div>
     );
 

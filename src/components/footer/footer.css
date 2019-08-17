@@ -5,3 +5,8 @@
     font-family: monospace;
     font-size: inherit;
 }
+@media (max-width : 1000px) {
+    .footer{
+        font-weight: bold;
+    }
+}

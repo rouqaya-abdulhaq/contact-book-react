@@ -4,6 +4,7 @@
     2- PALETTE LIST
         2-1 PALETTE LIST OUTSIDE STRUCTURE
         2-2 PALETTE LIST INSIDE ELEMENTS
+    3- MEDIA QUERIES
 ---------------------------*/
 /*1- PALETTE INTERFACE*/
 .paletteIcon{
@@ -43,5 +44,21 @@ img{
 .block:hover{
     cursor: pointer;
 }
-
+/*----------------------------------------------*/
+/*3- MEDIA QUERIES*/
+@media (max-width : 1100px) {
+    img{
+        width : 4vw;
+    }
+}
+@media (max-width : 800px) {
+    img{
+        width : 5vw;
+    }
+}
+@media (max-width : 600px) {
+    img{
+        width : 6vw;
+    }
+}
 

@@ -6,6 +6,7 @@
     2-1 SIGN/LOG HEADER
     2-2 SIGN OUT HEADER
   3- NAV BUTTONS
+  4- MEDIA QUERIES 
   ----------------------------*/
 
 /*1- HEADER GLOBAL SELECTORS*/
@@ -61,3 +62,11 @@
   margin-top: 2%;
   outline: none;
 }
+/*--------------------------------------------------------------*/
+/*4- MEDIA QUERIES*/
+@media (max-width : 1000px) {
+  .navButton{
+    width: 15vw;
+  }
+}
+

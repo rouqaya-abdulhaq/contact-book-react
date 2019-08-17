@@ -6,6 +6,7 @@
     2-2 CONTACTS
   3- CONTACT FORM 
     3-1 FORM DYNAMICS
+  4- MEDIA QUERIES  
 ----------------------*/
 /*1- CONTACT LIST OUTSIDE STRUCTURE*/
 .contactList{
@@ -69,7 +70,18 @@ buttons to be pressed*/
     outline: none;
     font-size: 10%;
 }
-
+/*--------------------------------------------------------------*/
+/*4- MEDIA QUERIES*/
+@media (max-width : 900px ) {
+    .contactList{
+       width : 30VW ;
+    }
+ }  
+ @media (max-width : 600px ) {
+    .contactList{
+       width : 35VW ;
+    }
+ } 
 
 
 

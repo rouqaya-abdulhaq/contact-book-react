@@ -4,8 +4,6 @@
 /*-----------------
    STYLE TABLE :
    1- GLOBAL SELECTORS
-   2- PALETTE STYLE CLASSES
-   3- Media queries*/
 
    /*-------------------
      1- GLOBAL SELECTORS
@@ -30,97 +28,6 @@ main{
 
 
 
-/*----------------------------------------------------------------------
-these should be extracted to a diffirent css file
-  2- PALETTE STYLE CLASSES
-     1-default
-     2-flowery
-     3-seaSide
- -------------------------*/
 
-/*1-deafult*/
-.default, .default .styleList  ,.default .submitButton{
-   background: rgb(170, 27, 65);
-}
-.default .header , .default .contactForm{
-   background:  rgb(232, 167, 102);
-}
-.default .navButton{
-   background: rgb(79, 50, 53);
-  -webkit-box-shadow: 0px 26px 0px 0px rgb(54, 20, 7);
-  -moz-box-shadow: 0px 26px 0px 0px rgba(54, 20, 7);
-  box-shadow: 0px 11px 0px 0px rgb(54, 20, 7);
-}
-.default .contactList{
-   background: rgb(219, 171, 122);
-   border-left-color: rgb(209, 160, 111);
-}
-.default .title{
-   background : rgb(210, 180, 140);
-}
-.default #cover{
-   background: rgb(161, 44, 83);
-   -webkit-box-shadow: 2px 2px 0px 2px rgb(65, 6, 34,1);
-    -moz-box-shadow: 2px 2px 0px 2px rgba(65, 6, 34,1);
-    box-shadow: 2px 2px 0px 2px rgba(65, 6, 34,1);
-}
-/*sign up and log in forms will be added later*/
-
-/*------------------------------*/
-/*2-flowey*/
-.flowery , .flowery .submitButton , .flowery .styleList{
-   background: rgb(252, 220, 209);
-}
-.flowery .header , .flowery .contactForm{
-   background: rgb(235, 202, 203);
-}
-.flowery .navButton{
-   background: rgb(235, 187, 185);
-  -webkit-box-shadow: 0px 26px 0px 0px rgb(194, 154, 152,1);
-  -moz-box-shadow: 0px 26px 0px 0px rgba(194, 154, 152,1);
-  box-shadow: 0px 11px 0px 0px rgb(194, 154, 152,1);
-  color: black;
-}
-.flowery .contactList{
-   background: rgb(244, 233, 229);
-   border-left-color: rgb(241, 209, 198);
-}
-.flowery .title{
-   background: rgb(248, 248, 246);
-}
-.flowery #cover{
-   background: rgb(243, 197, 182);
-   -webkit-box-shadow: 2px 2px 0px 2px rgb(214, 184, 174,1);
-    -moz-box-shadow: 2px 2px 0px 2px rgba(214, 184, 174,1);
-    box-shadow: 2px 2px 0px 2px rgba(214, 184, 174,1);
-}
-
-/*------------------------------*/
-/*3-seaSide*/
-.seaSide , .seaSide .submitButton , .seaSide .styleList{
-   background: rgb(90, 188, 185);
-}
-.seaSide .header , .seaSide .contactForm{
-   background: rgb(238, 203, 113);
-}
-.seaSide .navButton{
-   background: rgb(2, 28, 68);
-  -webkit-box-shadow: 0px 26px 0px 0px rgb(0, 9, 20,1);
-  -moz-box-shadow: 0px 26px 0px 0px rgba(0, 9, 20,1);
-  box-shadow: 0px 11px 0px 0px rgb(0, 9, 20,1);
-}
-.seaSide .contactList{
-   background: rgb(130, 212, 187);
-   border-left-color: rgb(103, 212, 180);
-}
-.seaSide .title{
-   background: rgb(166, 244, 220);
-}
-.seaSide #cover{
-   background: rgb(90, 188, 185);
-   -webkit-box-shadow: 2px 2px 0px 2px rgb(57, 151, 148,1);
-    -moz-box-shadow: 2px 2px 0px 2px rgba(57, 151, 148,1);
-    box-shadow: 2px 2px 0px 2px rgba(57, 151, 148,1);
-}
 
  

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, } from 'react-router-dom';
 import './App.css';
+import './paletteClasses.css';
 import Header from '../../components/header/header';
 import ContactList from '../contact-list/contactList';
 import Footer from "../../components/footer/footer";

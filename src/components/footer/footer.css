@@ -1,12 +1,8 @@
 .footer{
     grid-area: footer;
-    margin-top : 10vh;
+    margin-top : 13vh;
     margin-left: 2vw;
     font-family: monospace;
     font-size: inherit;
-}
-@media (max-width : 1000px) {
-    .footer{
-        font-weight: bold;
-    }
+    font-weight: bold;
 }

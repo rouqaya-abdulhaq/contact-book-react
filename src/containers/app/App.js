@@ -10,8 +10,6 @@ import SignUp from '../../components/signUp/signUp';
 import LogIn from '../../components/logIn/logIn';
 
 
-
-
 class App extends Component {
   constructor(){
     super();
@@ -37,18 +35,18 @@ class App extends Component {
     <Router className="App">
       <div className={classes}>
         <Header isRegistered={this.state.isRegistered} 
-        updateRegistrationHandler ={this.updateRegistrationHandler}/>
+          updateRegistrationHandler ={this.updateRegistrationHandler}/>
         <Switch>
           <Route exact path="/" component={ContactList}></Route>
           <Route exact path="/sign-up" 
-          render={(props)=> <SignUp 
+            render={(props)=> <SignUp 
                               updateRegistrationHandler={this.updateRegistrationHandler} 
-          isAuthed={true}/>} 
-          ></Route>
+            isAuthed={true}/>}> 
+          </Route>
           <Route exact path="/log-in" 
-          render={(props)=> <LogIn 
+            render={(props)=> <LogIn 
                               updateRegistrationHandler={this.updateRegistrationHandler}
-          isAuthed={true} />}>
+            isAuthed={true} />}>
           </Route>
         </Switch>
         <Footer author={"rouqaya abdulhaq"}/>

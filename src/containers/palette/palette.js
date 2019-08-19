@@ -1,7 +1,7 @@
 import React from 'react';
 import './palette.css';
 import PaletteImage from './color_palette.png';
-import PopUp from '../popUp/popUp';
+import PopUp from '../../components/popUp/popUp';
 
 class Palette extends React.Component {
     constructor(props){

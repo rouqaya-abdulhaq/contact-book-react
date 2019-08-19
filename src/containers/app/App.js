@@ -5,7 +5,7 @@ import './paletteClasses.css';
 import Header from '../../components/header/header';
 import ContactList from '../contact-list/contactList';
 import Footer from "../../components/footer/footer";
-import Palette from "../../components/palette/palette";
+import Palette from "../palette/palette";
 import SignUp from '../../components/signUp/signUp';
 import LogIn from '../../components/logIn/logIn';
 

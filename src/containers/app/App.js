@@ -16,28 +16,15 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      
       style : 'default',
       isRegistered: true,
-      headerType: "signOutHeader",
     }
   }
-  //i want to extract all the header handlers to adifferent component when i clean the code
+
   updateRegistrationHandler = () =>{
       this.setState({isRegistered : !this.state.isRegistered})
   }
-
-  updateHeaderType= () =>{
-    let newHeaderType = (this.state.headerType === "signOutHeader") ? "signLogHeader" : "signOutHeader";
-    this.setState({headerType : newHeaderType})
-
-  }
-
-  updateHeaderHandler = () =>{
-    this.updateRegistrationHandler();
-    this.updateHeaderType();
-  }
-
+ 
   changeStyleHandler = (newStyle) =>{
     this.setState({
       style : newStyle 
@@ -50,16 +37,17 @@ class App extends Component {
     <Router className="App">
       <div className={classes}>
         <Header isRegistered={this.state.isRegistered} 
-        updateHeaderHandler ={this.updateHeaderHandler}
-        headerType={this.state.headerType}/>
+        updateRegistrationHandler ={this.updateRegistrationHandler}/>
         <Switch>
           <Route exact path="/" component={ContactList}></Route>
           <Route exact path="/sign-up" 
-          render={(props)=> <SignUp updateHeaderHandler={this.updateHeaderHandler} 
+          render={(props)=> <SignUp 
+                              updateRegistrationHandler={this.updateRegistrationHandler} 
           isAuthed={true}/>} 
           ></Route>
           <Route exact path="/log-in" 
-          render={(props)=> <LogIn updateHeaderHandler={this.updateHeaderHandler}
+          render={(props)=> <LogIn 
+                              updateRegistrationHandler={this.updateRegistrationHandler}
           isAuthed={true} />}>
           </Route>
         </Switch>

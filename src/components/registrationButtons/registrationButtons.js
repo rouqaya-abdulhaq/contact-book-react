@@ -10,7 +10,7 @@ const  Registration = (props) => {
           <div className="signOutButton">
             <Link to="/log-in">
               <button className="navButton" 
-              onClick={props.updateHeaderHandler}>sign out</button>
+              onClick={props.updateRegistrationHandler}>sign out</button>
             </Link>
           </div>
         );
@@ -18,10 +18,14 @@ const  Registration = (props) => {
       return (
         <div className="signLogButtons">
           <Link  to="/log-in">
-            <button className="navButton" >log in</button>
+            <button className="navButton">
+              log in
+            </button>
           </Link>
           <Link to="/sign-up">
-            <button className="navButton" >sign up</button>
+            <button className="navButton">
+              sign up
+            </button>
           </Link>
         </div>
       );

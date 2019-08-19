@@ -17,7 +17,9 @@ const SignUp = (props) =>{
 
                <Link to="/">
                     <button className="submitButton" type="submit" 
-                    onClick={props.updateHeaderHandler}>Sign Up</button>
+                        onClick={props.updateRegistrationHandler}>
+                        Sign Up
+                    </button>
                </Link>
             </form>
         </main>

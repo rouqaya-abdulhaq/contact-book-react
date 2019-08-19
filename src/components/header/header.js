@@ -1,15 +1,16 @@
 import React from 'react';
 import Logo from '../logo/logo';
 import './header.css'
-import Registartion from '../registrationButtons/registrationButtons';
+import RegistrationButtons from '../registrationButtons/registrationButtons';
 
 const Header = (props)=>{
+      const headerType = (props.isRegistered) ? "signOutHeader" : "signLogHeader";
       return(
          <header className="header">
-         <div className={props.headerType}>
+         <div className={headerType}>
            <Logo/>
-           <Registartion 
-           updateHeaderHandler={props.updateHeaderHandler}
+           <RegistrationButtons
+           updateRegistrationHandler={props.updateRegistrationHandler}
            isRegistered={props.isRegistered} />
          </div>
          </header>

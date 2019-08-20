@@ -2,6 +2,7 @@ import React from 'react';
 import Form from '../../containers/form/form';
 import PopUp from '../popUp/popUp';
 import Icon from './icon.png';
+import ContactForm from '../contactForm/contactForm';
 import '../../containers/contact-list/contactList.css';
 
 class EditButton extends React.Component{
@@ -41,7 +42,9 @@ class EditButton extends React.Component{
                 <div className="contactForm">
                     <PopUp display={this.state.editClicked}>
                     <Form onSubmit={this.onSubmitEditHandler}>
-                        <button onClick={this.displayEditForm}> x </button>
+                        <ContactForm>
+                            <button onClick={this.displayEditForm}> x </button> 
+                        </ContactForm>
                     </Form>
                     </PopUp>                
                 </div>

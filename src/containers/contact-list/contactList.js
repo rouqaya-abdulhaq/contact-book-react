@@ -3,6 +3,7 @@ import "./contactList.css";
 import PopUp from '../../components/popUp/popUp';
 import Form from '../form/form';
 import EditButton from '../../components/editButton/editButton';
+import ContactForm from '../../components/contactForm/contactForm';
 
 //need to enable other buttons when there is some work in the process
 class ContactList extends React.Component{
@@ -65,10 +66,11 @@ class ContactList extends React.Component{
                     <div className="contactForm">
                         <PopUp  display={this.state.addClicked}>
                             <Form  onSubmit={this.onSubmitHandler}>
-                                {/* maybe this button should be in the form */}
+                                <ContactForm>
                                 <button
                                     className="cancelButton" onClick={this.displayAddForm}> x 
                                 </button>
+                                </ContactForm>
                             </Form>
                         </PopUp> 
                     </div>

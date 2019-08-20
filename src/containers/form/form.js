@@ -1,5 +1,4 @@
 import React ,{Component} from "react";
-import Input from "../../components/input/input";
 import './form.css';
 
 
@@ -43,22 +42,15 @@ class Form extends Component{
     render(){
         return(
             <div className="formWrapper">
-                {this.props.children}
-              <Input label={"first name"} id="firstName" value={this.state.firstName}
-              type={"text"} onChange={this.ChangeHandler}/>
-
-              <Input label={"last name"} id="lastName" value={this.state.lastName}
-              type={"text"} onChange={this.ChangeHandler}/>
-
-              <Input label={"email"} id="email" value={this.state.email}
-              type={"email"} onChange={this.ChangeHandler}/>
-
-              <Input label={"phone number"} id="phoneNumber" type={"tel"} 
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value={this.state.phoneNumber}
-              onChange={this.ChangeHandler}/>
-
+                {React.cloneElement(this.props.children, 
+                    { firstname: this.state.firstName ,
+                      lastname : this.state.lastName,
+                      email : this.state.email,
+                      phonenumber : this.state.phoneNumber,
+                      changehandler : this.ChangeHandler })}
               <button className="submitButton" onClick={this.submitFormHandler}>
-                  submit</button>
+                  submit
+              </button>
             </div>
         );
     }

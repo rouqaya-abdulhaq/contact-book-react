@@ -18,6 +18,10 @@ const ContactForm = (props) =>{
               <Input label={"phone number"} id="phoneNumber" type={"tel"} 
               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value={props.phonenumber}
               onChange={props.changehandler}/>
+
+              <button className="submitButton" onClick={props.submitformhandler}>
+                  submit
+              </button>
         </div>
     );
 

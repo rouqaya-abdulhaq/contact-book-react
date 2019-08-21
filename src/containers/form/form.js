@@ -10,6 +10,7 @@ class Form extends Component{
                 lastName: "",
                 email: "",
                 phoneNumber: "",
+                password : "",
         }
         this.baseState = this.state;
         this.id = 0;
@@ -47,10 +48,9 @@ class Form extends Component{
                       lastname : this.state.lastName,
                       email : this.state.email,
                       phonenumber : this.state.phoneNumber,
-                      changehandler : this.ChangeHandler })}
-              <button className="submitButton" onClick={this.submitFormHandler}>
-                  submit
-              </button>
+                      password : this.state.password,
+                      changehandler : this.ChangeHandler, 
+                      submitformhandler: this.submitFormHandler})}
             </div>
         );
     }

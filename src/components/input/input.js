@@ -3,7 +3,6 @@ import './input.css';
 
 
 const Input = (props)=>{
-
     const updateParentState=(event)=>{
         props.onChange(props.id, event.target.value);
     }

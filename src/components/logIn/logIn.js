@@ -1,24 +1,28 @@
 import React from 'react';
 import "../registrationButtons/registrationButtons.css";
-import {Link } from 'react-router-dom';
+import Form from '../../containers/form/form.js';
+import Input from '../input/input';
+import {Link}  from 'react-router-dom';
 
 const LogIn = (props) =>{
     return(
           <main>
-              <form>
-                 <label>email</label>
-                 <input type="email" required></input>
+              <Form>
+                  <div>
+                     <Input label={"email"} id="email" value={props.email}
+                     type ={"email"} onChange={props.changehandler}/>
 
-                 <label>password</label>
-                 <input type="password" required></input>
-                 
-                 <Link to="/">
-                    <button className="submitButton" 
+                     <Input label={"password"} id="email" value={props.password}
+                     type={"password"} onChange={props.changehandler}/>
+
+                    <Link to="/">
+                     <button className="submitButton" 
                         onClick={props.updateRegistrationHandler} type="submit">
                         Log In
-                    </button>
-                 </Link>
-              </form>
+                     </button>
+                    </Link> 
+                  </div>
+              </Form>
           </main>
     );
 }

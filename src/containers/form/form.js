@@ -41,16 +41,20 @@ class Form extends Component{
 
 
     render(){
+        const children = React.Children.map(this.props.children, child =>{
+            return React.cloneElement(child, {
+                firstname: this.state.firstName ,
+                lastname : this.state.lastName,
+                email : this.state.email,
+                phonenumber :  this.state.phoneNumber,
+                password : this.state.password,
+                changehandler : this.ChangeHandler, 
+                submitformhandler: this.submitFormHandler 
+            });
+        });
         return(
             <div className="formWrapper">
-                {React.cloneElement(this.props.children, 
-                    { firstname: this.state.firstName ,
-                      lastname : this.state.lastName,
-                      email : this.state.email,
-                      phonenumber : this.state.phoneNumber,
-                      password : this.state.password,
-                      changehandler : this.ChangeHandler, 
-                      submitformhandler: this.submitFormHandler})}
+                {children}
             </div>
         );
     }

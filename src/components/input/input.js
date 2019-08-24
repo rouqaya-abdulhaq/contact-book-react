@@ -4,7 +4,7 @@ import './input.css';
 
 const Input = (props)=>{
     const updateParentState=(event)=>{
-        props.onChange(props.id, event.target.value);
+        props.changeHandler(props.id, event.target.value);
     }
 
     return(

@@ -59,8 +59,8 @@ class ContactList extends React.Component{
         </div>)
         
         return(
-            <main>
-                <div className="contactList">
+            <main className="contactList">
+                <div>
                     <p className="title">contacts :</p>
                     <button className="addButton" onClick={this.displayAddForm}> + </button>
                     <div className="contactForm">

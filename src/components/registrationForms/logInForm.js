@@ -4,12 +4,11 @@ import {Link}  from 'react-router-dom';
 
 const logInForm = (props) =>{
         return(
-            <main>            
                 <div>
                  <Input label={"email"} id="email" value={props.email}
                      type ={"email"} changeHandler={props.changehandler}/>
 
-                 <Input label={"password"} id="email" value={props.password}
+                 <Input label={"password"} id="password" value={props.password}
                     type={"password"} changeHandler={props.changehandler}/>
 
                 <Link to="/">
@@ -19,7 +18,6 @@ const logInForm = (props) =>{
                     </button>
                 </Link> 
                 </div> 
-            </main>
         );
 }
 

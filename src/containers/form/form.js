@@ -11,6 +11,8 @@ class Form extends Component{
                 email: "",
                 phoneNumber: "",
                 password : "",
+                // i want user to be first + last name
+                user: "",
         }
         this.baseState = this.state;
         this.id = 0;
@@ -48,6 +50,7 @@ class Form extends Component{
                 email : this.state.email,
                 phonenumber :  this.state.phoneNumber,
                 password : this.state.password,
+                user : this.state.user,
                 changehandler : this.ChangeHandler, 
                 submitformhandler: this.submitFormHandler 
             });

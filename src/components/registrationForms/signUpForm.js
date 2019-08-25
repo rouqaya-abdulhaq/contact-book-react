@@ -4,16 +4,15 @@ import {Link}  from 'react-router-dom';
 
 const signUpForm = (props) =>{
         return(
-        <main>
           <div>
-              {/* this needs a change handler */}
+              {/* this has a user state for now it will be first + last name later */}
             <Input label={"user name"} id={"user"} 
-              type={"text"}/>
+              type={"text"} changeHandler={props.changehandler}/>
 
             <Input label={"email"} id="email" value={props.email}
               type ={"email"} changeHandler={props.changehandler}/>
 
-            <Input label={"password"} id="email" value={props.password}
+            <Input label={"password"} id="password" value={props.password}
               type={"password"} changeHandler={props.changehandler}/>
 
             <Link to="/">
@@ -23,7 +22,6 @@ const signUpForm = (props) =>{
                 </button>
             </Link>
           </div>
-        </main>
         );
 }
 

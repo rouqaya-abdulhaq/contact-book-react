@@ -1,13 +1,12 @@
 import React from 'react';
-import "../registrationButtons/registrationButtons";
 import Form from '../../containers/form/form';
 import SignUpForm from '../registrationForms/signUpForm';
 
 const SignUp = (props) =>{
     return(
-        <main>
+        <main className="signLog">
             <Form>
-                <SignUpForm/>
+                <SignUpForm updateRegistrationHandler={props.updateRegistrationHandler}/>
             </Form>
         </main>
     );

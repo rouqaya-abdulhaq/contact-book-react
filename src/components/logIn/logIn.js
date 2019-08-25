@@ -1,5 +1,4 @@
 import React from 'react';
-import "../registrationButtons/registrationButtons.css";
 import Form from '../../containers/form/form';
 import LogInForm from '../registrationForms/logInForm';
 
@@ -7,9 +6,9 @@ import LogInForm from '../registrationForms/logInForm';
 const LogIn = (props) =>{
     
     return(
-        <main>
+        <main className="signLog">
          <Form>
-            <LogInForm/>
+            <LogInForm updateRegistrationHandler={props.updateRegistrationHandler}/>
          </Form>
         </main>
     );

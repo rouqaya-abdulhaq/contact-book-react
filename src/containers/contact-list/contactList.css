@@ -6,19 +6,10 @@
     2-2 CONTACTS
   3- CONTACT FORM 
     3-1 FORM DYNAMICS
-  4- MEDIA QUERIES  
 ----------------------*/
 /*1- CONTACT LIST OUTSIDE STRUCTURE*/
 .contactList{
-    height: 65vh;
-    width: 20vw;
-    text-align: center;
     overflow-y: auto;
-    border-left: ridge 0.5vw ;
-    border-radius: 3%;
-    -webkit-box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
-    -moz-box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
-    box-shadow: 13px 5px 32px -19px rgba(0,0,0,1);
 }
 /*--------------------------------------------------------------*/
 /*2- CONTACT LIST INSIDE ELEMENTS*/
@@ -71,17 +62,7 @@ buttons to be pressed*/
     font-size: 10%;
 }
 /*--------------------------------------------------------------*/
-/*4- MEDIA QUERIES*/
-@media (max-width : 900px ) {
-    .contactList{
-       width : 30VW ;
-    }
- }  
- @media (max-width : 600px ) {
-    .contactList{
-       width : 35VW ;
-    }
- } 
+ 
 
 
 

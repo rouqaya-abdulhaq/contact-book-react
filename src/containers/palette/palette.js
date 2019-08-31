@@ -39,6 +39,9 @@ class Palette extends React.Component {
                onClick={this.displayStylePopUp}></img>
                <div className="palettePopUp">
                     <PopUp display={this.state.stylePopUpDisplay}>
+                        <button className="cancelButt" onClick={this.displayStylePopUp}>
+                             x 
+                        </button>
                         <div className="styleList">
                          {styles} 
                         </div>

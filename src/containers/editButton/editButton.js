@@ -1,10 +1,11 @@
 import React from 'react';
-import Form from '../../containers/form/form';
-import PopUp from '../popUp/popUp';
+import Form from '../form/form';
+import PopUp from '../../components/popUp/popUp';
 import Icon from './icon.png';
-import ContactForm from '../contactForm/contactForm';
-import '../../containers/contact-list/contactList.css';
+import ContactForm from '../../components/contactForm/contactForm';
+import '../contact-list/contactList.css';
 
+//could this process be done in another way to avoid another smart component??
 class EditButton extends React.Component{
     constructor(props){
         super(props);

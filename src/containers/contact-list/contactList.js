@@ -2,7 +2,7 @@ import React from 'react';
 import "./contactList.css";
 import PopUp from '../../components/popUp/popUp';
 import Form from '../form/form';
-import EditButton from '../../components/editButton/editButton';
+import EditButton from '../editButton/editButton';
 import ContactForm from '../../components/contactForm/contactForm';
 
 //need to enable other buttons when there is some work in the process

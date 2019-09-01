@@ -15,7 +15,7 @@ class EditButton extends React.Component{
         }
         this.baseState = this.state;
     }
-
+    
     displayEditForm = () =>{
         this.setState({
             editClicked : !this.state.editClicked
@@ -26,6 +26,16 @@ class EditButton extends React.Component{
         this.setState({
             'editedContact' : editedContact
         });
+    }
+
+
+    
+    shouldComponentUpdate(nextProps, nextState){
+        if(nextState === this.state){
+            return false;
+        }else {
+            return true;
+        }
     }
    
     componentDidUpdate() {

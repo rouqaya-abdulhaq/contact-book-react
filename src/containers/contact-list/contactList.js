@@ -5,7 +5,6 @@ import Form from '../form/form';
 import EditButton from '../editButton/editButton';
 import ContactForm from '../../components/contactForm/contactForm';
 
-//need to enable other buttons when there is some work in the process
 class ContactList extends React.Component{
     constructor(props){
         super(props);

@@ -46,13 +46,11 @@
 }
 /*--------------------------------------------------------------*/
 /*3- CONTACT FORM */
-/*this could be improved by  enabling the other
-buttons to be pressed*/
 .contactForm{
     position: fixed;
     width: 40vw;
     left : 33vw;
-    top: 33vh;
+    top: 28vh;
     border-radius: 3%;
 }
 /*-----------------------*/

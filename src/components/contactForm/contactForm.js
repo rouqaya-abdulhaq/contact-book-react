@@ -3,7 +3,6 @@ import Input from '../input/input';
 import '../../containers/contact-list/contactList.css';
 
 const ContactForm = (props) =>{
-    // console.log(props.changehandler);
     return(
         <div>
             {props.children}

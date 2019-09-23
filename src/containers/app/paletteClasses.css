@@ -9,7 +9,7 @@
 .default, .default .styleList  ,.default .submitButton{
     background: rgb(170, 27, 65);
  }
- .default .header , .default .contactForm{
+ .default .header , .default .contactPopUps{
     background:  rgb(232, 167, 102);
  }
  .default .navButton{
@@ -38,7 +38,7 @@
  .flowery , .flowery .submitButton , .flowery .styleList{
     background: rgb(252, 220, 209);
  }
- .flowery .header , .flowery .contactForm{
+ .flowery .header , .flowery .contactPopUps{
     background: rgb(235, 202, 203);
  }
  .flowery .navButton{
@@ -67,7 +67,7 @@
  .seaSide , .seaSide .submitButton , .seaSide .styleList{
     background: rgb(90, 188, 185);
  }
- .seaSide .header , .seaSide .contactForm{
+ .seaSide .header , .seaSide .contactPopUps{
     background: rgb(238, 203, 113);
  }
  .seaSide .navButton{

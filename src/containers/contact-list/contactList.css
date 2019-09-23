@@ -4,8 +4,8 @@
   2- CONTACT LIST INSIDE ELEMENTS
     2-1 DYNAMIC ELEMENTS
     2-2 CONTACTS
-  3- CONTACT FORM 
-    3-1 FORM DYNAMICS
+  3- CONTACT POPUPS
+    3-1 POPUPS DYNAMICS
 ----------------------*/
 /*1- CONTACT LIST OUTSIDE STRUCTURE*/
 .contactList{
@@ -45,8 +45,8 @@
     font : bolder;
 }
 /*--------------------------------------------------------------*/
-/*3- CONTACT FORM */
-.contactForm{
+/*3- CONTACT POPUPS */
+.contactPopUps{
     position: fixed;
     width: 40vw;
     left : 33vw;
@@ -54,7 +54,7 @@
     border-radius: 3%;
 }
 /*-----------------------*/
-/*3-1 FORM DYNAMICS*/
+/*3-1 POPUPS DYNAMICS*/
 .cancelButton{
     outline: none;
     font-size: 10%;

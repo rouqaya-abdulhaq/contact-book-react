@@ -4,6 +4,7 @@ import PopUp from '../../components/popUp/popUp';
 import Form from '../form/form';
 import EditButton from '../editButton/editButton';
 import ContactForm from '../../components/contactForm/contactForm';
+import ContactName from '../../components/contactInfo/contactName';
 
 class ContactList extends React.Component{
     constructor(props){
@@ -11,6 +12,7 @@ class ContactList extends React.Component{
         this.state = {
             contacts : [],
             addClicked : false,
+            contactClicked : false,
         }
     }
 
@@ -41,13 +43,21 @@ class ContactList extends React.Component{
         });
     }
 
+    displayContactInfo = () =>{
+        this.setState({
+            contactClicked : !this.state.contactClicked
+        });
+    }
+
     
     render(){
         //this should be extracted to it's own component 'contacts'
         const contacts = this.state.contacts.map((contact,index) =>
         //phone number is the key for now only
         <div className="contact" key={contact.phoneNumber}>
-            <li>{contact.firstName + " " + contact.lastName}</li>
+            <ContactName contact={this.state.contacts[index]} 
+            displayInfoState={this.state.contactClicked}
+            displayInfo={this.displayContactInfo}/>
              
            <EditButton showPopUp={this.showPopUpHandler} 
             hidePopUp={this.hidePopUpHandler}
@@ -62,7 +72,7 @@ class ContactList extends React.Component{
                 <div>
                     <p className="title">contacts :</p>
                     <button className="addButton" onClick={this.displayAddForm}> + </button>
-                    <div className="contactForm">
+                    <div className="contactPopUps">
                         <PopUp  display={this.state.addClicked}>
                             <Form  onSubmit={this.onSubmitHandler}>
                                 <ContactForm>

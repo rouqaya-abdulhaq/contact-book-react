@@ -8,8 +8,9 @@ const contactName = (props) =>{
                 {props.contact.firstName + " " + props.contact.lastName}
             </li>
             <ContactInfo displayInfoState={props.displayInfoState} 
-            contact={props.contact}
-            canceldisplayInfo={props.displayInfo}/> 
+                getInfo={props.getInfo}
+                info = {props.contact}
+                canceldisplayInfo={props.displayInfo}/>
         </div>
     );
 }

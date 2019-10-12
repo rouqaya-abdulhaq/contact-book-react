@@ -50,7 +50,7 @@ class EditButton extends React.Component{
             <div>
                 <img src={Icon} alt="edit" className="contactButtons" 
                     onClick={this.displayEditForm}></img> 
-                <div className="contactForm">
+                <div className="contactPopUps">
                     <PopUp display={this.state.editClicked}>
                     <Form onSubmit={this.onSubmitEditHandler}>
                         <ContactForm>

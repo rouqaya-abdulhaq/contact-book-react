@@ -49,6 +49,9 @@ class ContactList extends React.Component{
         });
     }
 
+    getContactInfo = (event) =>{
+        return this.state.contacts[event.target.index];
+    }
     
     render(){
         //this should be extracted to it's own component 'contacts'
@@ -56,13 +59,14 @@ class ContactList extends React.Component{
         //phone number is the key for now only
         <div className="contact" key={contact.phoneNumber}>
             <ContactName contact={this.state.contacts[index]} 
-            displayInfoState={this.state.contactClicked}
-            displayInfo={this.displayContactInfo}/>
+                displayInfoState={this.state.contactClicked}
+                displayInfo={this.displayContactInfo}
+                getInfo={this.getContactInfo}/>
              
            <EditButton showPopUp={this.showPopUpHandler} 
             hidePopUp={this.hidePopUpHandler}
-           submitEditHandler={(newContact)=>this.onEditHandler(index , newContact)} 
-           oldContact={contact}/>
+            submitEditHandler={(newContact)=>this.onEditHandler(index , newContact)} 
+            oldContact={contact}/>
 
            <button className="contactButtons" onClick={()=>this.onDeleteHandler(index)}> x </button>
         </div>)

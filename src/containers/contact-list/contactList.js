@@ -48,7 +48,7 @@ class ContactList extends React.Component{
         
         <div className="contact" key={contact.phoneNumber}>
             <Contact contact={contact} index={index} />
-             
+             {/* move edit and delete to contact and change edit to stateless component */}
            <EditButton showPopUp={this.showPopUpHandler} 
             hidePopUp={this.hidePopUpHandler}
             submitEditHandler={(newContact)=>this.onEditHandler(index , newContact)} 
@@ -61,6 +61,7 @@ class ContactList extends React.Component{
                 <div>
                     <p className="title">contacts :</p>
                     <button className="addButton" onClick={this.displayAddForm}> + </button>
+                    {/* create a new Component for this */}
                     <div className="contactPopUps">
                         <PopUp  display={this.state.addClicked}>
                             <Form  onSubmit={this.onSubmitHandler}>

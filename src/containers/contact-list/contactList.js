@@ -2,7 +2,6 @@ import React from 'react';
 import "./contactList.css";
 import PopUp from '../../components/popUp/popUp';
 import Form from '../form/form';
-import EditButton from '../editButton/editButton';
 import ContactForm from '../../components/contactForm/contactForm';
 import Contact from './contact/contact';
 
@@ -47,14 +46,13 @@ class ContactList extends React.Component{
         //phone number is the key for now only
         
         <div className="contact" key={contact.phoneNumber}>
-            <Contact contact={contact} index={index} />
-             {/* move edit and delete to contact and change edit to stateless component */}
-           <EditButton showPopUp={this.showPopUpHandler} 
-            hidePopUp={this.hidePopUpHandler}
-            submitEditHandler={(newContact)=>this.onEditHandler(index , newContact)} 
-            oldContact={contact}/>
+            <Contact contact={contact} index={index}
+            onEditHandler={this.onEditHandler} 
+            submitEditHandler={(newContact)=>this.onEditHandler(index , newContact)}/>
 
-           <button className="contactButtons" onClick={()=>this.onDeleteHandler(index)}> x </button>
+           <button className="contactButtons" onClick={()=>this.onDeleteHandler(index)}>
+                x 
+            </button>
         </div>)
         return(
             <main className="contactList">

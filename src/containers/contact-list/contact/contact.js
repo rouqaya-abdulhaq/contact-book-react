@@ -1,16 +1,19 @@
 import React ,{Component} from 'react';
 import ContactName from '../../../components/contactInfo/contactName';
+import EditBtn from '../../../components/editButton/editButton';
 
 class Contact extends Component{
     constructor(props){
         super(props);
         this.state = {
-            firstName : props.contact.firstName,
+           contInfo : { firstName : props.contact.firstName,
             lastName : props.contact.lastName,
             email : props.contact.email,
-            phoneNumber : props.contact.phoneNumber,
+            phoneNumber : props.contact.phoneNumber},
             index : props.index,
             contactClicked : false,
+            editClicked : false ,
+            editedContact : undefined,
         }
     }
 
@@ -24,13 +27,39 @@ class Contact extends Component{
         return this.state.contacts[event.target.index];
     }
 
+    displayEditForm = () =>{
+        this.setState({
+            'editClicked' : !this.state.editClicked
+        })
+    }
+
+    onSubmitEditHandler = (editedContact) =>{
+        this.setState({
+            'editedContact' : editedContact
+        });
+    }
+
+    componentDidUpdate() {
+        if(this.state.editedContact !== undefined){
+            this.props.submitEditHandler(this.state.editedContact);
+            this.setState(this.baseState);
+        }
+    }
+
     render(){
         return(
             <div>
-                <ContactName contact={this.state} 
+                <ContactName 
+                contact={this.state.contInfo} 
                 displayInfoState={this.state.contactClicked}
                 displayInfo={this.displayContactInfo}
                 getInfo={this.getContactInfo}/>
+
+                <EditBtn
+                editClicked={this.state.editClicked}
+                displayEditForm = {this.displayEditForm}
+                oldContact={this.state.contInfo}
+                onSubmitEditHandler={this.onSubmitEditHandler}/>
             </div>
         );
     }

@@ -1,6 +1,7 @@
 import React ,{Component} from 'react';
 import ContactName from '../../../components/contactInfo/contactName';
 import EditBtn from '../../../components/editButton/editButton';
+import '../contactList.css';
 
 class Contact extends Component{
     constructor(props){
@@ -38,7 +39,7 @@ class Contact extends Component{
 
     render(){
         return(
-            <div>
+            <div className="contact">
                 <ContactName 
                 contact={this.state.contInfo} 
                 displayInfoState={this.state.contactClicked}

@@ -1,9 +1,7 @@
 import React from 'react';
 import "./contactList.css";
-import PopUp from '../../components/popUp/popUp';
-import Form from '../form/form';
-import ContactForm from '../../components/contactForm/contactForm';
 import Contact from './contact/contact';
+import ContactPopUp from '../../components/contactForm/contactPopUp/contactPopUp';
 
 class ContactList extends React.Component{
     constructor(props){
@@ -53,23 +51,19 @@ class ContactList extends React.Component{
                 x 
             </button>
         </div>)
+
+        
         return(
             <main className="contactList">
                 <div>
                     <p className="title">contacts :</p>
+
                     <button className="addButton" onClick={this.displayAddForm}> + </button>
-                    {/* create a new Component for this */}
-                    <div className="contactPopUps">
-                        <PopUp  display={this.state.addClicked}>
-                            <Form  onSubmit={this.onSubmitHandler}>
-                                <ContactForm>
-                                <button
-                                    className="cancelButton" onClick={this.displayAddForm}> x 
-                                </button>
-                                </ContactForm>
-                            </Form>
-                        </PopUp> 
-                    </div>
+                    
+                    <ContactPopUp clicked = {this.state.addClicked}
+                    submitHandler = {this.onSubmitHandler}
+                    toggleForm ={this.displayAddForm}/>
+
                     {contacts}
                 </div> 
             </main>

@@ -13,7 +13,6 @@ class Contact extends Component{
             index : props.index,
             contactClicked : false,
             editClicked : false ,
-            editedContact : undefined,
         }
     }
 
@@ -34,16 +33,7 @@ class Contact extends Component{
     }
 
     onSubmitEditHandler = (editedContact) =>{
-        this.setState({
-            'editedContact' : editedContact
-        });
-    }
-
-    componentDidUpdate() {
-        if(this.state.editedContact !== undefined){
-            this.props.submitEditHandler(this.state.editedContact);
-            this.setState(this.baseState);
-        }
+        this.props.EditListHandler(editedContact);
     }
 
     render(){
@@ -58,7 +48,6 @@ class Contact extends Component{
                 <EditBtn
                 editClicked={this.state.editClicked}
                 displayEditForm = {this.displayEditForm}
-                oldContact={this.state.contInfo}
                 onSubmitEditHandler={this.onSubmitEditHandler}/>
             </div>
         );

@@ -47,8 +47,7 @@ class ContactList extends React.Component{
         
         <div className="contact" key={contact.phoneNumber}>
             <Contact contact={contact} index={index}
-            onEditHandler={this.onEditHandler} 
-            submitEditHandler={(newContact)=>this.onEditHandler(index , newContact)}/>
+            EditListHandler={(newContact)=>this.onEditHandler(index , newContact)}/>
 
            <button className="contactButtons" onClick={()=>this.onDeleteHandler(index)}>
                 x 

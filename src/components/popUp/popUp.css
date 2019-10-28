@@ -10,3 +10,9 @@
 .hide{
     display: none;
 }
+
+@media (max-width : 380px){
+    .popUp{
+      height: 60vh;
+    }
+}

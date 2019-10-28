@@ -17,3 +17,35 @@
     margin-left: 2vw;
     font-size: 1.5vw; 
 }
+/*TABLET QUERIES*/
+@media (max-width : 1024px ) and (min-width : 768px) {
+    .label{
+        font-size: 2em;
+    }
+    .inputBox{
+        width: 40%;
+    }
+ }  
+/*SMART PHONE QUERIES*/
+@media (max-width : 500px){
+    .inputWrapper{
+        margin: 2%;
+    }
+    .label{
+        font-size: 28px;
+        display: block;
+    }
+    .inputBox{
+        width: 80%;
+    }
+}
+@media(max-width : 380px) {
+    .inputWrapper{
+        margin: 3%;
+    }
+}
+@media(max-width : 330px){
+    .label{
+        font-size: 20px;
+    }
+}

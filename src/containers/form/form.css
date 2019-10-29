@@ -8,3 +8,12 @@
 .submitButton:focus , .submitButton:hover{
     background: limegreen;
 }
+
+/*TABLET QUERIES*/
+@media (max-width : 1024px ) and (min-width : 768px) {
+    .submitButton{
+        width: 20vw;
+        height: 4vh;
+        font-size: 1.5em;
+    }
+ }  

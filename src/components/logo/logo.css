@@ -16,3 +16,10 @@
     width: 50px;
   }
 }
+/* TABLET*/
+@media (max-width : 1024px ) and (min-width : 768px) {
+  #cover{
+    width: 10vw;
+  }
+  
+}  

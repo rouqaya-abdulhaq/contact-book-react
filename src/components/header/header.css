@@ -64,9 +64,36 @@
 }
 /*--------------------------------------------------------------*/
 /*4- MEDIA QUERIES*/
-@media (max-width : 1000px) {
+/* @media (max-width : 1000px) {
   .navButton{
     width: 15vw;
   }
-}
+} */
+/*4-2 TABLET*/
+@media (max-width : 1024px ) and (min-width : 768px) {
+  .signLogHeader{
+    grid-template-columns: 30% 20% 50%;
+  }
+  .signOutHeader{
+    grid-template-columns: 35% 30% 35%;
+  }
+  .navButton{
+    width: 20vw;
+    font-size: 1.5em;
+  }
+  
+}  
+/*------------------------------------------------*/
+/*4-3 SMART PHONES*/
+@media (max-width : 500px) and (min-width : 320px) {
+  .signLogHeader{
+    grid-template-columns: 30% 10% 60%;
+  }
+  .signOutHeader{
+    grid-template-columns: 30% 40% 30%;
+  }
+  .navButton{
+    width: 25vw;
+  }
 
+}

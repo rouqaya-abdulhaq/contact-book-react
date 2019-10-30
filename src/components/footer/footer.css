@@ -6,3 +6,12 @@
     font-size: inherit;
     font-weight: bold;
 }
+
+
+/* TABLET*/
+@media (max-width : 1024px ) and (min-width : 768px) {
+    footer{
+        font-size: 2em;
+    }
+ }  
+ 

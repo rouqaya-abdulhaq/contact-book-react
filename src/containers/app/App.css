@@ -41,6 +41,7 @@ main{
 /*2-1 TABLET*/
 @media (max-width : 1024px ) and (min-width : 768px) {
    .App{
+      grid-template-columns: 32% 28% 40%;
       grid-template-areas: "header header header"
                           "main main main"
                           "palette footer footer"; 
@@ -54,6 +55,7 @@ main{
 /*2-1 SMART PHONES*/
 @media (max-width : 500px) and (min-width : 320px) {
    .App{
+      grid-template-columns: 32% 28% 40%;
       grid-template-areas: "header header header"
                           "main main main"
                           "palette footer footer"; 

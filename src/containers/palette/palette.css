@@ -7,6 +7,8 @@
             2-1-2 PALETTE LIST INSIDE ELEMENTS
         2-2 cancel button
     3- MEDIA QUERIES
+        3-2 TABLET
+        3-3 SMART PHONES
 ---------------------------*/
 /*1- PALETTE INTERFACE*/
 .paletteIcon{
@@ -70,4 +72,53 @@ img{
         width : 6vw;
     }
 }
+ /*------------------------------------------------*/
+/*3-2 TABLET*/
+@media (max-width : 1024px ) and (min-width : 768px) {
+    img{
+        margin-top: 35%;
+        margin-left: 25%;
+        width: 8vw;   
+    }
+    .palettePopUp{
+        left: 7vw;
+    }
+    .styleList{
+        width: 40vw;
+    }
+    .block{
+        font-size: 1.5em;
+    }
+    
+ }  
+ /*------------------------------------------------*/
+ /*3-3 SMART PHONES*/
 
+ @media (max-width : 500px) and (min-width : 320px) {
+    img{
+        margin-top: 55%;
+        margin-left: 25%;  
+        width: 8vw;    
+    }
+    .palettePopUp{
+        left: 7vw;
+    }
+    .styleList{
+        width: 40vw;
+    }
+ }
+
+ @media (max-width : 380px){
+     .palettePopUp{
+         top : 30vh;
+     }
+    .styleList{
+        height: 50vh;
+    }
+}
+
+@media (max-width : 500px) and (min-width : 385px) {
+    .palettePopUp{
+        top: 38vh;
+    }
+ }

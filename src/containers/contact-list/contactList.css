@@ -36,7 +36,6 @@
     justify-content: center;
     margin-top: 3%;
 }
-/*the margin for the edit is not really showing*/
 .contactButtons{
     margin-left: 2.5%;
     border: none;
@@ -46,6 +45,10 @@
     height: 3.5vh;
     width: auto;
     font : bolder;
+}
+#editIcon{
+    margin-left: 1.5vw;
+    margin-top: 0;
 }
 /*--------------------------------------------------------------*/
 /*3- CONTACT POPUPS */
@@ -99,6 +102,9 @@
     }
     .contactButtons{
         font-size: 30px;
+    }
+    #editIcon{
+        margin-left: 3vw;
     }
     .contactPopUps{
         width: 90vw;  

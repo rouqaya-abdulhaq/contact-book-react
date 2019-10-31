@@ -6,7 +6,7 @@ import ContactPopUp from '../contactForm/contactPopUp/contactPopUp';
 const EditButton = (props)=>{
         return(
             <div>
-                <img src={Icon} alt="edit" className="contactButtons" 
+                <img src={Icon} alt="edit" id="editIcon" className="contactButtons" 
                     onClick={props.displayEditForm}></img> 
                 
                 <ContactPopUp clicked = {props.editClicked}

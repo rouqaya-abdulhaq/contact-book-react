@@ -10,7 +10,7 @@
 .hide{
     display: none;
 }
-
+/*SMALL SMART PHONES */
 @media (max-width : 380px){
     .popUp{
       height: 57vh;

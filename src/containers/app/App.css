@@ -5,8 +5,9 @@
    STYLE TABLE :
    1- GLOBAL SELECTORS
    2- MEDIA QUERIES 
-      2-1 TABLET
-      2-2 SMART PHONES 
+      2-1 COMBINED
+      2-2 TABLET
+      2-3 SMART PHONES 
    /*-------------------
      1- GLOBAL SELECTORS
      -------------------*/
@@ -38,28 +39,26 @@ main{
 
 /*---------------------------------------------------------------------*/
 /*2- MEDIA QUERIES*/
-/*2-1 TABLET*/
-@media (max-width : 1024px ) and (min-width : 768px) {
+/*2-1 COMBINED*/
+@media(max-width : 1024px){
    .App{
       grid-template-columns: 32% 28% 40%;
       grid-template-areas: "header header header"
                           "main main main"
                           "palette footer footer"; 
    }
+}
+/*------------------------------------------------*/
+/*2-2 TABLET*/
+@media (max-width : 1024px ) and (min-width : 768px) {
    main{
       width : 70VW ;
       margin-left: 15%;
    }
 }  
 /*------------------------------------------------*/
-/*2-1 SMART PHONES*/
+/*2-3 SMART PHONES*/
 @media (max-width : 500px) and (min-width : 320px) {
-   .App{
-      grid-template-columns: 32% 28% 40%;
-      grid-template-areas: "header header header"
-                          "main main main"
-                          "palette footer footer"; 
-   }
    main{
       width: 80vw;
       margin-left: 10%;

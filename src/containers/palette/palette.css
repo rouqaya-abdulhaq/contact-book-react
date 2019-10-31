@@ -7,6 +7,7 @@
             2-1-2 PALETTE LIST INSIDE ELEMENTS
         2-2 cancel button
     3- MEDIA QUERIES
+        3-1 COMBINED
         3-2 TABLET
         3-3 SMART PHONES
 ---------------------------*/
@@ -57,19 +58,13 @@ img{
 }
 /*----------------------------------------------*/
 /*3- MEDIA QUERIES*/
-@media (max-width : 1100px) {
-    img{
-        width : 4vw;
+/*COMBINED*/
+@media(max-width : 1024px){
+    .palettePopUp{
+        left: 7vw;
     }
-}
-@media (max-width : 800px) {
-    img{
-        width : 5vw;
-    }
-}
-@media (max-width : 600px) {
-    img{
-        width : 6vw;
+    .styleList{
+        width: 40vw;
     }
 }
  /*------------------------------------------------*/
@@ -80,14 +75,12 @@ img{
         margin-left: 25%;
         width: 8vw;   
     }
-    .palettePopUp{
-        left: 7vw;
-    }
-    .styleList{
-        width: 40vw;
-    }
     .block{
-        font-size: 1.5em;
+        font-size: 3vw;
+    }
+    .cancelButt{
+        height: 3vh;
+        width: 4vw;
     }
     
  }  
@@ -99,12 +92,6 @@ img{
         margin-top: 55%;
         margin-left: 25%;  
         width: 8vw;    
-    }
-    .palettePopUp{
-        left: 7vw;
-    }
-    .styleList{
-        width: 40vw;
     }
  }
 

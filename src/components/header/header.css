@@ -7,6 +7,8 @@
     2-2 SIGN OUT HEADER
   3- NAV BUTTONS
   4- MEDIA QUERIES 
+    4-1 TABLET
+    4-2 SMART PHONES
   ----------------------------*/
 
 /*1- HEADER GLOBAL SELECTORS*/
@@ -64,12 +66,7 @@
 }
 /*--------------------------------------------------------------*/
 /*4- MEDIA QUERIES*/
-/* @media (max-width : 1000px) {
-  .navButton{
-    width: 15vw;
-  }
-} */
-/*4-2 TABLET*/
+/*4-1 TABLET*/
 @media (max-width : 1024px ) and (min-width : 768px) {
   .signLogHeader{
     grid-template-columns: 30% 20% 50%;
@@ -84,7 +81,7 @@
   
 }  
 /*------------------------------------------------*/
-/*4-3 SMART PHONES*/
+/*4-2 SMART PHONES*/
 @media (max-width : 500px) and (min-width : 320px) {
   .signLogHeader{
     grid-template-columns: 30% 10% 60%;

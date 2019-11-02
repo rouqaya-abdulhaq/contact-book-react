@@ -50,18 +50,19 @@ main{
 }
 /*------------------------------------------------*/
 /*2-2 TABLET*/
-@media (max-width : 1024px ) and (min-width : 768px) {
+@media only screen and (max-width : 1024px ) and (min-width : 768px) {
    main{
-      width : 70VW ;
-      margin-left: 15%;
+      width : 60VW ;
+      margin-left: 20%;
    }
-}  
+}
+
 /*------------------------------------------------*/
 /*2-3 SMART PHONES*/
-@media (max-width : 500px) and (min-width : 320px) {
+@media only screen and (max-width : 767px) and (min-width : 320px) {
    main{
-      width: 80vw;
-      margin-left: 10%;
+      width: 70vw;
+      margin-left: 15%;
    }
 
 }

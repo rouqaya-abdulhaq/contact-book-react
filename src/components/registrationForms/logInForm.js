@@ -3,6 +3,20 @@ import Input from '../input/input';
 import {Link}  from 'react-router-dom';
 
 const logInForm = (props) =>{
+        const submitLog = () =>{
+            props.updateRegistrationHandler();
+            fetch("http://localhost:5000/mock",{
+                method : 'get',
+            }).then((res)=>{
+                return res.text()
+            }).then((text)=>{
+                console.log(text);
+            }).catch((err)=>{
+                console.log(err);
+            }) 
+            console.log("end of submit");
+        }
+
         return(
                 <div>
                  <Input label={"email"} id="email" value={props.email}
@@ -13,7 +27,7 @@ const logInForm = (props) =>{
 
                 <Link to="/">
                     <button className="submitButton" 
-                      onClick={props.updateRegistrationHandler} type="submit">
+                      onClick={submitLog} type="submit">
                         Log In
                     </button>
                 </Link> 

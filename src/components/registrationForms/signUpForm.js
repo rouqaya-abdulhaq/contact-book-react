@@ -3,6 +3,14 @@ import Input from '../input/input';
 import {Link}  from 'react-router-dom';
 
 const signUpForm = (props) =>{
+        const onSubmit = () =>{
+          props.updateRegistrationHandler();
+          fetch('/signUp').then((req,res)=>{
+            console.log(req);
+          }).catch((err)=>{
+            console.log(err);
+          })
+        }
         return(
           <div>
               {/* this has a user state for now it will be first + last name later */}
@@ -17,7 +25,7 @@ const signUpForm = (props) =>{
 
             <Link to="/">
                 <button className="submitButton" type="submit" 
-                  onClick={props.updateRegistrationHandler}>
+                  onClick={onSubmit}>
                     Sign Up
                 </button>
             </Link>

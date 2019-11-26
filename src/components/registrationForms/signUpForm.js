@@ -5,8 +5,21 @@ import {Link}  from 'react-router-dom';
 const signUpForm = (props) =>{
         const onSubmit = () =>{
           props.updateRegistrationHandler();
-          fetch('/signUp').then((req,res)=>{
-            console.log(req);
+          fetch('http://localhost:5000/signUp',{
+            method : 'POST',
+            headers : {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body : JSON.stringify({
+              name : props.user,
+              email : props.email,
+              password : props.password
+            })
+          }).then((data)=>{
+            return data.json();
+          }).then((res)=>{
+            console.log(res);
           }).catch((err)=>{
             console.log(err);
           })

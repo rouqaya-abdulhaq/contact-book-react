@@ -5,16 +5,23 @@ import {Link}  from 'react-router-dom';
 const logInForm = (props) =>{
         const submitLog = () =>{
             props.updateRegistrationHandler();
-            fetch("http://localhost:5000/mock",{
-                method : 'get',
+            fetch("http://localhost:5000/signIn",{
+                method : 'POST',
+                headers : {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body : JSON.stringify({
+                    email : props.email,
+                    password : props.password
+                  })
             }).then((res)=>{
-                return res.text()
+                return res.json();
             }).then((text)=>{
                 console.log(text);
             }).catch((err)=>{
                 console.log(err);
             }) 
-            console.log("end of submit");
         }
 
         return(

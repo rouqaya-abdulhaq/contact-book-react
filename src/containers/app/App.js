@@ -15,12 +15,19 @@ class App extends Component {
     super();
     this.state = {
       style : 'default',
-      isRegistered: true,
+      isRegistered: false,
+      user : {}
     }
   }
 
   updateRegistrationHandler = () =>{
       this.setState({isRegistered : !this.state.isRegistered})
+  }
+
+  isRegistered = (user) =>{
+    if(user){
+      this.setState({isRegistered : true, user : user})
+    }
   }
  
   changeStyleHandler = (newStyle) =>{
@@ -30,6 +37,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.user);
     const classes = `App ${this.state.style}`;
     return (
     <Router className="App">
@@ -37,15 +45,18 @@ class App extends Component {
         <Header isRegistered={this.state.isRegistered} 
           updateRegistrationHandler ={this.updateRegistrationHandler}/>
         <Switch>
-          <Route exact path="/" component={ContactList}></Route>
+          <Route exact path="/contact-list" component={ContactList}></Route>
           <Route exact path="/sign-up" 
             render={(props)=> <SignUp 
                               updateRegistrationHandler={this.updateRegistrationHandler} 
+                              history ={props.history}
             isAuthed={true}/>}> 
           </Route>
           <Route exact path="/log-in" 
             render={(props)=> <LogIn 
                               updateRegistrationHandler={this.updateRegistrationHandler}
+                              history ={props.history}
+                              register = {this.isRegistered}
             isAuthed={true} />}>
           </Route>
         </Switch>

@@ -36,12 +36,12 @@ const signUpForm = (props) =>{
             <Input label={"password"} id="password" value={props.password}
               type={"password"} changeHandler={props.changehandler}/>
 
-            <Link to="/">
+            {/* <Link to="/"> */}
                 <button className="submitButton" type="submit" 
                   onClick={onSubmit}>
                     Sign Up
                 </button>
-            </Link>
+            {/* </Link> */}
           </div>
         );
 }

@@ -2,26 +2,32 @@ import React from 'react';
 import Input from '../input/input';
 import {Link}  from 'react-router-dom';
 
-const logInForm = (props) =>{
-        const submitLog = () =>{
-            props.updateRegistrationHandler();
+const logInForm = (props) => {
+       const fetchUser = (email , password) =>{
             fetch("http://localhost:5000/signIn",{
-                method : 'POST',
-                headers : {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body : JSON.stringify({
-                    email : props.email,
-                    password : props.password
-                  })
-            }).then((res)=>{
-                return res.json();
-            }).then((text)=>{
-                console.log(text);
-            }).catch((err)=>{
-                console.log(err);
-            }) 
+                    method : 'POST',
+                    headers : {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body : JSON.stringify({
+                        email : email,
+                        password : password
+                      })
+                }).then((res)=>{
+                    const contentType = res.headers.get("content-type");
+                    if(contentType && contentType.indexOf("application/json") !== -1){
+                        props.updateRegistrationHandler();
+                        return res.json();
+                    }else{
+                        return {};
+                    }
+                }).then((user)=>{
+                    // console.log(user);
+                    props.register(user)
+                }).catch((err)=>{
+                    console.log(err);
+                })
         }
 
         return(
@@ -31,13 +37,12 @@ const logInForm = (props) =>{
 
                  <Input label={"password"} id="password" value={props.password}
                     type={"password"} changeHandler={props.changehandler}/>
-
-                <Link to="/">
+                {/* <Link to='contact-list'> */}
                     <button className="submitButton" 
-                      onClick={submitLog} type="submit">
+                      onClick={()=>fetchUser(props.email,props.password)} type="submit">
                         Log In
                     </button>
-                </Link> 
+                {/* </Link>  */}
                 </div> 
         );
 }

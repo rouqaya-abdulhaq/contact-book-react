@@ -4,13 +4,13 @@ import LogInForm from '../registrationForms/logInForm';
 
         
 const LogIn = (props) =>{
-    
-    return(
-        <main className="signLog">
-         <Form>
-            <LogInForm updateRegistrationHandler={props.updateRegistrationHandler}/>
-         </Form>
-        </main>
+        return(
+            <main className="signLog">
+                <Form>
+                    <LogInForm register={props.register} 
+                    updateRegistrationHandler={props.updateRegistrationHandler}/>
+                </Form>
+            </main>
     );
 }
 

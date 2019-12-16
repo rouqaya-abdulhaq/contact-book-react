@@ -3,27 +3,30 @@ import Input from '../input/input';
 import {Link}  from 'react-router-dom';
 
 const signUpForm = (props) =>{
-        const onSubmit = () =>{
-          props.updateRegistrationHandler();
-          fetch('http://localhost:5000/signUp',{
-            method : 'POST',
-            headers : {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-            body : JSON.stringify({
-              name : props.user,
-              email : props.email,
-              password : props.password
-            })
-          }).then((data)=>{
-            return data.json();
-          }).then((res)=>{
-            console.log(res);
-          }).catch((err)=>{
-            console.log(err);
-          })
-        }
+
+        const fetchUser = (email , password, userName) =>{
+          fetch("http://localhost:5000/signUp",{
+                  method : 'POST',
+                  headers : {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json'
+                  },
+                  body : JSON.stringify({
+                    name : userName,
+                    email : email,
+                    password : password
+                    })
+              }).then((res)=>{
+                      props.updateRegistrationHandler();
+                      return res.json();
+              }).then((user)=>{
+                  // console.log(user);
+                  props.register(user)
+              }).catch((err)=>{
+                  console.log(err);
+              })
+      }
+
         return(
           <div>
               {/* this has a user state for now it will be first + last name later */}
@@ -36,12 +39,12 @@ const signUpForm = (props) =>{
             <Input label={"password"} id="password" value={props.password}
               type={"password"} changeHandler={props.changehandler}/>
 
-            {/* <Link to="/"> */}
+            <Link to="/contact-list">
                 <button className="submitButton" type="submit" 
-                  onClick={onSubmit}>
+                  onClick={()=>fetchUser(props.email,props.password,props.user)}>
                     Sign Up
                 </button>
-            {/* </Link> */}
+            </Link>
           </div>
         );
 }

@@ -37,12 +37,12 @@ const logInForm = (props) => {
 
                  <Input label={"password"} id="password" value={props.password}
                     type={"password"} changeHandler={props.changehandler}/>
-                {/* <Link to='contact-list'> */}
+                <Link to='contact-list'>
                     <button className="submitButton" 
                       onClick={()=>fetchUser(props.email,props.password)} type="submit">
                         Log In
                     </button>
-                {/* </Link>  */}
+                </Link> 
                 </div> 
         );
 }

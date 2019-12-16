@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import './App.css';
 import './paletteClasses.css';
 import Header from '../../components/header/header';
@@ -36,17 +36,22 @@ class App extends Component {
     });
   }
 
+  
   render() {
     console.log(this.state.user);
     const classes = `App ${this.state.style}`;
+    let dir = null;
+    if(this.state.isRegistered){
+      dir = <Redirect to="contact-List"/>
+    }
     return (
     <Router className="App">
       <div className={classes}>
         <Header isRegistered={this.state.isRegistered} 
           updateRegistrationHandler ={this.updateRegistrationHandler}/>
         <Switch>
-          <Route exact path="/contact-list" component={ContactList}>
-          </Route>
+          <Route exact path="/contact-list" component={ContactList}></Route>
+          {dir}
           <Route exact path="/sign-up" 
             render={(props)=> <SignUp 
                               updateRegistrationHandler={this.updateRegistrationHandler} 

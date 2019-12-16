@@ -1,6 +1,5 @@
 import React from 'react';
 import Input from '../input/input';
-import {Link}  from 'react-router-dom';
 
 const signUpForm = (props) =>{
 
@@ -39,12 +38,10 @@ const signUpForm = (props) =>{
             <Input label={"password"} id="password" value={props.password}
               type={"password"} changeHandler={props.changehandler}/>
 
-            <Link to="/contact-list">
                 <button className="submitButton" type="submit" 
                   onClick={()=>fetchUser(props.email,props.password,props.user)}>
                     Sign Up
                 </button>
-            </Link>
           </div>
         );
 }

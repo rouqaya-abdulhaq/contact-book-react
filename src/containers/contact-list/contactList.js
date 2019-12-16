@@ -111,7 +111,7 @@ class ContactList extends React.Component{
         return(
             <main className="contactList">
                 <div>
-                    <p className="title">contacts :</p>
+                    <p className="title">contacts : {this.props.firstName}</p>
 
                     <button className="addButton" onClick={this.displayAddForm}> + </button>
                     

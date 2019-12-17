@@ -20,9 +20,10 @@
 /*2-1 DYNAMIC ELEMENTS*/
 .title{
     font-family: monospace;
-    font-size: 2em;
+    font-size: 1.5vw;
     position: sticky;
     top: 1vh;
+    font-weight: bolder;
 }
 .addButton{
     height: 3vh;
@@ -80,7 +81,7 @@
 /*4-2 TABLET*/
 @media (max-width : 1024px ) and (min-width : 768px) {
     .title{
-        font-size: 6vw;
+        font-size: 4vw;
     }
     .addButton{
         width: 4vw;
@@ -102,6 +103,9 @@
 /*-----------------------*/
 /*4-3 SMART PHONES*/
 @media (max-width : 500px) and (min-width : 320px){
+    .title{
+        font-size: 6vw;
+    }
     .addButton{
         width: 7vw;
     }

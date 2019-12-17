@@ -50,7 +50,10 @@ class App extends Component {
         <Header isRegistered={this.state.isRegistered} 
           updateRegistrationHandler ={this.updateRegistrationHandler}/>
         <Switch>
-          <Route exact path="/contact-list" component={ContactList}></Route>
+          <Route exact path="/contact-list" 
+             render={(props)=> <ContactList
+              firstName = {this.state.user.name}/>}> 
+          </Route>
           {dir}
           <Route exact path="/sign-up" 
             render={(props)=> <SignUp 

@@ -7,8 +7,14 @@ class ContactList extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            contacts : [],
+            contacts : []  ,
             addClicked : false,
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState){
+        if(this.props.contacts !== prevProps.contacts){
+            this.setState({contacts : this.props.contacts})
         }
     }
 
@@ -95,19 +101,17 @@ class ContactList extends React.Component{
     }
 
     render(){
-        const contacts = this.state.contacts.map((contact,index) =>
-        //phone number is the key for now only
-        
-        <div className="contact" key={contact.phoneNumber}>
-            <Contact contact={contact} index={index}
-            EditListHandler={(newContact)=>this.onEditHandler(index , newContact)}/>
-
-           <button className="contactButtons" onClick={()=>this.onDeleteHandler(index)}>
-                x 
-            </button>
-        </div>)
-
-        
+          const contacts = this.state.contacts.map((contact,index) =>
+            //phone number is the key for now only
+            <div className="contact" key={contact.phoneNumber}>
+                <Contact contact={contact} index={index}
+                EditListHandler={(newContact)=>this.onEditHandler(index , newContact)}/>
+    
+               <button className="contactButtons" onClick={()=>this.onDeleteHandler(index)}>
+                    x 
+                </button>
+            </div>) 
+          
         return(
             <main className="contactList">
                 <div>

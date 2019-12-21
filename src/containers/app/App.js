@@ -8,7 +8,7 @@ import Footer from "../../components/footer/footer";
 import Palette from "../palette/palette";
 import SignUp from '../../components/signUp/signUp';
 import LogIn from '../../components/logIn/logIn';
-
+import LandingPage from '../../components/landing/landingPage';
 
 class App extends Component {
   constructor(){
@@ -49,6 +49,7 @@ class App extends Component {
         <Header isRegistered={this.state.isRegistered} 
           updateRegistrationHandler ={this.updateRegistrationHandler}/>
         <Switch>
+          <Route exact path="/" component={LandingPage}/>
           <Route exact path="/contact-list" 
              render={(props)=> <ContactList
               firstName = {this.state.user.name}  contacts = {this.state.user.contacts}/>}

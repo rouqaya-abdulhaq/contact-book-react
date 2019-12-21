@@ -101,7 +101,9 @@ class ContactList extends React.Component{
     }
 
     render(){
-          const contacts = this.state.contacts.map((contact,index) =>
+        let contacts = null;
+        if(this.state.contacts){
+            contacts = this.state.contacts.map((contact,index) =>
             //phone number is the key for now only
             <div className="contact" key={contact.phoneNumber}>
                 <Contact contact={contact} index={index}
@@ -111,6 +113,7 @@ class ContactList extends React.Component{
                     x 
                 </button>
             </div>) 
+        }
           
         return(
             <main className="contactList">

@@ -5,7 +5,7 @@ const  Registration = (props) => {
       if(props.isRegistered === true){
         return (
           <div className="signOutButton">
-            <Link to="/log-in">
+            <Link to="/">
               <button className="navButton" 
               onClick={props.updateRegistrationHandler}>sign out</button>
             </Link>

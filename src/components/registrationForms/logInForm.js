@@ -16,7 +16,7 @@ const logInForm = (props) => {
                 }).then((res)=>{
                     const contentType = res.headers.get("content-type");
                     if(contentType && contentType.indexOf("application/json") !== -1){
-                        props.updateRegistrationHandler();
+                        props.registrationHandler();
                         return res.json();
                     }else{
                         return {};

@@ -6,7 +6,7 @@ import './logo.css';
 const Logo = (props)=>{
     return(
         <Link to="/">
-            <div id="cover" onClick={props.updateRegistrationHandler}>
+            <div id="cover" onClick={props.unregisterHandler}>
                 <PersonIcon/>      
             </div>
         </Link>

@@ -7,7 +7,7 @@ const  Registration = (props) => {
           <div className="signOutButton">
             <Link to="/">
               <button className="navButton" 
-              onClick={props.updateRegistrationHandler}>sign out</button>
+              onClick={props.unregisterHandler}>sign out</button>
             </Link>
           </div>
         );

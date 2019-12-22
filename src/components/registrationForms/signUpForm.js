@@ -16,7 +16,7 @@ const signUpForm = (props) =>{
                     password : password
                     })
               }).then((res)=>{
-                      props.updateRegistrationHandler();
+                      props.registrationHandler();
                       return res.json();
               }).then((user)=>{
                   // console.log(user);

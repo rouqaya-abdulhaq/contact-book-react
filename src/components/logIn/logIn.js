@@ -8,7 +8,7 @@ const LogIn = (props) =>{
             <main className="signLog">
                 <Form>
                     <LogInForm register={props.register} 
-                    updateRegistrationHandler={props.updateRegistrationHandler}/>
+                    registrationHandler={props.registrationHandler}/>
                 </Form>
             </main>
     );

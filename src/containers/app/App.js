@@ -20,8 +20,16 @@ class App extends Component {
     }
   }
 
-  updateRegistrationHandler = () =>{
-      this.setState({isRegistered : !this.state.isRegistered})
+  registrationHandler = () =>{
+      if(!this.state.isRegistered){
+      this.setState({isRegistered : true});
+      }
+  }
+
+  unregisterHandler = () =>{
+    if(this.state.isRegistered){
+      this.setState({isRegistered : false, user : {}});
+    }
   }
 
   isRegistered = (user) =>{
@@ -47,7 +55,8 @@ class App extends Component {
     <Router className="App">
       <div className={classes}>
         <Header isRegistered={this.state.isRegistered} 
-          updateRegistrationHandler ={this.updateRegistrationHandler}/>
+          registrationHandler ={this.registrationHandler}
+          unregisterHandler = {this.unregisterHandler}/>
         <Switch>
           <Route exact path="/" component={LandingPage}/>
           <Route exact path="/contact-list" 
@@ -58,14 +67,14 @@ class App extends Component {
           {dir}
           <Route exact path="/sign-up" 
             render={(props)=> <SignUp 
-                              updateRegistrationHandler={this.updateRegistrationHandler} 
+                              registrationHandler={this.registrationHandler} 
                               history ={props.history}
                               register = {this.isRegistered}
             isAuthed={true}/>}> 
           </Route>
           <Route exact path="/log-in" 
             render={(props)=> <LogIn 
-                              updateRegistrationHandler={this.updateRegistrationHandler}
+                              registrationHandler={this.registrationHandler}
                               history ={props.history}
                               register = {this.isRegistered}
             isAuthed={true} />}>

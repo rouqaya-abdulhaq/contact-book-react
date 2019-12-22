@@ -8,9 +8,9 @@ const Header = (props)=>{
       return(
          <header className="header">
          <div className={headerType}>
-           <Logo updateRegistrationHandler={props.updateRegistrationHandler}/>
+           <Logo unregisterHandler={props.unregisterHandler}/>
            <RegistrationButtons
-           updateRegistrationHandler={props.updateRegistrationHandler}
+           unregisterHandler={props.unregisterHandler}
            isRegistered={props.isRegistered} />
          </div>
          </header>

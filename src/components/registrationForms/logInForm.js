@@ -14,21 +14,20 @@ const logInForm = (props) => {
                         password : password
                       })
                 }).then((res)=>{
-                    const contentType = res.headers.get("content-type");
-                    if(contentType && contentType.indexOf("application/json") !== -1){
-                        props.registrationHandler();
-                        return res.json();
+                    if(!res.ok){
+                        return null;
                     }else{
-                        return {};
+                        return res.json()
                     }
                 }).then((user)=>{
-                    // console.log(user);
-                    props.register(user)
+                    if(user){
+                        props.registrationHandler();
+                        props.register(user)  
+                    }
                 }).catch((err)=>{
                     console.log(err);
                 })
         }
-
         return(
                 <div>
                  <Input label={"email"} id="email" value={props.email}

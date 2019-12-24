@@ -34,7 +34,7 @@ class App extends Component {
 
   isRegistered = (user) =>{
     if(user){
-      this.setState({isRegistered : true, user : user})
+      this.setState({isRegistered : true, user : user});
     }
   }
  
@@ -46,6 +46,7 @@ class App extends Component {
 
   
   render() {
+    // console.log(this.state.user);
     const classes = `App ${this.state.style}`;
     let dir = null;
     if(this.state.isRegistered){

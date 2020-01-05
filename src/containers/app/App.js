@@ -46,7 +46,6 @@ class App extends Component {
 
   
   render() {
-    // console.log(this.state.user);
     const classes = `App ${this.state.style}`;
     let dir = null;
     if(this.state.isRegistered){
@@ -78,6 +77,7 @@ class App extends Component {
                               registrationHandler={this.registrationHandler}
                               history ={props.history}
                               register = {this.isRegistered}
+                              isRegistered ={this.state.isRegistered}
             isAuthed={true} />}>
           </Route>
         </Switch>

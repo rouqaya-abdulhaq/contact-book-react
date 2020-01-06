@@ -16,8 +16,13 @@ class App extends Component {
     this.state = {
       style : 'default',
       isRegistered: false,
+      wrongCredintialsMsg : null,
       user : {}
     }
+  }
+
+  wrongCredintialsHandler = () =>{
+    this.setState({wrongCredintialsMsg : "wrong credintilas"});
   }
 
   registrationHandler = () =>{
@@ -70,6 +75,8 @@ class App extends Component {
                               registrationHandler={this.registrationHandler} 
                               history ={props.history}
                               register = {this.isRegistered}
+                              wrongCredintialsHandler={this.wrongCredintialsHandler}
+                              wrongCredintialsMsg={this.state.wrongCredintialsMsg}
             isAuthed={true}/>}> 
           </Route>
           <Route exact path="/log-in" 
@@ -78,6 +85,8 @@ class App extends Component {
                               history ={props.history}
                               register = {this.isRegistered}
                               isRegistered ={this.state.isRegistered}
+                              wrongCredintialsHandler={this.wrongCredintialsHandler}
+                              wrongCredintialsMsg={this.state.wrongCredintialsMsg}
             isAuthed={true} />}>
           </Route>
         </Switch>

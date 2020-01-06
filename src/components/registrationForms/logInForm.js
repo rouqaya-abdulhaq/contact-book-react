@@ -17,8 +17,8 @@ const logInForm = (props) => {
                 }).then((res)=>{
                     if(res.ok){
                         return res.json()
-                    }else if(res.status.valueOf(401)){
-                        props.falseCredintialsHandler();
+                    }else{
+                        props.wrongCredintialsHandler();
                     }
                 }).then((user)=>{
                     if(user){

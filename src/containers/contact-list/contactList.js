@@ -19,7 +19,6 @@ class ContactList extends React.Component{
     }
 
     onSubmitHandler = (newContact) =>{
-        this.setState({"contacts" : [...this.state.contacts, newContact]});
             fetch('http://localhost:5000/contactAdd',{
             method : 'PUT',
             headers : {
@@ -35,7 +34,8 @@ class ContactList extends React.Component{
             }).then((res)=>{
                 return res.json();
             }).then((contact)=>{
-                console.log(contact);
+                const contacts = [...this.state.contacts, contact];
+                this.setState({"contacts" : contacts});
             }).catch((err)=>{
                 console.log(err);
             });
@@ -49,11 +49,6 @@ class ContactList extends React.Component{
     }
     
     onEditHandler = (index , newContact)=>{
-        let contacts = [...this.state.contacts];
-        contacts[index] = newContact;
-        this.setState({
-            'contacts' : contacts
-        });
         fetch('http://localhost:5000/contactEdit',{
             method : 'PUT',
             headers : {
@@ -70,20 +65,19 @@ class ContactList extends React.Component{
             }).then((res)=>{
                 return res.json();
             }).then((contact)=>{
-                console.log(contact);
+                const contacts = [...this.state.contacts];
+                contacts[index] = contact;
+                this.setState({
+                    'contacts' : contacts
+                });
             }).catch((err)=>{
                 console.log(err);
             });
     }
 
     onDeleteHandler = (index) =>{
-        let contacts = [...this.state.contacts];
-        contacts.splice(index,1);
-        this.setState({
-            contacts : contacts
-        });
         fetch('http://localhost:5000/contactDelete',{
-            method : 'PUT',
+            method : 'DELETE',
             headers : {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -93,8 +87,12 @@ class ContactList extends React.Component{
             })
             }).then((res)=>{
                 return res.json();
-            }).then((contact)=>{
-                console.log(contact);
+            }).then((contactIndex)=>{
+                const contacts = [...this.state.contacts];
+                contacts.splice(contactIndex,1);
+                this.setState({
+                    contacts : contacts
+                });
             }).catch((err)=>{
                 console.log(err);
             });

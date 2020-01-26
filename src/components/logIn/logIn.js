@@ -4,7 +4,6 @@ import LogInForm from '../registrationForms/logInForm';
 
         
 const LogIn = (props) => {
-    
     return(
         <main className="signLog">
             <p style={{'color' : '#db0000'}}>{props.wrongCredintialsMsg}</p>

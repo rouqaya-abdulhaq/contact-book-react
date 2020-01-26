@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
+import { BrowserRouter as Router,Redirect} from 'react-router-dom';
 import './App.css';
 import './paletteClasses.css';
+import Main from '../../components/main/main';
 import Header from '../../components/header/header';
-import ContactList from '../contact-list/contactList';
 import Footer from "../../components/footer/footer";
 import Palette from "../palette/palette";
-import SignUp from '../../components/signUp/signUp';
-import LogIn from '../../components/logIn/logIn';
-import LandingPage from '../../components/landing/landingPage';
+
 
 class App extends Component {
   constructor(){
@@ -37,7 +35,7 @@ class App extends Component {
     }
   }
 
-  isRegistered = (user) =>{
+  registered = (user) =>{
     if(user){
       this.setState({isRegistered : true, user : user});
     }
@@ -52,45 +50,30 @@ class App extends Component {
   
   render() {
     const classes = `App ${this.state.style}`;
+    //RECONSIDER WHERE SHOULDE THIS REDIRECTING OF THE ROUTES BE
     let dir = null;
     if(this.state.isRegistered){
       dir = <Redirect to="contact-List"/>
     }
+    
     return (
     <Router className="App">
       <div className={classes}>
+
         <Header isRegistered={this.state.isRegistered} 
           registrationHandler ={this.registrationHandler}
           unregisterHandler = {this.unregisterHandler}/>
-        <Switch>
-          <Route exact path="/" component={LandingPage}/>
-          <Route exact path="/contact-list" 
-             render={(props)=> <ContactList
-              firstName = {this.state.user.name}  contacts = {this.state.user.contacts}/>}
-            > 
-          </Route>
-          {dir}
-          <Route exact path="/sign-up" 
-            render={(props)=> <SignUp 
-                              registrationHandler={this.registrationHandler} 
-                              history ={props.history}
-                              register = {this.isRegistered}
-                              wrongCredintialsHandler={this.wrongCredintialsHandler}
-                              wrongCredintialsMsg={this.state.wrongCredintialsMsg}
-            isAuthed={true}/>}> 
-          </Route>
-          <Route exact path="/log-in" 
-            render={(props)=> <LogIn 
-                              registrationHandler={this.registrationHandler}
-                              history ={props.history}
-                              register = {this.isRegistered}
-                              isRegistered ={this.state.isRegistered}
-                              wrongCredintialsHandler={this.wrongCredintialsHandler}
-                              wrongCredintialsMsg={this.state.wrongCredintialsMsg}
-            isAuthed={true} />}>
-          </Route>
-        </Switch>
+
+          <Main registrationHandler={this.registrationHandler} 
+                register = {this.registered}
+                wrongCredintialsHandler={this.wrongCredintialsHandler}
+                wrongCredintialsMsg={this.state.wrongCredintialsMsg}
+                firstName = {this.state.user.name}
+                contacts = {this.state.user.contacts}
+                dir = {dir}/>
+
         <Footer author={"rouqaya abdulhaq"}/>
+
         <Palette changeStyle={this.changeStyleHandler}/>
       </div>
     </Router>

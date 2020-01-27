@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router,Redirect} from 'react-router-dom';
 import './App.css';
 import './paletteClasses.css';
-import Main from '../../components/main/main';
-import Header from '../../components/header/header';
-import Footer from "../../components/footer/footer";
+import Main from '../../components/layout/main/main';
+import Header from '../../components/layout/header/header';
+import Footer from "../../components/layout/footer/footer";
 import Palette from "../palette/palette";
 
 

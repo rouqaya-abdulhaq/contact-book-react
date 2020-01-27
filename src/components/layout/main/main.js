@@ -1,9 +1,9 @@
 import React from 'react';
 import {Switch, Route, /*Redirect*/} from 'react-router-dom';
-import ContactList from '../../containers/contact-list/contactList';
-import SignUp from '../signUp/signUp';
-import LogIn from '../logIn/logIn';
-import LandingPage from '../landing/landingPage';
+import ContactList from '../../../containers/contact-list/contactList';
+import SignUp from '../../signUp/signUp';
+import LogIn from '../../logIn/logIn';
+import LandingPage from '../../landing/landingPage';
 
 const main = (props) =>{
     return(

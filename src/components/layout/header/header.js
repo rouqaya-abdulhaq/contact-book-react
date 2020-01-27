@@ -1,7 +1,7 @@
 import React from 'react';
-import Logo from '../logo/logo';
+import Logo from '../../logo/logo';
 import './header.css'
-import RegistrationButtons from '../registrationButtons/registrationButtons';
+import RegistrationButtons from '../../registrationButtons/registrationButtons';
 
 const Header = (props)=>{
       const headerType = (props.isRegistered) ? "signOutHeader" : "signLogHeader";

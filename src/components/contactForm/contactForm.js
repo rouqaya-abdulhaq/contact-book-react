@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from '../input/input';
+import Input from '../UI/input/input';
 import '../../containers/contact-list/contactList.css';
 
 const ContactForm = (props) =>{

@@ -1,6 +1,6 @@
 import React from 'react';
-import PopUp from '../popUp/popUp';
-import '../../containers/contact-list/contactList.css';
+import PopUp from '../../popUp/popUp';
+import '../../../containers/contact-list/contactList.css';
 //only displays the last item in list
 //without the pop up it's working correctly ??
 const contactInfo = (props) =>{

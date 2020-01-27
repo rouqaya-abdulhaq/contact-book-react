@@ -1,6 +1,6 @@
 import React ,{Component} from 'react';
-import ContactName from '../../../components/contactInfo/contactName';
-import EditBtn from '../../../components/editButton/editButton';
+import ContactName from '../../../components/contact/contactInfo/contactName';
+import EditBtn from '../../../components/contact/editButton/editButton';
 import '../contactList.css';
 
 class Contact extends Component{

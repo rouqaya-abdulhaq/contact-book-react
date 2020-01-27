@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from './icon.png';
-import '../../containers/contact-list/contactList.css';
-import ContactPopUp from '../contactForm/contactPopUp/contactPopUp';
+import '../../../containers/contact-list/contactList.css';
+import ContactPopUp from '../../contactForm/contactPopUp/contactPopUp';
 
 const EditButton = (props)=>{
         return(

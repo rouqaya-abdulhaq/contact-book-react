@@ -16,9 +16,15 @@ const signUpForm = (props) =>{
                     password : password
                     })
               }).then((res)=>{
-                  return res.json();
+                if(res.ok){
+                  return res.json()
+                }else{
+                  props.wrongCredintialsHandler();
+                } 
               }).then((user)=>{
-                  props.register(user)
+                  if(user){
+                    props.register(user)
+                  }
               }).catch((err)=>{
                   console.log(err);
               })

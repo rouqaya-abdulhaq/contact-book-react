@@ -10,7 +10,6 @@ const LogIn = (props) => {
             <Form>
                 <LogInForm register={props.register} 
                 wrongCredintialsHandler={props.wrongCredintialsHandler}
-                registrationHandler={props.registrationHandler}
                 isRegistered={props.isRegistered}/>
             </Form>
         </main>

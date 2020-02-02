@@ -22,7 +22,6 @@ const logInForm = (props) => {
                     }
                 }).then((user)=>{
                     if(user){
-                        props.registrationHandler();
                         props.register(user)
                     }
                 }).catch((err)=>{

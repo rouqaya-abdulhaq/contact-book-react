@@ -23,19 +23,13 @@ class App extends Component {
     this.setState({wrongCredintialsMsg : "wrong credintilas"});
   }
 
-  registrationHandler = () =>{
-      if(!this.state.isRegistered){
-      this.setState({isRegistered : true});
-      }
-  }
-
   unregisterHandler = () =>{
     if(this.state.isRegistered){
       this.setState({isRegistered : false, user : {}});
     }
   }
 
-  registered = (user) =>{
+  registerHandler = (user) =>{
     if(user){
       this.setState({isRegistered : true, user : user});
     }
@@ -64,8 +58,7 @@ class App extends Component {
           registrationHandler ={this.registrationHandler}
           unregisterHandler = {this.unregisterHandler}/>
 
-          <Main registrationHandler={this.registrationHandler} 
-                register = {this.registered}
+          <Main register = {this.registerHandler}
                 wrongCredintialsHandler={this.wrongCredintialsHandler}
                 wrongCredintialsMsg={this.state.wrongCredintialsMsg}
                 firstName = {this.state.user.name}

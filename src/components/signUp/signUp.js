@@ -6,8 +6,7 @@ const SignUp = (props) =>{
     return(
         <main className="signLog">
             <Form>
-                <SignUpForm registrationHandler={props.registrationHandler} 
-                register={props.register}/>
+                <SignUpForm register={props.register}/>
             </Form>
         </main>
     );

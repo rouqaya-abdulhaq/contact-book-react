@@ -16,10 +16,8 @@ const signUpForm = (props) =>{
                     password : password
                     })
               }).then((res)=>{
-                      props.registrationHandler();
-                      return res.json();
+                  return res.json();
               }).then((user)=>{
-                  // console.log(user);
                   props.register(user)
               }).catch((err)=>{
                   console.log(err);

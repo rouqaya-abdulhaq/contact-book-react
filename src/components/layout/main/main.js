@@ -17,7 +17,6 @@ const main = (props) =>{
           {props.dir}
           <Route exact path="/sign-up" 
             render={(sideProps)=> <SignUp 
-                              registrationHandler={props.registrationHandler} 
                               history ={sideProps.history}
                               register = {props.register}
                               wrongCredintialsHandler={props.wrongCredintialsHandler}
@@ -26,7 +25,6 @@ const main = (props) =>{
           </Route>
           <Route exact path="/log-in" 
             render={(sideProps)=> <LogIn 
-                              registrationHandler={props.registrationHandler}
                               history ={sideProps.history}
                               register = {props.register}
                               wrongCredintialsHandler={props.wrongCredintialsHandler}

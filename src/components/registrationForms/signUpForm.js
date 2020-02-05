@@ -32,7 +32,6 @@ const signUpForm = (props) =>{
 
         return(
           <div>
-              {/* this has a user state for now it will be first + last name later */}
             <Input label={"user name"} id={"user"} 
               type={"text"} changeHandler={props.changehandler}/>
 
@@ -43,7 +42,7 @@ const signUpForm = (props) =>{
               type={"password"} changeHandler={props.changehandler}/>
 
                 <button className="submitButton" type="submit" 
-                  onClick={()=>fetchUser(props.email,props.password,props.user)}>
+                  onClick={()=>fetchUser(props.values.email,props.values.password,props.values.user)}>
                     Sign Up
                 </button>
           </div>

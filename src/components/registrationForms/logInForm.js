@@ -2,7 +2,6 @@ import React from 'react';
 import Input from '../UI/input/input';
 
 const logInForm = (props) => {
-
        const fetchUser = (email , password) =>{
             fetch("http://localhost:5000/signIn",{
                     method : 'POST',
@@ -37,7 +36,7 @@ const logInForm = (props) => {
                  <Input label={"password"} id="password" value={props.password}
                     type={"password"} changeHandler={props.changehandler}/>
                     <button className={"submitButton"} 
-                      onClick={()=>fetchUser(props.email,props.password)} 
+                      onClick={()=>fetchUser(props.values.email,props.values.password)} 
                       type="submit">
                         Log In
                     </button>

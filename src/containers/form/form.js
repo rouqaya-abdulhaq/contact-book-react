@@ -30,12 +30,6 @@ class Form extends Component{
     render(){
         const children = React.Children.map(this.props.children, child =>{
             return React.cloneElement(child, {
-                // firstname: this.state.firstName ,
-                // lastname : this.state.lastName,
-                // email : this.state.email,
-                // phonenumber :  this.state.phoneNumber,
-                // password : this.state.password,
-                // user : this.state.user,
                 changehandler : this.ChangeHandler, 
                 submitformhandler: this.submitFormHandler ,
                 values : this.state.values

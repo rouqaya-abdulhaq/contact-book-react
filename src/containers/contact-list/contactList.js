@@ -7,14 +7,8 @@ class ContactList extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            contacts : []  ,
+            contacts : this.props.contacts ? this.props.contacts : []  ,
             addClicked : false,
-        }
-    }
-
-    componentDidUpdate(prevProps, prevState){
-        if(this.props.contacts !== prevProps.contacts){
-            this.setState({contacts : this.props.contacts})
         }
     }
 

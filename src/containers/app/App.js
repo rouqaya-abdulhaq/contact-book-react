@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router,Redirect} from 'react-router-dom';
+import { BrowserRouter as Router} from 'react-router-dom';
 import './App.css';
 import './paletteClasses.css';
 import Main from '../../components/layout/main/main';
@@ -44,11 +44,6 @@ class App extends Component {
   
   render() {
     const classes = `App ${this.state.style}`;
-    //RECONSIDER WHERE SHOULDE THIS REDIRECTING OF THE ROUTES BE
-    let dir = null;
-    if(this.state.isRegistered){
-      dir = <Redirect to="contact-List"/>
-    }
     
     return (
     <Router className="App">
@@ -63,7 +58,7 @@ class App extends Component {
                 wrongCredintialsMsg={this.state.wrongCredintialsMsg}
                 firstName = {this.state.user.name}
                 contacts = {this.state.user.contacts}
-                dir = {dir}/>
+                isRegistered = {this.state.isRegistered}/>
 
         <Footer author={"rouqaya abdulhaq"}/>
 

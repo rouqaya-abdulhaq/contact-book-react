@@ -1,11 +1,17 @@
 import React from 'react';
-import {Switch, Route, /*Redirect*/} from 'react-router-dom';
+import {Switch, Route, Redirect} from 'react-router-dom';
 import ContactList from '../../../containers/contact-list/contactList';
 import SignUp from '../../signUp/signUp';
 import LogIn from '../../logIn/logIn';
 import LandingPage from '../../landing/landingPage';
 
 const main = (props) =>{
+  
+    let dir = null;
+    if(props.isRegistered){
+      dir = <Redirect to="contact-List"/>
+    }
+
     return(
         <Switch>
           <Route exact path="/" component={LandingPage}/>
@@ -14,7 +20,7 @@ const main = (props) =>{
               firstName = {props.firstName}  contacts = {props.contacts}/>}
             > 
           </Route>
-          {props.dir}
+          {dir}
           <Route exact path="/sign-up" 
             render={(sideProps)=> <SignUp 
                               history ={sideProps.history}

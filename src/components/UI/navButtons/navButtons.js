@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link } from 'react-router-dom';
 
-const  Registration = (props) => { 
+const  navButtons = (props) => { 
       if(props.isRegistered === true){
         return (
           <div className="signOutButton">
@@ -28,4 +28,4 @@ const  Registration = (props) => {
       );
     }
 
-export default Registration;
+export default navButtons;

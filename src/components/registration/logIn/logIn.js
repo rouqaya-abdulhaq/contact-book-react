@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from '../../containers/form/form';
+import Form from '../../../containers/form/form';
 import LogInForm from '../registrationForms/logInForm';
 
         

@@ -1,7 +1,7 @@
 import React from 'react';
 import "./contactList.css";
 import Contact from './contact/contact';
-import ContactPopUp from '../../components/contactForm/contactPopUp/contactPopUp';
+import ContactPopUp from '../../components/contact/contactFormPopUp/contactPopUp';
 
 class ContactList extends React.Component{
     constructor(props){

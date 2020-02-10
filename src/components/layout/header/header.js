@@ -1,7 +1,7 @@
 import React from 'react';
-import Logo from '../../logo/logo';
+import Logo from '../../UI/logo/logo';
 import './header.css'
-import RegistrationButtons from '../../registrationButtons/registrationButtons';
+import NavButtons from '../../UI/navButtons/navButtons';
 
 const Header = (props)=>{
       const headerType = (props.isRegistered) ? "signOutHeader" : "signLogHeader";
@@ -9,7 +9,7 @@ const Header = (props)=>{
          <header className="header">
          <div className={headerType}>
            <Logo unregisterHandler={props.unregisterHandler}/>
-           <RegistrationButtons
+           <NavButtons
            unregisterHandler={props.unregisterHandler}
            isRegistered={props.isRegistered} />
          </div>

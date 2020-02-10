@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from '../UI/input/input';
+import Input from '../../UI/input/input';
 
 const logInForm = (props) => {
        const fetchUser = (email , password) =>{

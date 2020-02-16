@@ -32,17 +32,17 @@ const signUpForm = (props) =>{
 
         return(
           <div>
-            <Input label={"user name"} id={"user"} 
+            <Input label={"user name"} id={"user"} inputType={"name"}
               type={"text"} changeHandler={props.changehandler}/>
 
-            <Input label={"email"} id="email" value={props.email}
+            <Input label={"email"} id="email" inputType={"email"} value={props.email}
               type ={"email"} changeHandler={props.changehandler}/>
 
-            <Input label={"password"} id="password" value={props.password}
+            <Input label={"password"} id="password" inputType={"name"} value={props.password}
               type={"password"} changeHandler={props.changehandler}/>
 
                 <button className="submitButton" type="submit" 
-                  onClick={()=>fetchUser(props.values.email,props.values.password,props.values.user)}>
+                  onClick={()=>fetchUser(props.values.email.value,props.values.password.value,props.values.user.value)}>
                     Sign Up
                 </button>
           </div>

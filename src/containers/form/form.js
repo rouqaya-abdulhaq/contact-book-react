@@ -16,14 +16,19 @@ class Form extends Component{
         this.setState(this.baseState);
     } 
 
-    ChangeHandler = (state, newValue)=>{
+    
+    ChangeHandler = (state, newValue, isValid)=>{
         this.setState(prevState =>({
             values : {
                 ...prevState.values,
-                [state] : newValue
+                [state] : {
+                    value : newValue, 
+                    isValid : isValid
+                }
             }
         })
         );
+        console.log(this.state.values);
     }
 
 

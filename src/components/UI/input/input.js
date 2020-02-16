@@ -3,8 +3,33 @@ import './input.css';
 
 
 const Input = (props)=>{
+
+    const checkvalidIiputhandler = (InputType, inputValue) =>{
+        switch(InputType) {
+            case "name" :
+                if(inputValue.match(/^[A-Za-z]+$/)){
+                    return true;
+                }
+                return false;
+            case "email" :
+                if(inputValue.match(/\S+@\S+\.\S+/)){
+                    return true;
+                }
+                return false;
+            case "phoneNumber" :
+                if(inputValue.match(/^[(]?[0-9]{3}[)]?[-\s]?[0-9]{3}[-\s]?[0-9]{4,6}$/)){
+                    return true;
+                }
+                return false;
+            default :
+                return false;
+        }
+    }
+
     const updateParentState=(event)=>{
-        props.changeHandler(props.id, event.target.value);
+        const isValid = checkvalidIiputhandler(props.inputType,event.target.value);
+        // console.log(isValid);
+        props.changeHandler(props.id, event.target.value,isValid);
     }
 
     return(

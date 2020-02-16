@@ -29,14 +29,14 @@ const logInForm = (props) => {
         }
         return(
                 <div>
-                 <Input label={"email"} id="email" value={props.email}
+                 <Input label={"email"} id="email" inputType={"email"} value={props.email}
                      type ={"email"} changeHandler={props.changehandler}/>
 
 
-                 <Input label={"password"} id="password" value={props.password}
+                 <Input label={"password"} id="password" inputType={"name"} value={props.password}
                     type={"password"} changeHandler={props.changehandler}/>
                     <button className={"submitButton"} 
-                      onClick={()=>fetchUser(props.values.email,props.values.password)} 
+                      onClick={()=>fetchUser(props.values.email.value,props.values.password.value)} 
                       type="submit">
                         Log In
                     </button>

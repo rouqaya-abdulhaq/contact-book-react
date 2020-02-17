@@ -20,10 +20,10 @@ class ContactList extends React.Component{
                 'Content-Type': 'application/json'
             },
             body : JSON.stringify({
-                firstName : newContact.firstName,
-                lastName : newContact.lastName,
-                email : newContact.email,
-                phoneNumber : newContact.phoneNumber
+                firstName : newContact.firstName.value,
+                lastName : newContact.lastName.value,
+                email : newContact.email.value,
+                phoneNumber : newContact.phoneNumber.value
             })
             }).then((res)=>{
                 return res.json();
@@ -50,10 +50,10 @@ class ContactList extends React.Component{
                 'Content-Type': 'application/json'
             },
             body : JSON.stringify({
-                firstName : newContact.firstName,
-                lastName : newContact.lastName,
-                email : newContact.email,
-                phoneNumber : newContact.phoneNumber,
+                firstName : newContact.firstName.value,
+                lastName : newContact.lastName.value,
+                email : newContact.email.value,
+                phoneNumber : newContact.phoneNumber.value,
                 index : index
             })
             }).then((res)=>{

@@ -28,7 +28,6 @@ class Form extends Component{
             }
         })
         );
-        console.log(this.state.values);
     }
 
 

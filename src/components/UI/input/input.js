@@ -28,14 +28,13 @@ const Input = (props)=>{
 
     const updateParentState=(event)=>{
         const isValid = checkvalidIiputhandler(props.inputType,event.target.value);
-        // console.log(isValid);
         props.changeHandler(props.id, event.target.value,isValid);
     }
 
     return(
         <div className="inputWrapper">
             <label className="label">{props.label} : </label>
-            <input type={props.type} value={props.value} className="inputBox" 
+            <input type={props.type} value={props.value} className={`inputBox ${props.isValid ? "" : "wrongCredintials"}`} 
             onChange={updateParentState} 
              required></input>
         </div>

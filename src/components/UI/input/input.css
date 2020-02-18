@@ -9,17 +9,19 @@
    outline: none;
    font-family: "Comic Sans MS", cursive, sans-serif;	
 }
-.inputBox:focus{
-    border-bottom-color: green;
-}
+
 .label{
     margin-right: 2vw; 
     margin-left: 2vw;
     font-size: 1.5vw; 
 }
 
+.rightCredintials{
+    border-bottom-color: green;
+}
+
 .wrongCredintials{
-    border-bottom-color: salmon;
+    border-bottom-color: rgb(214, 39, 8);
 }
 
 /*-------------------------------------------------------------------------*/

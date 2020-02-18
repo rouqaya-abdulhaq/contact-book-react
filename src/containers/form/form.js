@@ -23,7 +23,8 @@ class Form extends Component{
                 ...prevState.values,
                 [state] : {
                     value : newValue, 
-                    isValid : isValid
+                    isValid : isValid,
+                    hasChanged : true,
                 }
             }
         })

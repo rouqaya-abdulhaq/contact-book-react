@@ -31,10 +31,12 @@ const Input = (props)=>{
         props.changeHandler(props.id, event.target.value,isValid);
     }
 
+    let styleClass = props.hasChanged ? props.isValid? "rightCredintials" : "wrongCredintials" : ""
+
     return(
         <div className="inputWrapper">
             <label className="label">{props.label} : </label>
-            <input type={props.type} value={props.value} className={`inputBox ${props.isValid ? "" : "wrongCredintials"}`} 
+            <input type={props.type} value={props.value} className={"inputBox " + styleClass} 
             onChange={updateParentState} 
              required></input>
         </div>

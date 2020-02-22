@@ -14,13 +14,14 @@ class App extends Component {
     this.state = {
       style : 'default',
       isRegistered: false,
-      wrongCredintialsMsg : null,
+      serverErrMsg : null,
       user : {}
     }
   }
 
-  wrongCredintialsHandler = () =>{
-    this.setState({wrongCredintialsMsg : "wrong credintilas"});
+  serverErrHandler = (msg) =>{
+    console.log(msg);
+    this.setState({serverErrMsg : msg});
   }
 
   unregisterHandler = () =>{
@@ -54,8 +55,8 @@ class App extends Component {
           unregisterHandler = {this.unregisterHandler}/>
 
           <Main register = {this.registerHandler}
-                wrongCredintialsHandler={this.wrongCredintialsHandler}
-                wrongCredintialsMsg={this.state.wrongCredintialsMsg}
+                serverErrHandler={this.serverErrHandler}
+                serverErrMsg={this.state.serverErrMsg}
                 firstName = {this.state.user.name}
                 contacts = {this.state.user.contacts}
                 isRegistered = {this.state.isRegistered}/>

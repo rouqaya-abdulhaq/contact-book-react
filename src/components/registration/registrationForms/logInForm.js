@@ -17,14 +17,14 @@ const logInForm = (props) => {
                     if(res.ok){
                         return res.json()
                     }else{
-                        props.wrongCredintialsHandler();
+                        props.serverErrHandler("USER NOT FOUND");
                     }
                 }).then((user)=>{
                     if(user){
                         props.register(user)
                     }
                 }).catch((err)=>{
-                    //
+                    console.log(err);
                 })
         }
 

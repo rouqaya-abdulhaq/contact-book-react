@@ -25,16 +25,16 @@ const main = (props) =>{
             render={(sideProps)=> <SignUp 
                               history ={sideProps.history}
                               register = {props.register}
-                              wrongCredintialsHandler={props.wrongCredintialsHandler}
-                              wrongCredintialsMsg={props.wrongCredintialsMsg}
+                              serverErrHandler={props.serverErrHandler}
+                              serverErrMsg={props.serverErrMsg}
             isAuthed={true}/>}> 
           </Route>
           <Route exact path="/log-in" 
             render={(sideProps)=> <LogIn 
                               history ={sideProps.history}
                               register = {props.register}
-                              wrongCredintialsHandler={props.wrongCredintialsHandler}
-                              wrongCredintialsMsg={props.wrongCredintialsMsg}
+                              serverErrHandler={props.serverErrHandler}
+                              serverErrMsg={props.serverErrMsg}
             isAuthed={true} />}>
           </Route>
         </Switch>

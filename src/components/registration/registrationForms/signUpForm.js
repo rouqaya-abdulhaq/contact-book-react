@@ -19,7 +19,7 @@ const signUpForm = (props) =>{
                 if(res.ok){
                   return res.json()
                 }else{
-                  props.wrongCredintialsHandler();
+                  props.serverErrHandler("INVALID INPUT");
                 } 
               }).then((user)=>{
                   if(user){

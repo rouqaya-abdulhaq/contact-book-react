@@ -28,24 +28,38 @@ const logInForm = (props) => {
                 })
         }
 
-        const validEmail = props.values.email === undefined ? true : props.values.email.isValid;
-        const emailChanged = props.values.email === undefined ? false : props.values.email.hasChanged;
+        const email = props.values.email ? {
+            value :  props.values.email.value,
+            isValid : props.values.email.isValid,
+            changed : true
+          } : {
+            value :  "",
+            isValid : true,
+            changed : false
+        }
 
-        const validPassword = props.values.password === undefined ? true : props.values.password.isValid;
-        const passwordChanged = props.values.password === undefined ? false : props.values.password.hasChanged;
+        const password = props.values.password ? {
+            value :  props.values.password.value,
+            isValid : props.values.password.isValid,
+            changed : true
+          } : {
+            value :  "",
+            isValid : true,
+            changed : false
+        }
 
         return(
                 <div>
                  <Input label={"email"} id="email" inputType={"email"} value={props.email}
                      type ={"email"} changeHandler={props.changehandler}
-                     isValid={validEmail} hasChanged={emailChanged}/>
+                     isValid={email.isValid} hasChanged={email.changed}/>
 
 
                  <Input label={"password"} id="password" inputType={"name"} value={props.password}
                     type={"password"} changeHandler={props.changehandler}
-                    isValid={validPassword} hasChanged={passwordChanged}/>
+                    isValid={password.isValid} hasChanged={password.changed}/>
                     <button className={"submitButton"} 
-                      onClick={()=>fetchUser(props.values.email.value,props.values.password.value)} 
+                      onClick={()=>fetchUser(email.value,password.value)} 
                       type="submit">
                         Log In
                     </button>

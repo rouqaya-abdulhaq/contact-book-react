@@ -11,6 +11,18 @@ class Form extends Component{
         this.baseState = this.state;
     }
 
+    assignInput = (input) =>{
+        return input ? {
+            value : input.value,
+            isValid : input.isValid,
+            changed : true
+        } : {
+            value :  "",
+            isValid : true,
+            changed : false
+        }
+    }
+
     submitFormHandler = ()=>{
         this.props.onSubmit(this.state.values);
         this.setState(this.baseState);
@@ -37,6 +49,7 @@ class Form extends Component{
             return React.cloneElement(child, {
                 changehandler : this.ChangeHandler, 
                 submitformhandler: this.submitFormHandler ,
+                assigninput : this.assignInput,
                 values : this.state.values
             });
         });

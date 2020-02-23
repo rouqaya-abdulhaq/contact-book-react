@@ -30,35 +30,10 @@ const signUpForm = (props) =>{
               })
       }
 
-        const email = props.values.email ? {
-          value :  props.values.email.value,
-          isValid : props.values.email.isValid,
-          changed : true
-        } : {
-          value :  "",
-          isValid : true,
-          changed : false
-        }
+      const email = props.assigninput(props.values.email);
+      const password = props.assigninput(props.values.password);
+      const user = props.assigninput(props.values.user);
 
-        const password = props.values.password ? {
-          value :  props.values.password.value,
-          isValid : props.values.password.isValid,
-          changed : true
-        } : {
-          value :  "",
-          isValid : true,
-          changed : false
-        }
-
-        const user = props.values.user ? {
-          value :  props.values.user.value,
-          isValid : props.values.user.isValid,
-          changed : true
-        } : {
-          value :  "",
-          isValid : true,
-          changed : false
-        }
 
         return(
           <div>

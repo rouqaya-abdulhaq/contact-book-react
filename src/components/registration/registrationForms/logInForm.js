@@ -1,18 +1,22 @@
 import React from 'react';
 import Input from '../../UI/input/input';
+import SubmitBtn from '../../UI/submitBtn/submitBtn';
 
 const logInForm = (props) => {
 
         const email = props.assigninput(props.values.email);
         const password = props.assigninput(props.values.password);
 
-        const registerUser = (email , password) =>{
-            if(email.isValid && password.isValid && email.hasChanged && password.hasChanged){
-            fetchUser(email.value,password.value);
-            }else{
-            props.serverErrHandler("INVALID INPUT");
-            }
-        }
+        // const registerUser = (email , password) =>{
+        //     console.log(email);
+        //     console.log(password);
+        //     if(email.isValid && password.isValid && email.hasChanged && password.hasChanged){
+        //         console.log("fetching")
+        //         fetchUser(email.value,password.value);
+        //     }else{
+        //         props.serverErrHandler("INVALID INPUT");
+        //     }
+        // }
 
        const fetchUser = (email , password) =>{
             fetch("http://localhost:5000/signIn",{
@@ -50,11 +54,15 @@ const logInForm = (props) => {
                  <Input label={"password"} id="password" inputType={"name"} value={props.password}
                     type={"password"} changeHandler={props.changehandler}
                     isValid={password.isValid} hasChanged={password.changed}/>
-                    <button className={"submitButton"} 
+                    {/* <button className={"submitButton"} 
                       onClick={()=>registerUser(email,password)} 
                       type="submit">
                         Log In
-                    </button>
+                    </button> */}
+                    <SubmitBtn value={"Log In"} 
+                    clickHandler={fetchUser}
+                    infoArr={[email,password]}
+                    />
                 </div> 
         );
 }

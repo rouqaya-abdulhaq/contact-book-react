@@ -2,6 +2,18 @@ import React from 'react';
 import Input from '../../UI/input/input';
 
 const logInForm = (props) => {
+
+        const email = props.assigninput(props.values.email);
+        const password = props.assigninput(props.values.password);
+
+        const registerUser = (email , password) =>{
+            if(email.isValid && password.isValid && email.hasChanged && password.hasChanged){
+            fetchUser(email.value,password.value);
+            }else{
+            props.serverErrHandler("INVALID INPUT");
+            }
+        }
+
        const fetchUser = (email , password) =>{
             fetch("http://localhost:5000/signIn",{
                     method : 'POST',
@@ -28,11 +40,6 @@ const logInForm = (props) => {
                 })
         }
 
-
-        const email = props.assigninput(props.values.email);
-        const password = props.assigninput(props.values.password);
-
-
         return(
                 <div>
                  <Input label={"email"} id="email" inputType={"email"} value={props.email}
@@ -44,7 +51,7 @@ const logInForm = (props) => {
                     type={"password"} changeHandler={props.changehandler}
                     isValid={password.isValid} hasChanged={password.changed}/>
                     <button className={"submitButton"} 
-                      onClick={()=>fetchUser(email.value,password.value)} 
+                      onClick={()=>registerUser(email,password)} 
                       type="submit">
                         Log In
                     </button>

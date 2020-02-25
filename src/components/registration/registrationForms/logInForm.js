@@ -7,17 +7,6 @@ const logInForm = (props) => {
         const email = props.assigninput(props.values.email);
         const password = props.assigninput(props.values.password);
 
-        // const registerUser = (email , password) =>{
-        //     console.log(email);
-        //     console.log(password);
-        //     if(email.isValid && password.isValid && email.hasChanged && password.hasChanged){
-        //         console.log("fetching")
-        //         fetchUser(email.value,password.value);
-        //     }else{
-        //         props.serverErrHandler("INVALID INPUT");
-        //     }
-        // }
-
        const fetchUser = (email , password) =>{
             fetch("http://localhost:5000/signIn",{
                     method : 'POST',
@@ -45,25 +34,21 @@ const logInForm = (props) => {
         }
 
         return(
-                <div>
-                 <Input label={"email"} id="email" inputType={"email"} value={props.email}
-                     type ={"email"} changeHandler={props.changehandler}
-                     isValid={email.isValid} hasChanged={email.changed}/>
+            <div>
+                <Input label={"email"} id="email" inputType={"email"} value={props.email}
+                    type ={"email"} changeHandler={props.changehandler}
+                    isValid={email.isValid} hasChanged={email.changed}/>
 
 
-                 <Input label={"password"} id="password" inputType={"name"} value={props.password}
+                <Input label={"password"} id="password" inputType={"name"} value={props.password}
                     type={"password"} changeHandler={props.changehandler}
                     isValid={password.isValid} hasChanged={password.changed}/>
-                    {/* <button className={"submitButton"} 
-                      onClick={()=>registerUser(email,password)} 
-                      type="submit">
-                        Log In
-                    </button> */}
-                    <SubmitBtn value={"Log In"} 
-                    clickHandler={fetchUser}
-                    infoArr={[email,password]}
-                    />
-                </div> 
+                
+                <SubmitBtn value={"Log In"} 
+                clickHandler={()=>fetchUser(email.value,password.value)}
+                infoArr={[email,password]}
+                />
+            </div> 
         );
 }
 

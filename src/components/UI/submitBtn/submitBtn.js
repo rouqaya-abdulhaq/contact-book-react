@@ -3,22 +3,31 @@ import './submitBtn.css';
 
 const SubmitBtn = (props) =>{
 
+    const validityArr = props.infoArr.map((infoObj)=>{
+        if(infoObj.isValid === false && infoObj.changed === true){
+            return false;
+        }else{
+            return true;
+        }
+    });
+
+    let btnColor = "";
+
+    for (const value in validityArr){
+        if (validityArr[value] === false){
+            btnColor = "disapled";
+            break;
+        }
+    }
+
     const submitInfo = () =>{
-        props.infoArr.map((infoObj)=>{
-            if(!infoObj.isValid && infoObj.hasChanged){
-                //TURN THE BUTTON RED
-                //DISPLAY INVALID MESSAGE
-                return false;
-            }else{
-                //TURN BUTTON GREEN 
-                //PREFORM SUBMIT HANDLER
-                return true;
-            }
-        });
+        if(btnColor !== "disapled"){
+            props.clickHandler()
+        }
     }
 
     return(
-        <button className={"submitButton " + props.styleClass} onClick={submitInfo} 
+        <button className={"submitButton " + btnColor} onClick={submitInfo} 
         type="submit">
             {props.value}
         </button>

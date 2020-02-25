@@ -8,6 +8,10 @@
     background: limegreen;
 }
 
+.disapled {
+    background-color: tomato !important;
+}
+
 /*TABLET QUERIES*/
 /*TABLET*/
 @media (max-width : 1024px ) and (min-width : 768px) {

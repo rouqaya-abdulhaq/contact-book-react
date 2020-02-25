@@ -1,20 +1,13 @@
 import React from 'react';
 import Input from '../../UI/input/input';
+import SubmitBtn from '../../UI/submitBtn/submitBtn';
+
 
 const signUpForm = (props) =>{
 
         const email = props.assigninput(props.values.email);
         const password = props.assigninput(props.values.password);
         const user = props.assigninput(props.values.user);
-
-        const registerUser = (email , password, userName) =>{
-          if(email.isValid && password.isValid && userName.isValid
-            && email.hasChanged && password.hasChanged && userName.hasChanged ){
-            fetchUser(email.value,password.value,userName.value);
-          }else{
-            props.serverErrHandler("INVALID INPUT");
-          }
-        }
 
         const fetchUser = (email , password, userName) =>{
           fetch("http://localhost:5000/signUp",{
@@ -57,10 +50,9 @@ const signUpForm = (props) =>{
             type={"password"} changeHandler={props.changehandler}
             isValid={password.isValid} hasChanged={password.changed}/>
 
-              <button className="submitButton" type="submit" 
-                onClick={()=>registerUser(email,password,user)}>
-                  Sign Up
-              </button>
+          <SubmitBtn value={"Sign Up"} 
+            clickHandler={()=>fetchUser(email.value,password.value,user.value)}
+            infoArr={[email,password,user]}/>
         </div>
       );
 }

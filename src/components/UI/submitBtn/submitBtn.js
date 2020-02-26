@@ -4,10 +4,10 @@ import './submitBtn.css';
 const SubmitBtn = (props) =>{
 
     const validityArr = props.infoArr.map((infoObj)=>{
-        if(infoObj.isValid === false && infoObj.changed === true){
-            return false;
-        }else{
+        if(infoObj.isValid === true && infoObj.changed === true){
             return true;
+        }else{
+            return false;
         }
     });
 
@@ -17,11 +17,13 @@ const SubmitBtn = (props) =>{
         if (validityArr[value] === false){
             btnColor = "disapled";
             break;
+        }else{
+            btnColor = "enabled";
         }
     }
 
     const submitInfo = () =>{
-        if(btnColor !== "disapled"){
+        if(btnColor !== "disapled" && btnColor !== ""){
             props.clickHandler()
         }
     }

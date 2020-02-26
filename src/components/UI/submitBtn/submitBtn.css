@@ -9,7 +9,12 @@
 }
 
 .disapled {
-    background-color: tomato !important;
+    background-color: rgb(134, 134, 134) !important;
+    color: rgb(168, 168, 168);
+}
+
+.disapled:focus , .disapled:hover{
+    background: rgb(206, 14, 14) !important; 
 }
 
 /*TABLET QUERIES*/

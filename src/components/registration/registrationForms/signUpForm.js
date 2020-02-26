@@ -25,7 +25,7 @@ const signUpForm = (props) =>{
                 if(res.ok){
                   return res.json()
                 }else{
-                  props.serverErrHandler("INVALID INPUT");
+                  props.invalidMsgHandler("INVALID INPUT");
                 } 
               }).then((user)=>{
                   if(user){

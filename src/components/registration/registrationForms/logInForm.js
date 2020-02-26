@@ -22,7 +22,7 @@ const logInForm = (props) => {
                     if(res.ok){
                         return res.json()
                     }else{
-                        props.serverErrHandler("USER NOT FOUND");
+                        props.invalidMsgHandler("USER NOT FOUND");
                     }
                 }).then((user)=>{
                     if(user){

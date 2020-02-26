@@ -6,10 +6,10 @@ import LogInForm from '../registrationForms/logInForm';
 const LogIn = (props) => {
     return(
         <main className="signLog">
-            <p style={{'color' : '#db0000'}}>{props.serverErrMsg}</p>
+            <p style={{'color' : '#db0000'}}>{props.invalidMsg}</p>
             <Form>
                 <LogInForm register={props.register} 
-                serverErrHandler={props.serverErrHandler}
+                invalidMsgHandler={props.invalidMsgHandler}
                 isRegistered={props.isRegistered}/>
             </Form>
         </main>

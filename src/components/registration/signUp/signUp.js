@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from '../../../containers/form/form';
+import Form from '../../../containers/HOC/form/form';
 import SignUpForm from '../registrationForms/signUpForm';
 
 const SignUp = (props) =>{

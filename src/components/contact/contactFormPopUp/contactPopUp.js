@@ -1,6 +1,6 @@
 import React from 'react';
 import PopUp from '../../HOC/popUp/popUp';
-import Form from '../../../containers/form/form';
+import Form from '../../../containers/HOC/form/form';
 import ContactForm from './contactForm';
 import '../../../containers/contact-list/contactList.css';
 

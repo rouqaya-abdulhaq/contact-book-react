@@ -21,6 +21,11 @@ const Input = (props)=>{
                     return true;
                 }
                 return false;
+            case "password" :
+                if(inputValue.match(/^\w+$/)){
+                    return true;
+                }
+                return false;
             default :
                 return false;
         }

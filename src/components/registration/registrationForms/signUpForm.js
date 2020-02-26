@@ -46,7 +46,7 @@ const signUpForm = (props) =>{
             type ={"email"} changeHandler={props.changehandler}
             isValid={email.isValid} hasChanged={email.changed}/>
 
-          <Input label={"password"} id="password" inputType={"name"} value={props.password}
+          <Input label={"password"} id="password" inputType={"password"} value={props.password}
             type={"password"} changeHandler={props.changehandler}
             isValid={password.isValid} hasChanged={password.changed}/>
 

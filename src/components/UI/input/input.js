@@ -4,7 +4,7 @@ import './input.css';
 
 const Input = (props)=>{
 
-    const checkvalidIiputhandler = (InputType, inputValue) =>{
+    const checkValidInputHandler = (InputType, inputValue) =>{
         switch(InputType) {
             case "name" :
                 if(inputValue.match(/^[A-Za-z]+$/)){
@@ -27,7 +27,7 @@ const Input = (props)=>{
     }
 
     const updateParentState=(event)=>{
-        const isValid = checkvalidIiputhandler(props.inputType,event.target.value);
+        const isValid = checkValidInputHandler(props.inputType,event.target.value);
         props.changeHandler(props.id, event.target.value,isValid);
     }
 

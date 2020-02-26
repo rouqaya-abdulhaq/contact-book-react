@@ -4,44 +4,35 @@ import '../../../containers/contact-list/contactList.css';
 
 const ContactForm = (props) =>{
 
-    const firstName = props.values.firstName === undefined ? '' : props.values.firstName.value;
-    const lastName = props.values.lastName === undefined ? '' : props.values.lastName.value;
-    const email = props.values.email === undefined ? '' : props.values.email.value;
-    const phoneNumber = props.values.phoneNumber === undefined ? '' : props.values.phoneNumber.value;
-
-    const validFirstName = props.values.firstName === undefined ? true : props.values.firstName.isValid;
-    const validLastName = props.values.lastName === undefined ? true : props.values.lastName.isValid;
-    const validEmail = props.values.email === undefined ? true : props.values.email.isValid;
-    const validPhoneNumber = props.values.phoneNumber === undefined ? true : props.values.phoneNumber.isValid;
-
-    const firstNameChanged = props.values.firstName === undefined ? false : props.values.firstName.hasChanged;
-    const lastNameChanged = props.values.lastName === undefined ? false : props.values.lastName.hasChanged;
-    const emailChanged = props.values.email === undefined ? false : props.values.email.hasChanged;
-    const phoneNumberChanged = props.values.phoneNumber === undefined ? false : props.values.phoneNumber.hasChanged;
+    const firstName = props.assigninput(props.values.firstName);
+    const lastName = props.assigninput(props.values.lastName);
+    const email = props.assigninput(props.values.email);
+    const phoneNumber = props.assigninput(props.values.phoneNumber);
 
     return(
         <div>
             {props.children}
             <Input label={"first name"} id="firstName" inputType={"name"}
-            value={firstName} isValid={validFirstName} hasChanged ={firstNameChanged}
+              value={firstName.value} isValid={firstName.isValid} hasChanged ={firstName.changed}
               type={"text"} changeHandler={props.changehandler}/>
 
-              <Input label={"last name"} id="lastName" inputType={"name"} 
-              value={lastName} isValid={validLastName} hasChanged={lastNameChanged}
+            <Input label={"last name"} id="lastName" inputType={"name"} 
+              value={lastName.value} isValid={lastName.isValid} hasChanged={lastName.changed}
               type={"text"} changeHandler={props.changehandler}/>
 
-              <Input label={"email"} id="email" inputType={"email"}
-              value={email} isValid={validEmail} hasChanged={emailChanged}
+            <Input label={"email"} id="email" inputType={"email"}
+              value={email.value} isValid={email.isValid} hasChanged={email.changed}
               type={"email"} changeHandler={props.changehandler}/>
 
-              <Input label={"phone number"} id="phoneNumber" type={"tel"} inputType={"phoneNumber"} 
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value={phoneNumber} hasChanged={phoneNumberChanged}
-              isValid={validPhoneNumber}
+            <Input label={"phone number"} id="phoneNumber" type={"tel"} inputType={"phoneNumber"} 
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value={phoneNumber.value} 
+              hasChanged={phoneNumber.changed}
+              isValid={phoneNumber.isValid}
               changeHandler={props.changehandler}/>
 
-              <button className="submitButton" onClick={props.submitformhandler}>
-                  submit
-              </button>
+            <button className="submitButton" onClick={props.submitformhandler}>
+                submit
+            </button>
         </div>
     );
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import Input from '../../UI/input/input';
+import SubmitBtn from '../../UI/submitBtn/submitBtn'; 
 import '../../../containers/contact-list/contactList.css';
 
 const ContactForm = (props) =>{
@@ -30,9 +31,9 @@ const ContactForm = (props) =>{
               isValid={phoneNumber.isValid}
               changeHandler={props.changehandler}/>
 
-            <button className="submitButton" onClick={props.submitformhandler}>
-                submit
-            </button>
+            <SubmitBtn value={"Submit"}
+              clickHandler={props.submitformhandler}
+              infoArr={[firstName,lastName,email,phoneNumber]}/>
         </div>
     );
 

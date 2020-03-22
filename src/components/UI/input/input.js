@@ -3,7 +3,7 @@ import './input.css';
 
 
 const Input = (props)=>{
-
+    
     const checkValidInputHandler = (InputType, inputValue) =>{
         switch(InputType) {
             case "name" :

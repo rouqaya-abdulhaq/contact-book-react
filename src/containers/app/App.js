@@ -6,7 +6,6 @@ import Main from '../../components/layout/main/main';
 import Header from '../../components/layout/header/header';
 import Footer from "../../components/layout/footer/footer";
 import Palette from "../palette/palette";
-import ErrorHandler from '../HOC/errorHandler/errorHandler';
 
 
 class App extends Component {
@@ -45,11 +44,9 @@ class App extends Component {
   
   render() {
     const classes = `App ${this.state.style}`;
-    
     return (
     <Router className="App">
       <div className={classes}>
-      <ErrorHandler>
         <Header isRegistered={this.state.isRegistered} 
           registrationHandler ={this.registrationHandler}
           unregisterHandler = {this.unregisterHandler}/>
@@ -64,7 +61,6 @@ class App extends Component {
         <Footer author={"rouqaya abdulhaq"}/>
 
         <Palette changeStyle={this.changeStyleHandler}/>
-        </ErrorHandler>
       </div>
     </Router>
     );

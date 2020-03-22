@@ -9,11 +9,15 @@ class ErrorHandler extends React.Component {
     }
 
     componentDidCatch(error,info){
+        console.log("error");
         this.setState({errorFound : true});
     }
 
     render(){
-        return this.state.errorFound? <h1>ERRRRROR!</h1> : this.props.children;
+        if(this.state.errorFound){
+            return  <h1>ERRRRROR!</h1>
+        }
+        return this.props.children;
     }
 }
 

@@ -4,6 +4,7 @@ import Contact from './contact/contact';
 import ContactPopUp from '../../components/contact/contactFormPopUp/contactPopUp';
 
 class ContactList extends React.Component{
+
     constructor(props){
         super(props);
         this.state = {

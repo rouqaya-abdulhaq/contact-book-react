@@ -1,0 +1,13 @@
+.screen{
+    height: 100vh;
+    width: 100vw;
+    background: rgb(92, 92, 92,0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.msg{
+    color: black;
+}

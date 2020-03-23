@@ -1,4 +1,5 @@
 import React from 'react';
+import TransScreen from '../../../components/HOC/transparentScreen/transparentScreen';
 
 class ErrorHandler extends React.Component {
     constructor(props){
@@ -13,9 +14,14 @@ class ErrorHandler extends React.Component {
         this.setState({errorFound : true});
     }
 
+    children = <div>
+                    <h1 className="msg">FORGIVE US</h1>
+                    <p className="msg">AN ERROR HAS OCCURRED!!</p> 
+               </div>
+
     render(){
         if(this.state.errorFound){
-            return  <h1>ERRRRROR!</h1>
+        return <TransScreen children={this.children}/>
         }
         return this.props.children;
     }

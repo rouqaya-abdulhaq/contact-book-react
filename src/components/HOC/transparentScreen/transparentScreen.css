@@ -1,11 +1,15 @@
 .screen{
-    height: 100vh;
-    width: 100vw;
-    background: rgb(92, 92, 92,0.1);
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
 
 .msg{

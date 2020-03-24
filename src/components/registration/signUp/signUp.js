@@ -9,7 +9,8 @@ const SignUp = (props) =>{
             <Form>
                 <SignUpForm register={props.register}
                 invalidMsgHandler={props.invalidMsgHandler}
-                isRegistered={props.isRegistered}/>
+                isRegistered={props.isRegistered}
+                registerServerError={props.registerServerError}/>
             </Form>
         </main>
     );

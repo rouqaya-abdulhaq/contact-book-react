@@ -17,7 +17,8 @@ const main = (props) =>{
           <Route exact path="/" component={LandingPage}/>
           <Route exact path="/contact-list" 
              render={()=> <ContactList
-              firstName = {props.firstName}  contacts = {props.contacts}/>}
+              firstName = {props.firstName}  contacts = {props.contacts}
+              registerServerError = {props.registerServerError}/>}
             > 
           </Route>
           {dir}
@@ -27,6 +28,7 @@ const main = (props) =>{
                               register = {props.register}
                               invalidMsgHandler={props.invalidMsgHandler}
                               invalidMsg={props.invalidMsg}
+                              registerServerError = {props.registerServerError}
             isAuthed={true}/>}> 
           </Route>
           <Route exact path="/log-in" 
@@ -35,6 +37,7 @@ const main = (props) =>{
                               register = {props.register}
                               invalidMsgHandler={props.invalidMsgHandler}
                               invalidMsg={props.invalidMsg}
+                              registerServerError = {props.registerServerError}
             isAuthed={true} />}>
           </Route>
         </Switch>

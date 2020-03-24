@@ -10,7 +10,8 @@ const LogIn = (props) => {
             <Form>
                 <LogInForm register={props.register} 
                 invalidMsgHandler={props.invalidMsgHandler}
-                isRegistered={props.isRegistered}/>
+                isRegistered={props.isRegistered}
+                registerServerError={props.registerServerError}/>
             </Form>
         </main>
     ); 

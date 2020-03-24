@@ -7,6 +7,7 @@ const logInForm = (props) => {
         const email = props.assigninput(props.values.email);
         const password = props.assigninput(props.values.password);
 
+
        const fetchUser = (email , password) =>{
             fetch("http://localhost:5000/signIn",{
                     method : 'POST',
@@ -29,6 +30,7 @@ const logInForm = (props) => {
                         props.register(user)
                     }
                 }).catch((err)=>{
+                    props.registerServerError("unable to log user")
                     console.log(err);
                 })
         }

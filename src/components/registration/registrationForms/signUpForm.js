@@ -32,7 +32,7 @@ const signUpForm = (props) =>{
                     props.register(user)
                   }
               }).catch((err)=>{
-                  console.log(err);
+                  props.registerServerError("unable to register user")
               })
       }
 

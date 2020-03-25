@@ -33,6 +33,7 @@ class ContactList extends React.Component{
                 this.setState({"contacts" : contacts});
             }).catch((err)=>{
                 console.log(err);
+                this.props.registerServerError("unable to submit contact");
             });
         this.displayAddForm();
     }
@@ -67,6 +68,7 @@ class ContactList extends React.Component{
                 });
             }).catch((err)=>{
                 console.log(err);
+                this.props.registerServerError("unable to edit contact");
             });
     }
 
@@ -90,6 +92,7 @@ class ContactList extends React.Component{
                 });
             }).catch((err)=>{
                 console.log(err);
+                this.props.registerServerError("unable to delete contact");
             });
     }
 

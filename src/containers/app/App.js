@@ -81,9 +81,9 @@ class App extends Component {
               <Header isRegistered={this.state.isRegistered} 
                 registrationHandler ={this.registrationHandler}
                 unregisterHandler = {this.unregisterHandler}/>
-                <TransScreen>
-                  {this.state.serverErrMsg}
-                </TransScreen>
+
+                <TransScreen msg={this.state.serverErrMsg}/>
+                
                 <Main register = {this.registerHandler}
                       invalidMsgHandler={this.invalidMsgHandler}
                       invalidMsg={this.state.invalidMsg}

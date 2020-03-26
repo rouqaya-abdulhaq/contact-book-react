@@ -21,8 +21,12 @@ class ErrorHandler extends React.Component {
 
     render(){
         if(this.state.errorFound){
-        return <TransScreen children={this.children}/>
-        }
+        return (
+            <div>
+               <TransScreen children={this.children}></TransScreen>
+               {this.props.children} 
+            </div>
+        );}
         return this.props.children;
     }
 }

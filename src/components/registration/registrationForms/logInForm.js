@@ -3,7 +3,6 @@ import Input from '../../UI/input/input';
 import SubmitBtn from '../../UI/submitBtn/submitBtn';
 
 const logInForm = (props) => {
-
         const email = props.assigninput(props.values.email);
         const password = props.assigninput(props.values.password);
 

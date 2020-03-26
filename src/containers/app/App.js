@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router} from 'react-router-dom';
+// import { BrowserRouter as Router} from 'react-router-dom';
 import './App.css';
 import './paletteClasses.css';
 import Main from '../../components/layout/main/main';
@@ -54,36 +54,12 @@ class App extends Component {
     const classes = `App ${this.state.style}`;
     if(!this.state.serverErrMsg){
       return (
-        <Router className="App">
-          <div className={classes}>
-            <Header isRegistered={this.state.isRegistered} 
-              registrationHandler ={this.registrationHandler}
-              unregisterHandler = {this.unregisterHandler}/>
-    
-              <Main register = {this.registerHandler}
-                    invalidMsgHandler={this.invalidMsgHandler}
-                    invalidMsg={this.state.invalidMsg}
-                    firstName = {this.state.user.name}
-                    contacts = {this.state.user.contacts}
-                    isRegistered = {this.state.isRegistered}
-                    registerServerError = {this.registerServerError}/>
-    
-            <Footer author={"rouqaya abdulhaq"}/>
-    
-            <Palette changeStyle={this.changeStyleHandler}/>
-          </div>
-        </Router>
-        );
-    }else{
-      return(
-          <Router className="App">
+        <div className="App">
             <div className={classes}>
               <Header isRegistered={this.state.isRegistered} 
                 registrationHandler ={this.registrationHandler}
                 unregisterHandler = {this.unregisterHandler}/>
-
-                <TransScreen msg={this.state.serverErrMsg}/>
-                
+      
                 <Main register = {this.registerHandler}
                       invalidMsgHandler={this.invalidMsgHandler}
                       invalidMsg={this.state.invalidMsg}
@@ -91,12 +67,36 @@ class App extends Component {
                       contacts = {this.state.user.contacts}
                       isRegistered = {this.state.isRegistered}
                       registerServerError = {this.registerServerError}/>
-
+      
               <Footer author={"rouqaya abdulhaq"}/>
-
+      
               <Palette changeStyle={this.changeStyleHandler}/>
             </div>
-          </Router>
+        </div>
+        );
+    }else{
+      return(
+          <div className="App">
+              <div className={classes}>
+                <Header isRegistered={this.state.isRegistered} 
+                  registrationHandler ={this.registrationHandler}
+                  unregisterHandler = {this.unregisterHandler}/>
+
+                  <TransScreen msg={this.state.serverErrMsg}/>
+                  
+                  <Main register = {this.registerHandler}
+                        invalidMsgHandler={this.invalidMsgHandler}
+                        invalidMsg={this.state.invalidMsg}
+                        firstName = {this.state.user.name}
+                        contacts = {this.state.user.contacts}
+                        isRegistered = {this.state.isRegistered}
+                        registerServerError = {this.registerServerError}/>
+
+                <Footer author={"rouqaya abdulhaq"}/>
+
+                <Palette changeStyle={this.changeStyleHandler}/>
+              </div>
+          </div>
       );
     }
   }

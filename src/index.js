@@ -4,8 +4,9 @@ import './index.css';
 import App from './containers/app/App';
 import * as serviceWorker from './serviceWorker';
 import ErrorHandler from '../src/containers/HOC/errorHandler/errorHandler';
+import {BrowserRouter} from 'react-router-dom'
 
-ReactDOM.render(<ErrorHandler><App/></ErrorHandler>, document.getElementById('root'));
+ReactDOM.render(<BrowserRouter><ErrorHandler><App/></ErrorHandler></BrowserRouter>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

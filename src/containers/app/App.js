@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-// import { BrowserRouter as Router} from 'react-router-dom';
 import './App.css';
 import './paletteClasses.css';
-import Main from '../../components/layout/main/main';
-import Header from '../../components/layout/header/header';
-import Footer from "../../components/layout/footer/footer";
-import Palette from "../palette/palette";
+import Layout from '../../components/layout/layout/layout';
 import ServerErrorHandler from '../../components/HOC/serverErrorHandler/serverErrorHandler';
 
 
@@ -56,21 +52,16 @@ class App extends Component {
       return (
         <div className="App">
             <div className={classes}>
-              <Header isRegistered={this.state.isRegistered} 
-                registrationHandler ={this.registrationHandler}
-                unregisterHandler = {this.unregisterHandler}/>
-      
-                <Main register = {this.registerHandler}
+              <Layout isRegistered={this.state.isRegistered} 
+                      registrationHandler ={this.registrationHandler}
+                      unregisterHandler = {this.unregisterHandler}
+                      registerHandler = {this.registerHandler}
                       invalidMsgHandler={this.invalidMsgHandler}
                       invalidMsg={this.state.invalidMsg}
                       firstName = {this.state.user.name}
                       contacts = {this.state.user.contacts}
-                      isRegistered = {this.state.isRegistered}
-                      registerServerError = {this.registerServerError}/>
-      
-              <Footer author={"rouqaya abdulhaq"}/>
-      
-              <Palette changeStyle={this.changeStyleHandler}/>
+                      registerServerError = {this.registerServerError}
+                      changeStyle={this.changeStyleHandler}/>
             </div>
         </div>
         );
@@ -78,23 +69,18 @@ class App extends Component {
       return(
           <div className="App">
               <div className={classes}>
-                <Header isRegistered={this.state.isRegistered} 
-                  registrationHandler ={this.registrationHandler}
-                  unregisterHandler = {this.unregisterHandler}/>
-
                   <ServerErrorHandler msg={this.state.serverErrMsg}/>
-                  
-                  <Main register = {this.registerHandler}
-                        invalidMsgHandler={this.invalidMsgHandler}
-                        invalidMsg={this.state.invalidMsg}
-                        firstName = {this.state.user.name}
-                        contacts = {this.state.user.contacts}
-                        isRegistered = {this.state.isRegistered}
-                        registerServerError = {this.registerServerError}/>
-
-                <Footer author={"rouqaya abdulhaq"}/>
-
-                <Palette changeStyle={this.changeStyleHandler}/>
+                  <Layout isRegistered={this.state.isRegistered} 
+                      registrationHandler ={this.registrationHandler}
+                      unregisterHandler = {this.unregisterHandler}
+                      registerHandler = {this.registerHandler}
+                      invalidMsgHandler={this.invalidMsgHandler}
+                      invalidMsg={this.state.invalidMsg}
+                      firstName = {this.state.user.name}
+                      contacts = {this.state.user.contacts}
+                      registerServerError = {this.registerServerError}
+                      changeStyle={this.changeStyleHandler}/>
+          
               </div>
           </div>
       );

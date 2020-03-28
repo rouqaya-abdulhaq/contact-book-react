@@ -6,7 +6,7 @@ import Main from '../../components/layout/main/main';
 import Header from '../../components/layout/header/header';
 import Footer from "../../components/layout/footer/footer";
 import Palette from "../palette/palette";
-import TransScreen from '../../components/HOC/transparentScreen/transparentScreen';
+import ServerErrorHandler from '../../components/HOC/serverErrorHandler/serverErrorHandler';
 
 
 class App extends Component {
@@ -82,7 +82,7 @@ class App extends Component {
                   registrationHandler ={this.registrationHandler}
                   unregisterHandler = {this.unregisterHandler}/>
 
-                  <TransScreen msg={this.state.serverErrMsg}/>
+                  <ServerErrorHandler msg={this.state.serverErrMsg}/>
                   
                   <Main register = {this.registerHandler}
                         invalidMsgHandler={this.invalidMsgHandler}

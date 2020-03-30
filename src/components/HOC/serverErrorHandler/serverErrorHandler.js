@@ -8,10 +8,25 @@ const serverErrorHandler = (props) =>{
         props.history.go(0);
     }
 
+    const serverError = () =>{
+        if(props.serverErrorMsg){
+            return true;
+        }
+        return false;
+    }
+
+    if(serverError()){
+        return(
+            <div className="App">
+               <TransScreen msg={props.serverErrorMsg}>
+                    <button onClick={refreshPage}>BACK</button>
+               </TransScreen>
+               {props.children}
+            </div>
+        );
+    }
     return(
-        <TransScreen msg={props.msg}>
-            <button onClick={refreshPage}>GO BACK AND TRY</button>
-        </TransScreen>
+        <div className="App">{props.children}</div>
     );
 }
 

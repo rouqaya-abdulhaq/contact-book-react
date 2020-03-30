@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import './paletteClasses.css';
 import Layout from '../../components/layout/layout/layout';
-import ServerErrorHandler from '../../components/HOC/serverErrorHandler/serverErrorHandler';
-
 
 class App extends Component {
   constructor(){
@@ -48,43 +46,22 @@ class App extends Component {
   
   render() {
     const classes = `App ${this.state.style}`;
-    if(!this.state.serverErrMsg){
+    
       return (
-        <div className="App">
-            <div className={classes}>
-              <Layout isRegistered={this.state.isRegistered} 
-                      registrationHandler ={this.registrationHandler}
-                      unregisterHandler = {this.unregisterHandler}
-                      registerHandler = {this.registerHandler}
-                      invalidMsgHandler={this.invalidMsgHandler}
-                      invalidMsg={this.state.invalidMsg}
-                      firstName = {this.state.user.name}
-                      contacts = {this.state.user.contacts}
-                      registerServerError = {this.registerServerError}
-                      changeStyle={this.changeStyleHandler}/>
-            </div>
+        <div className={classes}>
+          <Layout isRegistered={this.state.isRegistered} 
+                  registrationHandler ={this.registrationHandler}
+                  unregisterHandler = {this.unregisterHandler}
+                  registerHandler = {this.registerHandler}
+                  invalidMsgHandler={this.invalidMsgHandler}
+                  invalidMsg={this.state.invalidMsg}
+                  firstName = {this.state.user.name}
+                  contacts = {this.state.user.contacts}
+                  registerServerError = {this.registerServerError}
+                  serverErrorMsg = {this.state.serverErrMsg}
+                  changeStyle={this.changeStyleHandler}/>
         </div>
-        );
-    }else{
-      return(
-          <div className="App">
-              <div className={classes}>
-                  <ServerErrorHandler msg={this.state.serverErrMsg}/>
-                  <Layout isRegistered={this.state.isRegistered} 
-                      registrationHandler ={this.registrationHandler}
-                      unregisterHandler = {this.unregisterHandler}
-                      registerHandler = {this.registerHandler}
-                      invalidMsgHandler={this.invalidMsgHandler}
-                      invalidMsg={this.state.invalidMsg}
-                      firstName = {this.state.user.name}
-                      contacts = {this.state.user.contacts}
-                      registerServerError = {this.registerServerError}
-                      changeStyle={this.changeStyleHandler}/>
-          
-              </div>
-          </div>
-      );
-    }
+    );
   }
 }
 

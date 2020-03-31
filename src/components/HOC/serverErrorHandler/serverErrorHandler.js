@@ -2,7 +2,10 @@ import React from 'react';
 import {withRouter} from 'react-router-dom';
 import TransScreen from '../transparentScreen/transparentScreen';
 
+import './serverErrorHandler.css';
+
 const serverErrorHandler = (props) =>{
+    console.log(props.serverErrorMsg);
     
     const refreshPage = () =>{
         props.history.go(0);
@@ -19,7 +22,7 @@ const serverErrorHandler = (props) =>{
         return(
             <div className={props.styleClass}>
                <TransScreen msg={props.serverErrorMsg}>
-                    <button onClick={refreshPage}>BACK</button>
+                    <button onClick={refreshPage} className="backBtn">BACK</button>
                </TransScreen>
                {props.children}
             </div>

@@ -1,0 +1,8 @@
+.backBtn{
+    width: fit-content;
+    font-size: larger;
+    outline: none;
+    border-radius: 10%;
+    font-weight: bold;
+    background: darkgray;
+}

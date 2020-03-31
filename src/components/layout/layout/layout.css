@@ -1,0 +1,27 @@
+.layout{
+   overflow: hidden;
+   height: 100vh;
+   width: 100vw;  
+   display : grid;
+   grid-template-columns: 40% 20% 40%;
+   grid-template-rows: 15% 60% 25%;
+   grid-gap: 3%;
+   grid-template-areas: "header header header"
+                          ". main ."
+                          "palette footer footer"; 
+   font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.layout .main{
+   grid-area: main;
+}
+
+@media(max-width : 1024px){
+   .layout{
+      grid-template-columns: 32% 28% 40%;
+      grid-template-areas: "header header header"
+                          "main main main"
+                          "palette footer footer"; 
+   }
+}
+

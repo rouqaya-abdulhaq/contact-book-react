@@ -5,6 +5,8 @@ import SignUp from '../../registration/signUp/signUp';
 import LogIn from '../../registration/logIn/logIn';
 import LandingPage from '../landingPage/landingPage';
 
+import './main.css';
+
 const main = (props) =>{
   
     let dir = null;

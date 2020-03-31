@@ -17,7 +17,7 @@ const serverErrorHandler = (props) =>{
 
     if(serverError()){
         return(
-            <div className="App">
+            <div className={props.styleClass}>
                <TransScreen msg={props.serverErrorMsg}>
                     <button onClick={refreshPage}>BACK</button>
                </TransScreen>
@@ -26,7 +26,7 @@ const serverErrorHandler = (props) =>{
         );
     }
     return(
-        <div className="App">{props.children}</div>
+        <div className={props.styleClass}>{props.children}</div>
     );
 }
 

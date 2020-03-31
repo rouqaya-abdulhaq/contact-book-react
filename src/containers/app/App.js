@@ -45,10 +45,8 @@ class App extends Component {
 
   
   render() {
-    const classes = `App ${this.state.style}`;
-    
       return (
-        <div className={classes}>
+        <div className={this.state.style}>
           <Layout isRegistered={this.state.isRegistered} 
                   registrationHandler ={this.registrationHandler}
                   unregisterHandler = {this.unregisterHandler}

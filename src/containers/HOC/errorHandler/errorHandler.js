@@ -1,6 +1,5 @@
 import React from 'react';
-import TransScreen from '../../../components/HOC/transparentScreen/transparentScreen';
-import {withRouter} from 'react-router-dom';
+import ErrorScreen from '../../../components/HOC/errorScreen/errorScreen';
 
 class ErrorHandler extends React.Component {
     constructor(props){
@@ -11,27 +10,14 @@ class ErrorHandler extends React.Component {
     }
 
     componentDidCatch(error,info){
-        console.log("error");
         this.setState({errorFound : true});
     }
 
-    refreshWebsite = () =>{
-        this.props.history.push("/");
-        this.setState({errorFound : false});
-    }
-
-    children = <div>
-                    <h1 className="msg">FORGIVE US</h1>
-                    <p className="msg">AN ERROR HAS OCCURRED!!</p>
-                    <button onClick={this.refreshWebsite}>refresh</button> 
-               </div>
-
     render(){
         if(this.state.errorFound){
-            console.log("here");
         return (
             <div>
-               <TransScreen children={this.children}></TransScreen>
+               <ErrorScreen errorMsg={"FORGIVE US AN ERROR HAS OCCURED!!!"}/>
                {this.props.children} 
             </div>
         );}
@@ -39,4 +25,4 @@ class ErrorHandler extends React.Component {
     }
 }
 
-export default withRouter(ErrorHandler);
+export default ErrorHandler;

@@ -3,7 +3,7 @@ import Header from '../header/header';
 import Main from '../main/main';
 import Footer from '../footer/footer';
 import Palette from '../../../containers/palette/palette';
-import ServerErrorHandler from '../../HOC/serverErrorHandler/serverErrorHandler';
+import ErrorScreen from '../../HOC/errorScreen/errorScreen';
 
 import './layout.css';
 
@@ -14,7 +14,7 @@ const layout = (props) => {
                 registrationHandler ={props.registrationHandler}
                 unregisterHandler = {props.unregisterHandler}/>
 
-        <ServerErrorHandler styleClass="main" serverErrorMsg={props.serverErrorMsg} >
+        <ErrorScreen styleClass="main" errorMsg={props.serverErrorMsg} >
             <Main register = {props.registerHandler}
                     invalidMsgHandler={props.invalidMsgHandler}
                     invalidMsg={props.invalidMsg}
@@ -22,7 +22,7 @@ const layout = (props) => {
                     contacts = {props.contacts}
                     isRegistered = {props.isRegistered}
                     registerServerError = {props.registerServerError}/>
-        </ServerErrorHandler>
+        </ErrorScreen>
       
         <Footer author={"rouqaya abdulhaq"}/>
       

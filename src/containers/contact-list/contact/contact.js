@@ -38,7 +38,6 @@ class Contact extends Component{
     }
 
     render(){
-        // throw new Error("contact err");
         return(
             <div className="contact">
                 <ContactName 

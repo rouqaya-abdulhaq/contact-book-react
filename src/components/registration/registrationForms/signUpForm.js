@@ -7,9 +7,10 @@ const signUpForm = (props) =>{
 
         const email = props.assigninput(props.values.email);
         const password = props.assigninput(props.values.password);
-        const user = props.assigninput(props.values.user);
+        const firstName = props.assigninput(props.values.firstName);
+        const lastName = props.assigninput(props.values.lastName);
 
-        const fetchUser = (email , password, userName) =>{
+        const fetchUser = (email , password, firstName, lastName) =>{
           fetch("http://localhost:5000/signUp",{
                   method : 'POST',
                   headers : {
@@ -17,7 +18,8 @@ const signUpForm = (props) =>{
                       'Content-Type': 'application/json'
                   },
                   body : JSON.stringify({
-                    name : userName,
+                    firstName : firstName,
+                    lastName : lastName,
                     email : email,
                     password : password
                     })
@@ -38,9 +40,13 @@ const signUpForm = (props) =>{
 
       return(
         <div>
-          <Input label={"user name"} id={"user"} inputType={"name"}
+          <Input label={"first name"} id={"firstName"} inputType={"name"}
             type={"text"} changeHandler={props.changehandler}
-            isValid={user.isValid} hasChanged={user.changed}/>
+            isValid={firstName.isValid} hasChanged={firstName.changed}/>
+
+          <Input label={"last name"} id={"lastName"} inputType={"name"}
+            type={"text"} changeHandler={props.changehandler}
+            isValid={lastName.isValid} hasChanged={lastName.changed}/>
 
           <Input label={"email"} id="email" inputType={"email"} value={props.email}
             type ={"email"} changeHandler={props.changehandler}
@@ -51,8 +57,8 @@ const signUpForm = (props) =>{
             isValid={password.isValid} hasChanged={password.changed}/>
 
           <SubmitBtn value={"Sign Up"} 
-            clickHandler={()=>fetchUser(email.value,password.value,user.value)}
-            infoArr={[email,password,user]}/>
+            clickHandler={()=>fetchUser(email.value,password.value,firstName.value,lastName)}
+            infoArr={[email,password,firstName,lastName]}/>
         </div>
       );
 }

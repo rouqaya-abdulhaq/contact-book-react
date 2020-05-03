@@ -7,10 +7,11 @@ class Contact extends Component{
     constructor(props){
         super(props);
         this.state = {
-           contInfo : { firstName : props.contact.firstName,
-            lastName : props.contact.lastName,
-            email : props.contact.email,
-            phoneNumber : props.contact.phoneNumber},
+           contInfo : { firstName : props.contact.contact_first_name,
+            lastName : props.contact.contact_last_name,
+            email : props.contact.contact_email,
+            phoneNumber : props.contact.contact_phone_number},
+            id : props.contact.contact_id,
             index : props.index,
             contactClicked : false,
             editClicked : false ,

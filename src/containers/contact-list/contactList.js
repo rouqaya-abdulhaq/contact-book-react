@@ -13,6 +13,29 @@ class ContactList extends React.Component{
         }
     }
 
+    componentDidMount(){
+        if(this.props.id){
+            this.loadContacts(this.props.id);
+        }
+    }
+
+    loadContacts = (id) =>{
+        fetch(`http://localhost:5000/loadContacts?id=${id}`,{
+            method : 'GET',
+            headers : {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }, 
+        }).then((res)=>{
+            return res.json();
+        }).then((contacts) =>{
+            this.setState({contacts : contacts});
+        }).catch((err) =>{
+            console.log(err);
+            this.props.registerServerError("unable to load contacts from server");
+        })
+    }
+
     onSubmitHandler = (newContact) =>{
             fetch('http://localhost:5000/contactAdd',{
             method : 'PUT',
@@ -100,8 +123,7 @@ class ContactList extends React.Component{
         let contacts = null;
         if(this.state.contacts){
             contacts = this.state.contacts.map((contact,index) =>
-            //phone number is the key for now only
-            <div className="contact" key={contact.phoneNumber}>
+            <div className="contact" key={contact.contact_id}>
                 <Contact contact={contact} index={index}
                 EditListHandler={(newContact)=>this.onEditHandler(index , newContact)}/>
     

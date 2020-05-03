@@ -20,7 +20,7 @@ const main = (props) =>{
           <Route exact path="/contact-list" 
              render={()=> <ContactList
               firstName = {props.firstName}  contacts = {props.contacts}
-              registerServerError = {props.registerServerError}/>}
+              registerServerError = {props.registerServerError} id = {props.id}/>}
             > 
           </Route>
           {dir}

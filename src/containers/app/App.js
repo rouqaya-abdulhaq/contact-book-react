@@ -43,7 +43,6 @@ class App extends Component {
     })
   }
 
-  
   render() {
       return (
         <div className={this.state.style}>
@@ -53,7 +52,7 @@ class App extends Component {
                   registerHandler = {this.registerHandler}
                   invalidMsgHandler={this.invalidMsgHandler}
                   invalidMsg={this.state.invalidMsg}
-                  firstName = {this.state.user.user_first_name}
+                  user = {this.state.user}
                   contacts = {this.state.user.contacts}
                   registerServerError = {this.registerServerError}
                   serverErrorMsg = {this.state.serverErrMsg}

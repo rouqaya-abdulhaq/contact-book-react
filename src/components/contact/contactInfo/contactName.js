@@ -5,7 +5,7 @@ const contactName = (props) =>{
     return(
         <div>
            <li onClick={props.displayInfo}>
-                {props.contact.firstName + " " + props.contact.lastName}
+                {props.contact.contact_first_name + " " + props.contact.contact_last_name}
             </li>
             <ContactInfo displayInfoState={props.displayInfoState} 
                 getInfo={props.getInfo}

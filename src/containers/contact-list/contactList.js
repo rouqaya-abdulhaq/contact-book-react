@@ -44,6 +44,7 @@ class ContactList extends React.Component{
                 'Content-Type': 'application/json'
             },
             body : JSON.stringify({
+                userId : this.props.id,
                 firstName : newContact.firstName.value,
                 lastName : newContact.lastName.value,
                 email : newContact.email.value,
@@ -67,7 +68,7 @@ class ContactList extends React.Component{
         })
     }
     
-    onEditHandler = (index , newContact)=>{
+    onEditHandler = (index,id, newContact)=>{
         fetch('http://localhost:5000/contactEdit',{
             method : 'PUT',
             headers : {
@@ -79,7 +80,7 @@ class ContactList extends React.Component{
                 lastName : newContact.lastName.value,
                 email : newContact.email.value,
                 phoneNumber : newContact.phoneNumber.value,
-                index : index
+                contactId : id
             })
             }).then((res)=>{
                 return res.json();
@@ -95,7 +96,7 @@ class ContactList extends React.Component{
             });
     }
 
-    onDeleteHandler = (index) =>{
+    onDeleteHandler = (index,id) =>{
         fetch('http://localhost:5000/contactDelete',{
             method : 'DELETE',
             headers : {
@@ -103,13 +104,13 @@ class ContactList extends React.Component{
                 'Content-Type': 'application/json'
             },
             body : JSON.stringify({
-                index : index
+                id : id
             })
             }).then((res)=>{
                 return res.json();
             }).then((contactIndex)=>{
                 const contacts = [...this.state.contacts];
-                contacts.splice(contactIndex,1);
+                contacts.splice(index,1);
                 this.setState({
                     contacts : contacts
                 });
@@ -122,17 +123,16 @@ class ContactList extends React.Component{
     render(){
         let contacts = null;
         if(this.state.contacts){
-            contacts = this.state.contacts.map((contact,index) =>
-            <div className="contact" key={contact.contact_id}>
+            contacts = this.state.contacts.map((contact,index) => {
+            return <div className="contact" key={contact.contact_id}>
                 <Contact contact={contact} index={index}
-                EditListHandler={(newContact)=>this.onEditHandler(index , newContact)}/>
+                EditListHandler={(newContact)=>this.onEditHandler(index,contact.contact_id, newContact)}/>
     
-               <button className="contactButtons" onClick={()=>this.onDeleteHandler(index)}>
+               <button className="contactButtons" onClick={()=>this.onDeleteHandler(index,contact.contact_id)}>
                     x 
                 </button>
-            </div>) 
+            </div>}) 
         }
-          
         return(
             <main className="contactList">
                 <div>

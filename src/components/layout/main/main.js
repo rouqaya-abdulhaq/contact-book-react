@@ -8,8 +8,8 @@ import LandingPage from '../landingPage/landingPage';
 import './main.css';
 
 const main = (props) =>{
-  
-    let dir = null;
+
+  let dir = null;
     if(props.isRegistered){
       dir = <Redirect to="contact-List"/>
     }

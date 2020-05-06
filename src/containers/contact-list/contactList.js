@@ -3,63 +3,33 @@ import "./contactList.css";
 import Contact from './contact/contact';
 import ContactPopUp from '../../components/contact/contactFormPopUp/contactPopUp';
 
+import * as fetchCalls from './fetchCalls';
+
 class ContactList extends React.Component{
 
     constructor(props){
         super(props);
         this.state = {
-            contacts : this.props.contacts ? this.props.contacts : []  ,
+            contacts : [] ,
             addClicked : false,
         }
     }
 
     componentDidMount(){
         if(this.props.id){
-            this.loadContacts(this.props.id);
+            fetchCalls.LoadContactsCall(this.props.id,this.stateUpdate);
+            //     this.props.registerServerError("unable to load contacts from server");
         }
     }
 
-    loadContacts = (id) =>{
-        fetch(`http://localhost:5000/loadContacts?id=${id}`,{
-            method : 'GET',
-            headers : {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            }, 
-        }).then((res)=>{
-            return res.json();
-        }).then((contacts) =>{
-            this.setState({contacts : contacts});
-        }).catch((err) =>{
-            console.log(err);
-            this.props.registerServerError("unable to load contacts from server");
-        })
+    stateUpdate = (oldStateName,newState) =>{
+        this.setState({[oldStateName] : newState});
     }
 
     onSubmitHandler = (newContact) =>{
-            fetch('http://localhost:5000/contactAdd',{
-            method : 'PUT',
-            headers : {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body : JSON.stringify({
-                userId : this.props.id,
-                firstName : newContact.firstName.value,
-                lastName : newContact.lastName.value,
-                email : newContact.email.value,
-                phoneNumber : newContact.phoneNumber.value
-            })
-            }).then((res)=>{
-                return res.json();
-            }).then((contact)=>{
-                const contacts = [...this.state.contacts, contact];
-                this.setState({"contacts" : contacts});
-            }).catch((err)=>{
-                console.log(err);
-                this.props.registerServerError("unable to submit contact");
-            });
-        this.displayAddForm();
+            newContact.userId = this.props.id;
+            fetchCalls.SubmitCall(newContact,this.state.contacts,this.stateUpdate);
+            this.displayAddForm();
     }
 
     displayAddForm= () =>{
@@ -69,55 +39,22 @@ class ContactList extends React.Component{
     }
     
     onEditHandler = (index,id, newContact)=>{
-        fetch('http://localhost:5000/contactEdit',{
-            method : 'PUT',
-            headers : {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body : JSON.stringify({
-                firstName : newContact.firstName.value,
-                lastName : newContact.lastName.value,
-                email : newContact.email.value,
-                phoneNumber : newContact.phoneNumber.value,
-                contactId : id
-            })
-            }).then((res)=>{
-                return res.json();
-            }).then((contact)=>{
-                const contacts = [...this.state.contacts];
-                contacts[index] = contact;
-                this.setState({
-                    'contacts' : contacts
-                });
-            }).catch((err)=>{
-                console.log(err);
-                this.props.registerServerError("unable to edit contact");
-            });
+        const contactInfo = {
+            editedContact : newContact,
+            id : id,
+            index : index
+        }
+        fetchCalls.EditCall(contactInfo,this.state.contacts,this.stateUpdate);
+        //         this.props.registerServerError("unable to edit contact");
     }
 
     onDeleteHandler = (index,id) =>{
-        fetch('http://localhost:5000/contactDelete',{
-            method : 'DELETE',
-            headers : {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body : JSON.stringify({
-                id : id
-            })
-            }).then((res)=>{
-                return res.json();
-            }).then((contactIndex)=>{
-                const contacts = [...this.state.contacts];
-                contacts.splice(index,1);
-                this.setState({
-                    contacts : contacts
-                });
-            }).catch((err)=>{
-                console.log(err);
-                this.props.registerServerError("unable to delete contact");
-            });
+        const contactInfo = {
+            index : index,
+            id : id
+        }
+        fetchCalls.DeleteCall(contactInfo,this.state.contacts,this.stateUpdate);
+        //         this.props.registerServerError("unable to delete contact");
     }
 
     render(){
@@ -147,7 +84,6 @@ class ContactList extends React.Component{
                     {contacts}
                 </div> 
             </main>
-
         );
     }
 }

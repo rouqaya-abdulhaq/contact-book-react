@@ -8,6 +8,7 @@ import ErrorScreen from '../../HOC/errorScreen/errorScreen';
 import './layout.css';
 
 const layout = (props) => {
+
     return(
     <div className='layout'>
         <Header isRegistered={props.isRegistered} 

@@ -44,6 +44,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.serverErrMsg);
       return (
         <div className={this.state.style}>
           <Layout isRegistered={this.state.isRegistered} 
@@ -53,7 +54,6 @@ class App extends Component {
                   invalidMsgHandler={this.invalidMsgHandler}
                   invalidMsg={this.state.invalidMsg}
                   user = {this.state.user}
-                  contacts = {this.state.user.contacts}
                   registerServerError = {this.registerServerError}
                   serverErrorMsg = {this.state.serverErrMsg}
                   changeStyle={this.changeStyleHandler}/>

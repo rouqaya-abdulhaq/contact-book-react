@@ -19,7 +19,7 @@ const main = (props) =>{
           <Route exact path="/" component={LandingPage}/>
           <Route exact path="/contact-list" 
              render={()=> <ContactList
-              firstName = {props.firstName}  contacts = {props.contacts}
+              firstName = {props.firstName}  
               registerServerError = {props.registerServerError} id = {props.id}/>}
             > 
           </Route>

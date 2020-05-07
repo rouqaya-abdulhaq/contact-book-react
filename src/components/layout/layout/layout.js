@@ -21,7 +21,6 @@ const layout = (props) => {
                     invalidMsg={props.invalidMsg}
                     firstName = {props.user.user_first_name}
                     id = {props.user.user_id}
-                    contacts = {props.contacts}
                     isRegistered = {props.isRegistered}
                     registerServerError = {props.registerServerError}/>
         </ErrorScreen>

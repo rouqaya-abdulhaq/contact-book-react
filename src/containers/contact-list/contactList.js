@@ -1,9 +1,10 @@
 import React from 'react';
-import "./contactList.css";
 import Contact from './contact/contact';
 import ContactPopUp from '../../components/contact/contactFormPopUp/contactPopUp';
 
 import * as fetchCalls from './fetchCalls';
+
+import "./contactList.css";
 
 class ContactList extends React.Component{
 
@@ -17,7 +18,8 @@ class ContactList extends React.Component{
 
     componentDidMount(){
         if(this.props.id){
-            fetchCalls.LoadContactsCall(this.props.id,this.stateUpdate,this.props.registerServerError);
+            fetchCalls.LoadContactsCall(this.props.id,
+                this.stateUpdate,this.props.registerServerError);
         }
     }
 
@@ -27,7 +29,8 @@ class ContactList extends React.Component{
 
     onSubmitHandler = (newContact) =>{
             newContact.userId = this.props.id;
-            fetchCalls.SubmitCall(newContact,this.state.contacts,this.stateUpdate,this.props.registerServerError);
+            fetchCalls.SubmitCall(newContact,this.state.contacts,
+                this.stateUpdate,this.props.registerServerError);
             this.displayAddForm();
     }
 
@@ -43,8 +46,8 @@ class ContactList extends React.Component{
             id : id,
             index : index
         }
-        fetchCalls.EditCall(contactInfo,this.state.contacts,this.stateUpdate,this.props.registerServerError);
-        //         this.props.registerServerError("unable to edit contact");
+        fetchCalls.EditCall(contactInfo,this.state.contacts,
+            this.stateUpdate,this.props.registerServerError);
     }
 
     onDeleteHandler = (index,id) =>{
@@ -52,8 +55,8 @@ class ContactList extends React.Component{
             index : index,
             id : id
         }
-        fetchCalls.DeleteCall(contactInfo,this.state.contacts,this.stateUpdate,this.props.registerServerError);
-        //         this.props.registerServerError("unable to delete contact");
+        fetchCalls.DeleteCall(contactInfo,this.state.contacts,
+            this.stateUpdate,this.props.registerServerError);
     }
 
     render(){

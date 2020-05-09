@@ -1,8 +1,8 @@
 import React from 'react';
 import Input from '../../UI/input/input';
 import SubmitBtn from '../../UI/submitBtn/submitBtn';
-import {signUpFetchCall} from './fetchCalls';
 
+import {signUpFetchCall} from './fetchCalls';
 
 const signUpForm = (props) =>{
 

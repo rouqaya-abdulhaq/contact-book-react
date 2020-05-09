@@ -9,14 +9,9 @@ class App extends Component {
     this.state = {
       style : 'default',
       isRegistered: false,
-      invalidMsg : null,
       user : {},
       serverErrMsg : "",
     }
-  }
-
-  invalidMsgHandler = (msg) =>{
-    this.setState({invalidMsg : msg});
   }
 
   unregisterHandler = () =>{
@@ -44,15 +39,12 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.serverErrMsg);
       return (
         <div className={this.state.style}>
           <Layout isRegistered={this.state.isRegistered} 
                   registrationHandler ={this.registrationHandler}
                   unregisterHandler = {this.unregisterHandler}
                   registerHandler = {this.registerHandler}
-                  invalidMsgHandler={this.invalidMsgHandler}
-                  invalidMsg={this.state.invalidMsg}
                   user = {this.state.user}
                   registerServerError = {this.registerServerError}
                   serverErrorMsg = {this.state.serverErrMsg}

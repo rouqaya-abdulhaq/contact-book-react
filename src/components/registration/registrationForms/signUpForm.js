@@ -37,7 +37,7 @@ const signUpForm = (props) =>{
         isValid={password.isValid} hasChanged={password.changed}/>
 
       <SubmitBtn value={"Sign Up"} 
-        clickHandler={()=>signUpFetchCall(user,props.register,props.invalidMsgHandler,props.registerServerError)}
+        clickHandler={()=>signUpFetchCall(user,props.register,props.registerServerError)}
         infoArr={[email,password,firstName,lastName]}/>
     </div>
   );

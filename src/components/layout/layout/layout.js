@@ -17,8 +17,6 @@ const layout = (props) => {
 
         <ErrorScreen styleClass="main" errorMsg={props.serverErrorMsg} >
             <Main register = {props.registerHandler}
-                    invalidMsgHandler={props.invalidMsgHandler}
-                    invalidMsg={props.invalidMsg}
                     firstName = {props.user.user_first_name}
                     id = {props.user.user_id}
                     isRegistered = {props.isRegistered}

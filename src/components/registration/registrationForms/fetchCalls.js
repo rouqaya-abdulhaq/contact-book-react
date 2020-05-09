@@ -14,9 +14,7 @@ export async function signUpFetchCall (user,register,invalidInputHandler,registe
               }).then((res)=>{
                 if(res.ok){
                   return res.json();
-                }else{
-                  invalidInputHandler("INVALID INPUT");
-                } 
+                }
               }).then((user)=>{
                   if(user){
                     register(user);
@@ -26,7 +24,7 @@ export async function signUpFetchCall (user,register,invalidInputHandler,registe
               })
 }
 
-export async function logInFetchCall (userCredintials,register,invalidInputHandler,registerServerError) {
+export async function logInFetchCall (userCredintials,register,registerServerError) {
     fetch("http://localhost:5000/signIn",{
         method : 'POST',
         headers : {
@@ -40,8 +38,6 @@ export async function logInFetchCall (userCredintials,register,invalidInputHandl
     }).then((res)=>{
         if(res.ok){
             return res.json()
-        }else{
-            invalidInputHandler("USER NOT FOUND");
         }
     }).then((user)=>{
         if(user){

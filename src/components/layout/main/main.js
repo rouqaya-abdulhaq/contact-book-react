@@ -28,8 +28,6 @@ const main = (props) =>{
             render={(sideProps)=> <SignUp 
                               history ={sideProps.history}
                               register = {props.register}
-                              invalidMsgHandler={props.invalidMsgHandler}
-                              invalidMsg={props.invalidMsg}
                               registerServerError = {props.registerServerError}
             isAuthed={true}/>}> 
           </Route>
@@ -37,8 +35,6 @@ const main = (props) =>{
             render={(sideProps)=> <LogIn 
                               history ={sideProps.history}
                               register = {props.register}
-                              invalidMsgHandler={props.invalidMsgHandler}
-                              invalidMsg={props.invalidMsg}
                               registerServerError = {props.registerServerError}
             isAuthed={true} />}>
           </Route>

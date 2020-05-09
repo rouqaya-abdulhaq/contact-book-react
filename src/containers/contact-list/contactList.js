@@ -17,8 +17,7 @@ class ContactList extends React.Component{
 
     componentDidMount(){
         if(this.props.id){
-            fetchCalls.LoadContactsCall(this.props.id,this.stateUpdate);
-            //     this.props.registerServerError("unable to load contacts from server");
+            fetchCalls.LoadContactsCall(this.props.id,this.stateUpdate,this.props.registerServerError);
         }
     }
 
@@ -28,7 +27,7 @@ class ContactList extends React.Component{
 
     onSubmitHandler = (newContact) =>{
             newContact.userId = this.props.id;
-            fetchCalls.SubmitCall(newContact,this.state.contacts,this.stateUpdate);
+            fetchCalls.SubmitCall(newContact,this.state.contacts,this.stateUpdate,this.props.registerServerError);
             this.displayAddForm();
     }
 
@@ -44,7 +43,7 @@ class ContactList extends React.Component{
             id : id,
             index : index
         }
-        fetchCalls.EditCall(contactInfo,this.state.contacts,this.stateUpdate);
+        fetchCalls.EditCall(contactInfo,this.state.contacts,this.stateUpdate,this.props.registerServerError);
         //         this.props.registerServerError("unable to edit contact");
     }
 
@@ -53,7 +52,7 @@ class ContactList extends React.Component{
             index : index,
             id : id
         }
-        fetchCalls.DeleteCall(contactInfo,this.state.contacts,this.stateUpdate);
+        fetchCalls.DeleteCall(contactInfo,this.state.contacts,this.stateUpdate,this.props.registerServerError);
         //         this.props.registerServerError("unable to delete contact");
     }
 

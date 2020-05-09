@@ -1,4 +1,4 @@
-export const SubmitCall = (newContact,oldContacts,stateUpdate) =>{
+export async function SubmitCall (newContact,oldContacts,stateUpdate,registerServerError) {
     fetch('http://localhost:5000/contactAdd',{
         method : 'PUT',
         headers : {
@@ -17,14 +17,13 @@ export const SubmitCall = (newContact,oldContacts,stateUpdate) =>{
     }).then((contact)=>{
         const contacts = [...oldContacts, contact];
         stateUpdate("contacts",contacts);
-        return true;
     }).catch((err)=>{
         console.log(err);
-        return false;
+        registerServerError("could not submit new contact");
     });
 }
 
-export const EditCall = (contactInfo,oldContacts,stateUpdate) =>{
+export const EditCall = (contactInfo,oldContacts,stateUpdate,registerServerError) =>{
     fetch('http://localhost:5000/contactEdit',{
             method : 'PUT',
             headers : {
@@ -47,12 +46,11 @@ export const EditCall = (contactInfo,oldContacts,stateUpdate) =>{
                 return true;
             }).catch((err)=>{
                 console.log(err);
-                return false;
-                // this.props.registerServerError("unable to edit contact");
+                registerServerError("unable to edit contact");
             });
 }
 
-export const DeleteCall = (contactInfo,oldContacts,stateUpdate) =>{
+export const DeleteCall = (contactInfo,oldContacts,stateUpdate,registerServerError) =>{
     fetch('http://localhost:5000/contactDelete',{
             method : 'DELETE',
             headers : {
@@ -71,12 +69,11 @@ export const DeleteCall = (contactInfo,oldContacts,stateUpdate) =>{
                 return true;
             }).catch((err)=>{
                 console.log(err);
-                return false;
-                // this.props.registerServerError("unable to delete contact");
+                registerServerError("unable to delete contact");
             });
 }
 
-export const LoadContactsCall = (id,stateUpdate) =>{
+export async function LoadContactsCall (id,stateUpdate,registerServerError) {
     fetch(`http://localhost:5000/loadContacts?id=${id}`,{
             method : 'GET',
             headers : {
@@ -89,6 +86,6 @@ export const LoadContactsCall = (id,stateUpdate) =>{
             stateUpdate("contacts",contacts);
         }).catch((err) =>{
             console.log(err);
-            // this.props.registerServerError("unable to load contacts from server");
+            registerServerError("could not load contacts from server");
         })
 }

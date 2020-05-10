@@ -15,7 +15,7 @@ const layout = (props) => {
                 registrationHandler ={props.registrationHandler}
                 unregisterHandler = {props.unregisterHandler}/>
 
-        <ErrorScreen styleClass="main" errorMsg={props.serverErrorMsg} >
+        <ErrorScreen styleClass="main" errorMsg={props.serverErrorMsg} registerServerError={props.registerServerError} >
             <Main register = {props.registerHandler}
                     firstName = {props.user.user_first_name}
                     id = {props.user.user_id}

@@ -10,19 +10,22 @@ import './main.css';
 const main = (props) =>{
 
   let dir = null;
+  let contactListRoute = null;
+  
     if(props.isRegistered){
       dir = <Redirect to="contact-List"/>
+      contactListRoute = <Route exact path="/contact-list" 
+      render={()=> <ContactList
+       firstName = {props.firstName}  
+       registerServerError = {props.registerServerError} id = {props.id}/>}
+     > 
+   </Route>
     }
 
     return(
         <Switch>
           <Route exact path="/" component={LandingPage}/>
-          <Route exact path="/contact-list" 
-             render={()=> <ContactList
-              firstName = {props.firstName}  
-              registerServerError = {props.registerServerError} id = {props.id}/>}
-            > 
-          </Route>
+          {contactListRoute}
           {dir}
           <Route exact path="/sign-up" 
             render={(sideProps)=> <SignUp 

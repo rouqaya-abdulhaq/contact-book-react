@@ -61,12 +61,12 @@ export const DeleteCall = (contactInfo,oldContacts,stateUpdate,registerServerErr
                 id : contactInfo.id
             })
             }).then((res)=>{
-                return res.json();
-            }).then((contactIndex)=>{
-                const contacts = [...oldContacts];
-                contacts.splice(contactInfo.index,1);
-                stateUpdate("contacts",contacts);
-                return true;
+                if(res.status === 204){
+                    const contacts = [...oldContacts];
+                    contacts.splice(contactInfo.index,1);
+                    stateUpdate("contacts",contacts);
+                    return true;
+                }
             }).catch((err)=>{
                 console.log(err);
                 registerServerError("unable to delete contact");

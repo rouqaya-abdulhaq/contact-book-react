@@ -1,4 +1,4 @@
-export async function signUpFetchCall (user,register,invalidInputHandler,registerServerError) {
+export async function signUpFetchCall (user,register,registerServerError) {
     fetch("http://localhost:5000/signUp",{
                   method : 'POST',
                   headers : {

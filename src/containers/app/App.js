@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom';
 import './App.css';
 import './paletteClasses.css';
 import Layout from '../../components/layout/layout/layout';
@@ -23,6 +24,7 @@ class App extends Component {
   registerHandler = (user) =>{
     if(user){
       this.setState({isRegistered : true, user : user});
+      this.props.history.push('/contact-list');
     }
   }
  
@@ -54,4 +56,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

@@ -69,14 +69,13 @@
 /*4-1 TABLET*/
 @media (max-width : 1024px ) and (min-width : 768px) {
   .signLogHeader{
-    grid-template-columns: 30% 20% 50%;
+    grid-template-columns: 30% 10% 60%;
   }
   .signOutHeader{
     grid-template-columns: 35% 30% 35%;
   }
   .navButton{
-    width: 20vw;
-    font-size: 1.5em;
+    font-size: 38px;
   }
   
 }  
@@ -85,20 +84,29 @@
     grid-template-columns: 30% 12% 58%;
   }
   .navButton{
-    width: 23vw;
+    font-size: 30px;
   }
 }
 /*------------------------------------------------*/
 /*4-2 SMART PHONES*/
 @media (max-width : 500px) and (min-width : 320px) {
   .signLogHeader{
-    grid-template-columns: 30% 10% 60%;
+    grid-template-columns: 35% 5% 60%;
   }
+  .navButton{
+    font-size: 20px;
+  }
+
+}
+/*------------------------------------------------*/
+/*4-3 COMBINED*/
+@media (max-width : 767px){
   .signOutHeader{
-    grid-template-columns: 30% 40% 30%;
+    grid-template-columns: 30% 30% 40%;
   }
+}
+@media (max-width : 1024px){
   .navButton{
     width: 25vw;
   }
-
 }

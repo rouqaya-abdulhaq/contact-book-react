@@ -11,7 +11,12 @@
   margin-top: 1%;
   cursor: pointer;
 }
-  
+/*SMART PHONES*/
+@media  (max-width: 767px) {
+  #cover{
+    width: 15vw;
+  }
+}
 /* TABLET*/
 @media (max-width : 1024px ) and (min-width : 768px) {
   #cover{

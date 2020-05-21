@@ -3,7 +3,7 @@
     border-radius: 10%;
     font-weight: bold;
 }
-/*validation : i want this to go red if all the inputs are not filled*/
+
 .submitButton:focus , .submitButton:hover{
     background: limegreen;
 }
@@ -22,7 +22,7 @@
 @media (max-width : 1024px ) and (min-width : 768px) {
     .submitButton{
         width: 20vw;
-        height: 4vh;
+        height: 5vh;
         font-size: 3vw;
     }
  }

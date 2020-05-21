@@ -1,6 +1,7 @@
 .popUp{
     width: auto;
-    height: 50vh;
+    height: fit-content;
+    padding: 3%;
     border:  black dashed;
     border-radius: 3%;
 }
@@ -9,10 +10,4 @@
 }
 .hide{
     display: none;
-}
-/*SMALL SMART PHONES */
-@media (max-width : 380px){
-    .popUp{
-      height: 57vh;
-    }
 }

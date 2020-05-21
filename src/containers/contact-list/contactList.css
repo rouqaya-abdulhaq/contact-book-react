@@ -96,8 +96,9 @@
     }
     .cancelButton{
         width: 5vw;
-        height: 3vh;
+        height: 4vh;
         margin-top: 2%;
+        font-size: larger;
     }
  }  
 /*-----------------------*/

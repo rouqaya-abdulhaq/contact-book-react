@@ -6,7 +6,7 @@
  -------------------------*/
 
 /*1-deafult*/
-.default, .default .styleList  ,.default .submitButton{
+.default, .default .palettePopUp  ,.default .submitButton{
     background: rgb(170, 27, 65);
  }
  .default .header , .default .contactPopUps{
@@ -35,7 +35,7 @@
  
  /*------------------------------*/
  /*2-flowey*/
- .flowery , .flowery .submitButton , .flowery .styleList{
+ .flowery , .flowery .submitButton , .flowery .palettePopUp{
     background: rgb(252, 220, 209);
  }
  .flowery .header , .flowery .contactPopUps{
@@ -64,7 +64,7 @@
  
  /*------------------------------*/
  /*3-seaSide*/
- .seaSide , .seaSide .submitButton , .seaSide .styleList{
+ .seaSide , .seaSide .submitButton , .seaSide .palettePopUp{
     background: rgb(90, 188, 185);
  }
  .seaSide .header , .seaSide .contactPopUps{

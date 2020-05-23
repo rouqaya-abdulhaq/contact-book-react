@@ -1,9 +1,9 @@
 .popUp{
-    width: auto;
     height: fit-content;
     padding: 3%;
     border:  black dashed;
     border-radius: 3%;
+    overflow-x: auto;
 }
 .show{
     display: block;

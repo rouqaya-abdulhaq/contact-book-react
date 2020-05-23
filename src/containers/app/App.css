@@ -1,35 +1,6 @@
 *, *::before, *::after {box-sizing: border-box}
-/*there are proplems with the outlines it outlines divs sometimes must be fixed*/
-/*need a proper media fo most elements*/
-/*-----------------
-   STYLE TABLE :
-   1- GLOBAL SELECTORS
-   2- MEDIA QUERIES 
-      2-1 COMBINED
-      2-2 TABLET
-      2-3 SMART PHONES 
-   /*-------------------
-     1- GLOBAL SELECTORS
-     -------------------*/
+
 .App {
-   /* overflow: hidden;
-   height: 100vh;
-   width: 100vw;  
-   display : grid;
-   grid-template-columns: 40% 20% 40%;
-   grid-template-rows: 15% 60% 25%;
-   grid-gap: 3%;
-   grid-template-areas: "header header header"
-                          ". main ."
-                          "palette footer footer"; 
-   font-family: "Comic Sans MS", cursive, sans-serif; */
+   
 }
-
-
-
-/*---------------------------------------------------------------------*/
-/*2- MEDIA QUERIES*/
-/*2-1 COMBINED*/
-/*
-} */
 

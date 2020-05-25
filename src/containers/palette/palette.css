@@ -71,7 +71,7 @@ img{
 /*3-2 TABLET*/
 @media (max-width : 1024px ) and (min-width : 768px) {
     img{
-        margin-top: 35%;
+        margin-top: 15%;
         margin-left: 25%;
         width: 8vw;   
     }

@@ -4,7 +4,7 @@ import './App.css';
 import './paletteClasses.css';
 import Layout from '../../components/layout/layout/layout';
 
-class App extends Component {
+export class App extends Component {
   constructor(){
     super();
     this.state = {
@@ -29,15 +29,19 @@ class App extends Component {
   }
  
   changeStyleHandler = (newStyle) =>{
-    this.setState({
-      style : newStyle 
-    });
+    if(newStyle){
+      this.setState({
+        style : newStyle 
+      });
+    }
   }
 
   registerServerError = (msg) =>{
-    this.setState({
-      serverErrMsg : msg
-    })
+    if(msg){
+      this.setState({
+        serverErrMsg : msg
+      })
+    }
   }
 
   render() {

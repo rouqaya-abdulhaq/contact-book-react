@@ -23,7 +23,7 @@ const layout = (props) => {
                     registerServerError = {props.registerServerError}/>
         </ErrorScreen>
       
-        <Footer author={"rouqaya abdulhaq"}/>
+        <Footer />
       
         <Palette changeStyle={props.changeStyle}/>
     </div> 

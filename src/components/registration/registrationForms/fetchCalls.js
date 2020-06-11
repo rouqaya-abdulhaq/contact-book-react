@@ -17,7 +17,7 @@ export async function signUpFetchCall (user,register,registerServerError) {
                 }
               }).then((user)=>{
                   if(user){
-                    register(user);
+                    register(user,user.data);
                   }
               }).catch((err)=>{
                   registerServerError("unable to register user");
@@ -41,7 +41,7 @@ export async function logInFetchCall (userCredintials,register,registerServerErr
         }
     }).then((user)=>{
         if(user){
-            register(user)
+            register(user,user.data)
         }
     }).catch((err)=>{
         registerServerError("unable to log user");

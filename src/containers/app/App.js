@@ -10,6 +10,7 @@ export class App extends Component {
     this.state = {
       style : 'default',
       isRegistered: false,
+      token : {},
       user : {},
       serverErrMsg : "",
     }
@@ -21,9 +22,9 @@ export class App extends Component {
     }
   }
 
-  registerHandler = (user) =>{
+  registerHandler = (user,token) =>{
     if(user){
-      this.setState({isRegistered : true, user : user});
+      this.setState({isRegistered : true, user : user, token : token});
       this.props.history.push('/contact-list');
     }
   }

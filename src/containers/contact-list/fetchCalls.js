@@ -1,9 +1,10 @@
-export async function SubmitCall (newContact,oldContacts,stateUpdate,registerServerError) {
+export async function SubmitCall (newContact,oldContacts,token,stateUpdate,registerServerError) {
     fetch('http://localhost:5000/contactAdd',{
         method : 'PUT',
         headers : {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            "x-access-token" : token.accessToken
         },
         body : JSON.stringify({
             userId : newContact.userId,
@@ -23,12 +24,13 @@ export async function SubmitCall (newContact,oldContacts,stateUpdate,registerSer
     });
 }
 
-export const EditCall = (contactInfo,oldContacts,stateUpdate,registerServerError) =>{
+export const EditCall = (contactInfo,oldContacts,token,stateUpdate,registerServerError) =>{
     fetch('http://localhost:5000/contactEdit',{
             method : 'PUT',
             headers : {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                "x-access-token" : token.accessToken
             },
             body : JSON.stringify({
                 firstName : contactInfo.editedContact.firstName.value,
@@ -50,12 +52,13 @@ export const EditCall = (contactInfo,oldContacts,stateUpdate,registerServerError
             });
 }
 
-export const DeleteCall = (contactInfo,oldContacts,stateUpdate,registerServerError) =>{
+export const DeleteCall = (contactInfo,oldContacts,token,stateUpdate,registerServerError) =>{
     fetch('http://localhost:5000/contactDelete',{
             method : 'DELETE',
             headers : {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                "x-access-token" : token.accessToken
             },
             body : JSON.stringify({
                 id : contactInfo.id
@@ -73,12 +76,13 @@ export const DeleteCall = (contactInfo,oldContacts,stateUpdate,registerServerErr
             });
 }
 
-export async function LoadContactsCall (id,stateUpdate,registerServerError) {
+export const LoadContactsCall = (id,token,stateUpdate,registerServerError) =>{
     fetch(`http://localhost:5000/loadContacts?id=${id}`,{
             method : 'GET',
             headers : {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'x-access-token' : token.accessToken.toString()
             }, 
         }).then((res)=>{
             return res.json();

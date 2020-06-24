@@ -8,14 +8,15 @@ import LandingPage from '../landingPage/landingPage';
 import './main.css';
 
 const main = (props) =>{
-
+  
   let contactListRoute = <Redirect to="/log-in"/>;
   
     if(props.isRegistered){
       contactListRoute = <Route  path="/contact-list" 
                             render={()=> <ContactList
                             firstName = {props.firstName}  
-                            registerServerError = {props.registerServerError} id = {props.id}/>}/> 
+                            registerServerError = {props.registerServerError} id = {props.id}
+                            token = {props.token}/>}/> 
     }
 
     return(

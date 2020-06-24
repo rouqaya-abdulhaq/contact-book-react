@@ -41,7 +41,7 @@ export async function logInFetchCall (userCredintials,register,registerServerErr
         }
     }).then((user)=>{
         if(user){
-            register(user,user.data)
+            register(user.user,user.data)
         }
     }).catch((err)=>{
         registerServerError("unable to log user");

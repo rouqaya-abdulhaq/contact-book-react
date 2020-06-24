@@ -55,7 +55,8 @@ export class App extends Component {
                   user = {this.state.user}
                   registerServerError = {this.registerServerError}
                   serverErrorMsg = {this.state.serverErrMsg}
-                  changeStyle={this.changeStyleHandler}/>
+                  changeStyle={this.changeStyleHandler}
+                  token = {this.state.token}/>
         </div>
     );
   }

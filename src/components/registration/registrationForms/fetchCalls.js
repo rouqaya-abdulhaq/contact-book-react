@@ -44,6 +44,7 @@ export async function logInFetchCall (userCredintials,register,registerServerErr
             register(user.user,user.data)
         }
     }).catch((err)=>{
+        console.log(err);
         registerServerError("unable to log user");
     })
 }

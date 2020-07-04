@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
+import Cookies from 'js-cookie';
 import './App.css';
 import './paletteClasses.css';
 import Layout from '../../components/layout/layout/layout';
@@ -25,6 +26,7 @@ export class App extends Component {
   registerHandler = (user,token) =>{
     if(user){
       this.setState({isRegistered : true, user : user, token : token});
+      Cookies.set('access-token',token.accessToken,{expires : Date.parse(token.expiresAt), path : '/'});
       this.props.history.push('/contact-list');
     }
   }

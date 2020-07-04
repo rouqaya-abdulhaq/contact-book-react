@@ -20,6 +20,7 @@ export class App extends Component {
   unregisterHandler = () =>{
     if(this.state.isRegistered){
       this.setState({isRegistered : false, user : {}});
+      Cookies.remove('access-token');
     }
   }
 

@@ -11,7 +11,7 @@ export class App extends Component {
     this.state = {
       style : 'default',
       isRegistered: false,
-      token : {},
+      token : "",
       user : {},
       serverErrMsg : "",
     }
@@ -24,10 +24,11 @@ export class App extends Component {
     }
   }
 
-  registerHandler = (user,token) =>{
+  registerHandler = (user,jwt) =>{
     if(user){
+      Cookies.set('access-token',jwt.accessToken,{expires : Date.parse(jwt.expiresAt), path : '/'});
+      const token = Cookies.get('access-token')
       this.setState({isRegistered : true, user : user, token : token});
-      Cookies.set('access-token',token.accessToken,{expires : Date.parse(token.expiresAt), path : '/'});
       this.props.history.push('/contact-list');
     }
   }

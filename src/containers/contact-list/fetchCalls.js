@@ -4,7 +4,7 @@ export async function SubmitCall (newContact,oldContacts,token,stateUpdate,regis
         headers : {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            "x-access-token" : token.accessToken
+            "x-access-token" : token
         },
         body : JSON.stringify({
             userId : newContact.userId,
@@ -30,7 +30,7 @@ export const EditCall = (contactInfo,oldContacts,token,stateUpdate,registerServe
             headers : {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                "x-access-token" : token.accessToken
+                "x-access-token" : token
             },
             body : JSON.stringify({
                 firstName : contactInfo.editedContact.firstName.value,
@@ -58,7 +58,7 @@ export const DeleteCall = (contactInfo,oldContacts,token,stateUpdate,registerSer
             headers : {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                "x-access-token" : token.accessToken
+                "x-access-token" : token
             },
             body : JSON.stringify({
                 id : contactInfo.id
@@ -82,7 +82,7 @@ export const LoadContactsCall = (id,token,stateUpdate,registerServerError) =>{
             headers : {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'x-access-token' : token.accessToken.toString()
+                'x-access-token' : token
             }, 
         }).then((res)=>{
             return res.json();

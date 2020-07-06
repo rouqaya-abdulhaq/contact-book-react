@@ -12,6 +12,8 @@ class Palette extends React.Component {
                 {class : 'default'},
                 {class : 'flowery'},
                 {class : 'seaSide'},
+                {class : 'oranges'},
+                {class : 'vintage'}
             ]
         }
     }

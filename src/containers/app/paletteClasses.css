@@ -5,6 +5,11 @@
      3-seaSide
      4-oranges
      5-vintage
+     6-winter
+     7-jungle
+     8-pastel
+     9-fire
+     10-gold
  -------------------------*/
 
 /*1-deafult*/
@@ -33,7 +38,6 @@
      -moz-box-shadow: 2px 2px 0px 2px #4b2222;
      box-shadow: 2px 2px 0px 2px #4b2222;
  }
- /*sign up and log in forms will be added later*/
  
  /*------------------------------*/
  /*2-flowey*/
@@ -146,4 +150,144 @@
    -webkit-box-shadow: 2px 2px 0px 2px rgba(166, 250, 169,1);
     -moz-box-shadow: 2px 2px 0px 2px rgba(166, 250, 169,1);
     box-shadow: 2px 2px 0px 2px rgba(166, 250, 169,1);
+}
+
+/*------------------------------*/
+ /*6-winter*/
+ .winter , .winter .submitButton , .winter .palettePopUp{
+   background: #204051;
+}
+.winter .header , .winter .contactPopUps{
+   background: #84a9ac;
+}
+.winter .navButton{
+   background: #3b6978;
+  -webkit-box-shadow: 0px 26px 0px 0px #2d515e;
+  -moz-box-shadow: 0px 26px 0px 0px #2d515e;
+  box-shadow: 0px 11px 0px 0px #2d515e;
+}
+.winter main{
+   background: #cae8d5;
+   border-left-color: #acc5b5;
+}
+.winter .title{
+   background: #acc5b5;
+}
+.winter #cover{
+   background: #3b6978;
+   -webkit-box-shadow: 2px 2px 0px 2px #2d515e;
+    -moz-box-shadow: 2px 2px 0px 2px #2d515e;
+    box-shadow: 2px 2px 0px 2px #2d515e;
+}
+/*------------------------------*/
+ /*7-jungle*/
+ .jungle , .jungle .submitButton , .jungle .palettePopUp{
+   background: #96bb7c;
+}
+.jungle .header , .jungle .contactPopUps{
+   background: #d6efc7;
+}
+.jungle .navButton{
+   background: #184d47;
+  -webkit-box-shadow: 0px 26px 0px 0px #133d38;
+  -moz-box-shadow: 0px 26px 0px 0px #133d38;
+  box-shadow: 0px 11px 0px 0px #133d38;
+}
+.jungle main{
+   background: #eebb4d;
+   border-left-color: #d6a947;
+}
+.jungle .title{
+   background: #d6a947;
+}
+.jungle #cover{
+   background: #184d47;
+   -webkit-box-shadow: 2px 2px 0px 2px #133d38;
+    -moz-box-shadow: 2px 2px 0px 2px #133d38;
+    box-shadow: 2px 2px 0px 2px #133d38;
+}
+
+/*------------------------------*/
+ /*8-pastel*/
+ .pastel , .pastel .submitButton , .pastel .palettePopUp{
+   background: #e5cfe5;
+}
+.pastel .header , .pastel .contactPopUps{
+   background: #f6def6;
+}
+.pastel .navButton{
+   background: #cff6cf;
+  -webkit-box-shadow: 0px 26px 0px 0px #b2dab2;
+  -moz-box-shadow: 0px 26px 0px 0px #b2dab2;
+  box-shadow: 0px 11px 0px 0px #b2dab2;
+  color: black;
+}
+.pastel main{
+   background: #cfe5cf;
+   border-left-color: #accaac;
+}
+.pastel .title{
+   background: #accaac;
+}
+.pastel #cover{
+   background: #cff6cf;
+   -webkit-box-shadow: 2px 2px 0px 2px #b2dab2;
+    -moz-box-shadow: 2px 2px 0px 2px #b2dab2;
+    box-shadow: 2px 2px 0px 2px #b2dab2;
+}
+
+/*------------------------------*/
+ /*9-fire*/
+ .fire , .fire .submitButton , .fire .palettePopUp{
+   background: #2f2519;
+}
+.fire .header , .fire .contactPopUps{
+   background: #fa7d09;
+}
+.fire .navButton{
+   background: #2f2519;
+  -webkit-box-shadow: 0px 26px 0px 0px #1f1811;
+  -moz-box-shadow: 0px 26px 0px 0px #1f1811;
+  box-shadow: 0px 11px 0px 0px #1f1811;
+}
+.fire main{
+   background: #ff4301;
+   border-left-color: #e63f02;
+}
+.fire .title{
+   background: #e63f02;
+}
+.fire #cover{
+   background: #2f2519;
+   -webkit-box-shadow: 2px 2px 0px 2px #1f1811;
+    -moz-box-shadow: 2px 2px 0px 2px #1f1811;
+    box-shadow: 2px 2px 0px 2px #1f1811;
+}
+
+/*------------------------------*/
+ /*10-gold*/
+ .gold , .gold .submitButton , .gold .palettePopUp{
+   background: #e0ab5b;
+}
+.gold .header , .gold .contactPopUps{
+   background: #94784c;
+}
+.gold .navButton{
+   background: #6e4c41;
+  -webkit-box-shadow: 0px 26px 0px 0px #583d34;
+  -moz-box-shadow: 0px 26px 0px 0px #583d34;
+  box-shadow: 0px 11px 0px 0px #583d34;
+}
+.gold main{
+   background: #ffe76a;
+   border-left-color: #e2cc5c;
+}
+.gold .title{
+   background: #e2cc5c;
+}
+.gold #cover{
+   background: #6e4c41;
+   -webkit-box-shadow: 2px 2px 0px 2px #583d34;
+    -moz-box-shadow: 2px 2px 0px 2px #583d34;
+    box-shadow: 2px 2px 0px 2px #583d34;
 }

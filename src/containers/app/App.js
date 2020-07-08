@@ -38,6 +38,25 @@ export class App extends Component {
       this.setState({
         style : newStyle 
       });
+      if(this.state.user && this.state.token){
+        fetch('http://localhost:5000/selectStyle',{
+          method : 'POST',
+          headers : {
+              'Content-Type': 'application/json',
+              "x-access-token" : this.state.token
+          },
+          body : JSON.stringify({
+            data : {
+                style : newStyle,
+                id : this.state.user.user_id
+            }
+          })
+        }).then((res)=>{
+          console.log(res);
+        }).catch((err)=>{
+          console.log(err);
+        });
+      }
     }
   }
 

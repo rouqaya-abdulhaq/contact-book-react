@@ -19,16 +19,17 @@ export class App extends Component {
 
   unregisterHandler = () =>{
     if(this.state.isRegistered){
-      this.setState({isRegistered : false, user : {}});
+      this.setState({isRegistered : false, user : {}, style : 'default'});
       Cookies.remove('access-token');
     }
   }
 
   registerHandler = (user,jwt) =>{
     if(user){
+      const style = user.style ? user.style : 'default';
       Cookies.set('access-token',jwt.accessToken,{expires : Date.parse(jwt.expiresAt), path : '/'});
       const token = Cookies.get('access-token')
-      this.setState({isRegistered : true, user : user, token : token});
+      this.setState({isRegistered : true, user : user, token : token ,style : style});
       this.props.history.push('/contact-list');
     }
   }
@@ -51,8 +52,6 @@ export class App extends Component {
                 id : this.state.user.user_id
             }
           })
-        }).then((res)=>{
-          console.log(res);
         }).catch((err)=>{
           console.log(err);
         });

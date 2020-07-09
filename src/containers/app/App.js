@@ -4,6 +4,7 @@ import Cookies from 'js-cookie';
 import './App.css';
 import './paletteClasses.css';
 import Layout from '../../components/layout/layout/layout';
+import {updateStyleInDB} from './fetchCalls';
 
 export class App extends Component {
   constructor(){
@@ -40,21 +41,7 @@ export class App extends Component {
         style : newStyle 
       });
       if(this.state.user && this.state.token){
-        fetch('http://localhost:5000/selectStyle',{
-          method : 'POST',
-          headers : {
-              'Content-Type': 'application/json',
-              "x-access-token" : this.state.token
-          },
-          body : JSON.stringify({
-            data : {
-                style : newStyle,
-                id : this.state.user.user_id
-            }
-          })
-        }).catch((err)=>{
-          console.log(err);
-        });
+        updateStyleInDB(this.state.token,newStyle,this.state.user.user_id);
       }
     }
   }

@@ -1,5 +1,5 @@
 export async function signUpFetchCall (user,register,registerServerError) {
-    fetch("http://localhost:5000/signUp",{
+    fetch("https://contact-book-backend.herokuapp.com/signUp",{
                   method : 'POST',
                   headers : {
                       'Accept': 'application/json',
@@ -17,7 +17,7 @@ export async function signUpFetchCall (user,register,registerServerError) {
                 }
               }).then((user)=>{
                   if(user){
-                    register(user,user.data);
+                    register(user.user,user.data);
                   }
               }).catch((err)=>{
                   registerServerError("unable to register user");
@@ -25,7 +25,7 @@ export async function signUpFetchCall (user,register,registerServerError) {
 }
 
 export async function logInFetchCall (userCredintials,register,registerServerError) {
-    fetch("http://localhost:5000/signIn",{
+    fetch("https://contact-book-backend.herokuapp.com/signIn",{
         method : 'POST',
         headers : {
             'Accept': 'application/json',

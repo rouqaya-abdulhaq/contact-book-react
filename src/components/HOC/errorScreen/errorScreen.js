@@ -8,6 +8,7 @@ const errorScreen = (props) =>{
     
     const refreshPage = () =>{
         props.registerServerError(null);
+        window.location.reload(false);
     }
 
     const serverError = () =>{
@@ -19,7 +20,7 @@ const errorScreen = (props) =>{
 
     if(serverError()){
         errorScreen = <TransScreen msg={props.errorMsg}>
-                        <button onClick={refreshPage} className="backBtn">BACK</button>
+                        <button onClick={refreshPage} className="backBtn">TRY AGAIN</button>
                       </TransScreen>
     }
     return(

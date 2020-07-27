@@ -1,5 +1,7 @@
+const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+
 export const updateStyleInDB = (token ,style ,userId) =>{
-    fetch('https://contact-book-backend.herokuapp.com/selectStyle',{
+    fetch(proxyUrl + 'https://contact-book-backend.herokuapp.com/selectStyle',{
           method : 'POST',
           headers : {
               'Content-Type': 'application/json',

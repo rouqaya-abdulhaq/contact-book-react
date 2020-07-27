@@ -1,5 +1,7 @@
+const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+
 export async function signUpFetchCall (user,register,registerServerError) {
-    fetch("https://contact-book-backend.herokuapp.com/signUp",{
+    fetch(proxyUrl + "https://contact-book-backend.herokuapp.com/signUp",{
                   method : 'POST',
                   headers : {
                       'Accept': 'application/json',
@@ -25,7 +27,7 @@ export async function signUpFetchCall (user,register,registerServerError) {
 }
 
 export async function logInFetchCall (userCredintials,register,registerServerError) {
-    fetch("https://contact-book-backend.herokuapp.com/signIn",{
+    fetch(proxyUrl + "https://contact-book-backend.herokuapp.com/signIn",{
         method : 'POST',
         headers : {
             'Accept': 'application/json',

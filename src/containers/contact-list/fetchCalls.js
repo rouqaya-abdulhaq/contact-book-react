@@ -1,5 +1,7 @@
+const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+
 export async function SubmitCall (newContact,oldContacts,token,stateUpdate,registerServerError) {
-    fetch('https://contact-book-backend.herokuapp.com/contactAdd',{
+    fetch(proxyUrl + 'https://contact-book-backend.herokuapp.com/contactAdd',{
         method : 'PUT',
         headers : {
             'Accept': 'application/json',
@@ -25,7 +27,7 @@ export async function SubmitCall (newContact,oldContacts,token,stateUpdate,regis
 }
 
 export const EditCall = (contactInfo,oldContacts,token,stateUpdate,registerServerError) =>{
-    fetch('https://contact-book-backend.herokuapp.com/contactEdit',{
+    fetch(proxyUrl + 'https://contact-book-backend.herokuapp.com/contactEdit',{
             method : 'PUT',
             headers : {
                 'Accept': 'application/json',
@@ -53,7 +55,7 @@ export const EditCall = (contactInfo,oldContacts,token,stateUpdate,registerServe
 }
 
 export const DeleteCall = (contactInfo,oldContacts,token,stateUpdate,registerServerError) =>{
-    fetch('https://contact-book-backend.herokuapp.com/contactDelete',{
+    fetch(proxyUrl + 'https://contact-book-backend.herokuapp.com/contactDelete',{
             method : 'DELETE',
             headers : {
                 'Accept': 'application/json',
@@ -77,7 +79,7 @@ export const DeleteCall = (contactInfo,oldContacts,token,stateUpdate,registerSer
 }
 
 export const LoadContactsCall = (id,token,stateUpdate,registerServerError) =>{
-    fetch(`https://contact-book-backend.herokuapp.com/loadContacts?id=${id}`,{
+    fetch(proxyUrl + `https://contact-book-backend.herokuapp.com/loadContacts?id=${id}`,{
             method : 'GET',
             headers : {
                 'Accept': 'application/json',

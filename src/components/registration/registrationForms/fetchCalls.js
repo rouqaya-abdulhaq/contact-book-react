@@ -1,4 +1,4 @@
-const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+const proxyUrl = "https://aqueous-coast-32163.herokuapp.com/";
 
 export async function signUpFetchCall (user,register,registerServerError) {
     fetch(proxyUrl + "https://contact-book-backend.herokuapp.com/signUp",{

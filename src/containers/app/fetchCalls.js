@@ -1,4 +1,4 @@
-const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+const proxyUrl = "https://aqueous-coast-32163.herokuapp.com/";
 
 export const updateStyleInDB = (token ,style ,userId) =>{
     fetch(proxyUrl + 'https://contact-book-backend.herokuapp.com/selectStyle',{

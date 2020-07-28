@@ -21,7 +21,9 @@ const layout = (props) => {
                     firstName = {props.user.user_first_name}
                     id = {props.user.user_id}
                     isRegistered = {props.isRegistered}
-                    registerServerError = {props.registerServerError}/>
+                    registerServerError = {props.registerServerError}
+                    isLoading= {props.isLoading}
+                    isCompleted = {props.isCompleted}/>
         </ErrorScreen>
       
         <Footer />

@@ -1,6 +1,6 @@
 const proxyUrl = "https://aqueous-coast-32163.herokuapp.com/";
 
-export async function signUpFetchCall (user,register,registerServerError) {
+export async function signUpFetchCall (user,register,registerServerError,isLoading,isCompleted) {
     fetch(proxyUrl + "https://contact-book-backend.herokuapp.com/signUp",{
                   method : 'POST',
                   headers : {
@@ -20,13 +20,15 @@ export async function signUpFetchCall (user,register,registerServerError) {
               }).then((user)=>{
                   if(user){
                     register(user.user,user.data);
+                    isCompleted();
                   }
               }).catch((err)=>{
                   registerServerError("unable to register user");
+                  isCompleted();
               })
 }
 
-export async function logInFetchCall (userCredintials,register,registerServerError) {
+export async function logInFetchCall (userCredintials,register,registerServerError,isLoading,isCompleted) {
     fetch(proxyUrl + "https://contact-book-backend.herokuapp.com/signIn",{
         method : 'POST',
         headers : {
@@ -46,7 +48,7 @@ export async function logInFetchCall (userCredintials,register,registerServerErr
             register(user.user,user.data)
         }
     }).catch((err)=>{
-        console.log(err);
         registerServerError("unable to log user.");
+        isCompleted();
     })
 }

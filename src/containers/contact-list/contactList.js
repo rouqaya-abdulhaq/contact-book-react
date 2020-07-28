@@ -19,7 +19,7 @@ class ContactList extends React.Component{
     componentDidMount(){
         if(this.props.id){
             fetchCalls.LoadContactsCall(this.props.id, this.props.token,
-                this.stateUpdate,this.props.registerServerError);
+                this.stateUpdate,this.props.registerServerError,this.props.isLoading,this.props.isCompleted);
         }
     }
 
@@ -30,7 +30,7 @@ class ContactList extends React.Component{
     onSubmitHandler = (newContact) =>{
             newContact.userId = this.props.id;
             fetchCalls.SubmitCall(newContact,this.state.contacts, this.props.token,
-                this.stateUpdate,this.props.registerServerError);
+                this.stateUpdate,this.props.registerServerError,this.props.isLoading,this.props.isCompleted);
             this.displayAddForm();
     }
 
@@ -47,7 +47,7 @@ class ContactList extends React.Component{
             index : index
         }
         fetchCalls.EditCall(contactInfo,this.state.contacts, this.props.token,
-            this.stateUpdate,this.props.registerServerError);
+            this.stateUpdate,this.props.registerServerError,this.props.isLoading,this.props.isCompleted);
     }
 
     onDeleteHandler = (index,id) =>{
@@ -56,7 +56,7 @@ class ContactList extends React.Component{
             id : id
         }
         fetchCalls.DeleteCall(contactInfo,this.state.contacts, this.props.token,
-            this.stateUpdate,this.props.registerServerError);
+            this.stateUpdate,this.props.registerServerError,this.props.isLoading,this.props.isCompleted);
     }
 
     render(){

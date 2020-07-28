@@ -25,7 +25,7 @@ const logInForm = (props) => {
                 isValid={password.isValid} hasChanged={password.changed}/>
             
             <SubmitBtn value={"Log In"} 
-            clickHandler={()=>logInFetchCall(userCredintials,props.register,props.registerServerError)}
+            clickHandler={()=>logInFetchCall(userCredintials,props.register,props.registerServerError,props.isLoading,props.isCompleted)}
             infoArr={[email,password]}
             />
         </div> 

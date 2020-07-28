@@ -15,6 +15,7 @@ export class App extends Component {
       token : "",
       user : {},
       serverErrMsg : "",
+      loading : false
     }
   }
 
@@ -54,7 +55,16 @@ export class App extends Component {
     }
   }
 
+  isLoading = () =>{
+    this.setState({loading : true});
+  }
+
+  isCompleted = () =>{
+    this.setState({loading : false});
+  }
+
   render() {
+    console.log(this.state.loading);
       return (
         <div className={this.state.style}>
           <Layout isRegistered={this.state.isRegistered} 
@@ -65,7 +75,9 @@ export class App extends Component {
                   registerServerError = {this.registerServerError}
                   serverErrorMsg = {this.state.serverErrMsg}
                   changeStyle={this.changeStyleHandler}
-                  token = {this.state.token}/>
+                  token = {this.state.token}
+                  isLoading = {this.isLoading}
+                  isCompleted = {this.isCompleted}/>
         </div>
     );
   }

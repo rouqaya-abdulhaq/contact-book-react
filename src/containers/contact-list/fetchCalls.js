@@ -1,6 +1,7 @@
 const proxyUrl = "https://aqueous-coast-32163.herokuapp.com/";
 
-export async function SubmitCall (newContact,oldContacts,token,stateUpdate,registerServerError) {
+export async function SubmitCall (newContact,oldContacts,token,stateUpdate,registerServerError,isLoading,isCompleted) {
+    isLoading();
     fetch(proxyUrl + 'https://contact-book-backend.herokuapp.com/contactAdd',{
         method : 'PUT',
         headers : {
@@ -20,13 +21,15 @@ export async function SubmitCall (newContact,oldContacts,token,stateUpdate,regis
     }).then((contact)=>{
         const contacts = [...oldContacts, contact];
         stateUpdate("contacts",contacts);
+        isCompleted();
     }).catch((err)=>{
-        console.log(err);
         registerServerError("could not submit new contact");
+        isCompleted();
     });
 }
 
-export const EditCall = (contactInfo,oldContacts,token,stateUpdate,registerServerError) =>{
+export const EditCall = (contactInfo,oldContacts,token,stateUpdate,registerServerError,isLoading,isCompleted) =>{
+    isLoading();
     fetch(proxyUrl + 'https://contact-book-backend.herokuapp.com/contactEdit',{
             method : 'PUT',
             headers : {
@@ -47,14 +50,16 @@ export const EditCall = (contactInfo,oldContacts,token,stateUpdate,registerServe
                 const contacts = [...oldContacts];
                 contacts[contactInfo.index] = contact;
                 stateUpdate("contacts",contacts);
+                isCompleted();
                 return true;
             }).catch((err)=>{
-                console.log(err);
                 registerServerError("unable to edit contact");
+                isCompleted();
             });
 }
 
-export const DeleteCall = (contactInfo,oldContacts,token,stateUpdate,registerServerError) =>{
+export const DeleteCall = (contactInfo,oldContacts,token,stateUpdate,registerServerError,isLoading,isCompleted) =>{
+    isLoading();
     fetch(proxyUrl + 'https://contact-book-backend.herokuapp.com/contactDelete',{
             method : 'DELETE',
             headers : {
@@ -70,15 +75,18 @@ export const DeleteCall = (contactInfo,oldContacts,token,stateUpdate,registerSer
                     const contacts = [...oldContacts];
                     contacts.splice(contactInfo.index,1);
                     stateUpdate("contacts",contacts);
+                    isCompleted();
                     return true;
                 }
+                isCompleted();
             }).catch((err)=>{
-                console.log(err);
                 registerServerError("unable to delete contact");
+                isCompleted();
             });
 }
 
-export const LoadContactsCall = (id,token,stateUpdate,registerServerError) =>{
+export const LoadContactsCall = (id,token,stateUpdate,registerServerError,isLoading,isCompleted) =>{
+    isLoading();
     fetch(proxyUrl + `https://contact-book-backend.herokuapp.com/loadContacts?id=${id}`,{
             method : 'GET',
             headers : {
@@ -90,8 +98,9 @@ export const LoadContactsCall = (id,token,stateUpdate,registerServerError) =>{
             return res.json();
         }).then((contacts) =>{
             stateUpdate("contacts",contacts);
+            isCompleted();
         }).catch((err) =>{
-            console.log(err);
             registerServerError("could not load contacts from server");
+            isCompleted();
         })
 }

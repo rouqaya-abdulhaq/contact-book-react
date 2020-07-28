@@ -4,6 +4,7 @@ import Cookies from 'js-cookie';
 import './App.css';
 import './paletteClasses.css';
 import Layout from '../../components/layout/layout/layout';
+import Spinner from '../../components/UI/spinner/spinner';
 import {updateStyleInDB} from './fetchCalls';
 
 export class App extends Component {

@@ -4,7 +4,6 @@ import Cookies from 'js-cookie';
 import './App.css';
 import './paletteClasses.css';
 import Layout from '../../components/layout/layout/layout';
-import Spinner from '../../components/UI/spinner/spinner';
 import {updateStyleInDB} from './fetchCalls';
 
 export class App extends Component {
@@ -65,7 +64,6 @@ export class App extends Component {
   }
 
   render() {
-    console.log(this.state.loading);
       return (
         <div className={this.state.style}>
           <Layout isRegistered={this.state.isRegistered} 
@@ -78,7 +76,8 @@ export class App extends Component {
                   changeStyle={this.changeStyleHandler}
                   token = {this.state.token}
                   isLoading = {this.isLoading}
-                  isCompleted = {this.isCompleted}/>
+                  isCompleted = {this.isCompleted}
+                  loading= {this.state.loading}/>
         </div>
     );
   }

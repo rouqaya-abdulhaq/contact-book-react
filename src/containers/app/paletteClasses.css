@@ -13,7 +13,7 @@
  -------------------------*/
 
 /*1-deafult*/
-.default, .default .palettePopUp  ,.default .submitButton{
+.default, .default .palettePopUp  ,.default .submitButton,.default .spinner:after{
     background: #faf5ef;
  }
  .default .header , .default .contactPopUps{
@@ -41,7 +41,7 @@
  
  /*------------------------------*/
  /*2-flowey*/
- .flowery , .flowery .submitButton , .flowery .palettePopUp{
+ .flowery , .flowery .submitButton , .flowery .palettePopUp,.flowery .spinner:after{
     background: rgb(252, 220, 209);
  }
  .flowery .header , .flowery .contactPopUps{
@@ -70,7 +70,7 @@
  
  /*------------------------------*/
  /*3-seaSide*/
- .seaSide , .seaSide .submitButton , .seaSide .palettePopUp{
+ .seaSide , .seaSide .submitButton , .seaSide .palettePopUp,.seaSide .spinner:after{
     background: rgb(90, 188, 185);
  }
  .seaSide .header , .seaSide .contactPopUps{
@@ -98,7 +98,7 @@
 
  /*------------------------------*/
  /*4-oranges*/
- .oranges , .oranges .submitButton , .oranges .palettePopUp{
+ .oranges , .oranges .submitButton , .oranges .palettePopUp,.oranges .spinner:after{
    background: #ffeadb;
 }
 .oranges .header , .oranges .contactPopUps{
@@ -126,7 +126,7 @@
 
  /*------------------------------*/
  /*5-vintage*/
- .vintage , .vintage .submitButton , .vintage .palettePopUp{
+ .vintage , .vintage .submitButton , .vintage .palettePopUp,.vintage .spinner:after{
    background: #7d5e2a;
 }
 .vintage .header , .vintage .contactPopUps{
@@ -154,7 +154,7 @@
 
 /*------------------------------*/
  /*6-winter*/
- .winter , .winter .submitButton , .winter .palettePopUp{
+ .winter , .winter .submitButton , .winter .palettePopUp, .winter .spinner:after{
    background: #204051;
 }
 .winter .header , .winter .contactPopUps{
@@ -181,7 +181,7 @@
 }
 /*------------------------------*/
  /*7-jungle*/
- .jungle , .jungle .submitButton , .jungle .palettePopUp{
+ .jungle , .jungle .submitButton , .jungle .palettePopUp,.jungle .spinner:after{
    background: #96bb7c;
 }
 .jungle .header , .jungle .contactPopUps{
@@ -209,7 +209,7 @@
 
 /*------------------------------*/
  /*8-pastel*/
- .pastel , .pastel .submitButton , .pastel .palettePopUp{
+ .pastel , .pastel .submitButton , .pastel .palettePopUp,.pastel .spinner:after{
    background: #e5cfe5;
 }
 .pastel .header , .pastel .contactPopUps{
@@ -238,7 +238,7 @@
 
 /*------------------------------*/
  /*9-fire*/
- .fire , .fire .submitButton , .fire .palettePopUp{
+ .fire , .fire .submitButton , .fire .palettePopUp,.fire .spinner:after{
    background: #2f2519;
 }
 .fire .header , .fire .contactPopUps{
@@ -266,7 +266,7 @@
 
 /*------------------------------*/
  /*10-gold*/
- .gold , .gold .submitButton , .gold .palettePopUp{
+ .gold , .gold .submitButton , .gold .palettePopUp,.gold .spinner:after{
    background: #e0ab5b;
 }
 .gold .header , .gold .contactPopUps{

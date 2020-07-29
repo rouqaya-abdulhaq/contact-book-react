@@ -16,6 +16,10 @@
    grid-area: main;
 }
 
+.hideMain .main{
+   display: none;
+}
+
 @media(max-width : 1024px){
    .layout{
       grid-template-columns: 32% 28% 40%;
